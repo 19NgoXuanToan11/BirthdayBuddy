@@ -3,3 +3,4 @@ Use case details document: https://docs.google.com/document/d/1Wp9FNaoUyaBf_0ONo
 Use case: https://drive.google.com/file/d/1dDwD1ZN_awcYBItScAuEIOqdCArCLP9x/view?usp=sharing
 ERD:
 Database diagram:
+Use case update: https://drive.google.com/file/d/1i_Xf8nSDJW4-IqI9lr0KXEPOB_3zI-DY/view?usp=sharing
