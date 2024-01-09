@@ -1,0 +1,5 @@
+Interview questions: https://docs.google.com/spreadsheets/d/1eDx3_dzTzpfe1oagAuLLzl95pAzOiG3b-yd0XTjQTCw/edit?usp=drive_link
+Use case details document: https://docs.google.com/document/d/1Wp9FNaoUyaBf_0ONonsoab-cE-eZKdiV5PeYnwfH0Sk/edit?usp=drive_link
+Use case: https://drive.google.com/file/d/1dDwD1ZN_awcYBItScAuEIOqdCArCLP9x/view?usp=sharing
+ERD:
+Database diagram:
