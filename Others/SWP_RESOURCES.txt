@@ -3,3 +3,6 @@ Use case details document: https://docs.google.com/document/d/1Wp9FNaoUyaBf_0ONo
 Use case: https://drive.google.com/file/d/1dDwD1ZN_awcYBItScAuEIOqdCArCLP9x/view?usp=sharing
 ERD:
 Database diagram:
+- Sơ đồ Entity Relationship Diagram
+https://drive.google.com/file/d/14w-jAXnWvQwqP5OHiKg7koA4k4BU7fQG/view?usp=sharing
+https://drive.google.com/file/d/1wpDiUCxmFoK5OZRzp2Nb4XLv8oWU65u0/view?usp=sharing
