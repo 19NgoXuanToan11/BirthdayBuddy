@@ -1,9 +1,7 @@
 Interview questions: https://docs.google.com/spreadsheets/d/1eDx3_dzTzpfe1oagAuLLzl95pAzOiG3b-yd0XTjQTCw/edit?usp=drive_link
 Use case details document: https://docs.google.com/document/d/1Wp9FNaoUyaBf_0ONonsoab-cE-eZKdiV5PeYnwfH0Sk/edit?usp=drive_link
-Use case: https://drive.google.com/file/d/1dDwD1ZN_awcYBItScAuEIOqdCArCLP9x/view?usp=sharing
-https://drive.google.com/file/d/1i_Xf8nSDJW4-IqI9lr0KXEPOB_3zI-DY/view?usp=sharing
+Use case: https://drive.google.com/file/d/1i_Xf8nSDJW4-IqI9lr0KXEPOB_3zI-DY/view?usp=sharing
 ERD: https://drive.google.com/file/d/14w-jAXnWvQwqP5OHiKg7koA4k4BU7fQG/view?usp=sharing
-https://drive.google.com/file/d/1wpDiUCxmFoK5OZRzp2Nb4XLv8oWU65u0/view?usp=sharing
-Database diagram:
-
+Database diagram: https://drive.google.com/file/d/1wpDiUCxmFoK5OZRzp2Nb4XLv8oWU65u0/view?usp=sharing
+Figma: https://www.figma.com/file/yEtd7dEKhlX4BzIGbw2AsN/BirthdayPartyBooking?type=design&node-id=0%3A1&mode=design&t=wKJ9wlE1KWJEaChy-1
 
