@@ -1,11 +1,11 @@
 import './App.scss'
-import GuestHeader from '../src/Web_Application/Guest Page/components/atoms/guest-header/header';
+import GuestHomePage from './Web_Application/Guest Page/components/pages/guest-home-page/guest-home-page';
 
 function App() {
 
   return (
     <>
-      <GuestHeader />
+      <GuestHomePage />
     </>
   )
 }
