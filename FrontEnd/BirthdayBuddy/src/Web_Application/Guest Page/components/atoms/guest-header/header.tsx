@@ -4,26 +4,26 @@ function GuestHeader() {
     return (
         <header className="guest-header">
             <div className="upper-header">
-                <a href="#">Giao hàng</a> |{" "}
+                <a href="#">Giao hàng</a> | {" "}
                 <a href="#">Thành phố Hồ Chí Minh</a>
                 <div className="tracking">
                     <a href="#">Theo dõi đơn hàng</a> | <a href="#">Trợ giúp</a>
                 </div>
             </div>
             <div className="middle-header">
-                <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
+                <div className="logo">
+                    <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo"/>
+                </div>
+                
                 <div className="search-bar">
                     <input type="text" placeholder="Tìm kiếm..." />
-                    <button>
-                        <i className="fa fa-search"></i>
-                    </button>
                 </div>
                 <div className="user-cart">
                     <a href="#">
-                        <i className="fa fa-user"></i>
+                        <i className="fa fa-user">O</i>
                     </a>
                     <a href="#">
-                        <i className="fa fa-shopping-cart"></i>
+                        <i className="fa fa-shopping-cart">X</i>
                     </a>
                 </div>
             </div>
