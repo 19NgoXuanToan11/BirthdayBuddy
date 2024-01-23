@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $primary-color: #3498db; 
 $hover-color: lighten($primary-color, 10%); 
 $font-color: #333;
@@ -27,10 +28,29 @@ $border-color: #ddd;
                 color: $hover-color;
             }
         }
+=======
+.guest-header-container {
+    font-family: Itim, cursive;
+
+    a {
+        color: 0986E0;
+        text-decoration: none;
+    }
+
+    .upper-header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: -10px;
+        padding-inline-start: 50px;
+        padding-inline-end: 50px;
+        border-bottom: 1px solid rgb(204, 200, 200);
+>>>>>>> main
     }
 
     .middle-header {
         display: flex;
+<<<<<<< HEAD
         align-items: center;
         justify-content: space-between;
         padding: 20px 0;
@@ -83,10 +103,16 @@ $border-color: #ddd;
                 }
             }
         }
+=======
+        justify-content: space-around;
+        padding: 30px;
+
+>>>>>>> main
     }
 
     .lower-header {
         ul {
+<<<<<<< HEAD
             list-style: none;
             display: flex;
             padding-left: 0;
@@ -113,3 +139,18 @@ $border-color: #ddd;
     }
 }
 
+=======
+            display: flex;
+            justify-content: center;
+
+            li {
+                list-style: none;
+                display: inline-block;
+                justify-content: center;
+                padding-inline: 50px;
+                text-align: center;
+            }
+        }
+    }
+}
+>>>>>>> main
