@@ -1,11 +1,11 @@
-import GuestFooter from '../../atoms/guest-footer/footer'
+import GuestFooter from "../../atoms/guest-footer/footer";
 
 function GuestFooterHome() {
     return (
         <>
             <GuestFooter />
         </>
-    )
+    );
 }
 
-export default GuestFooterHome
+export default GuestFooterHome;

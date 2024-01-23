@@ -4,7 +4,7 @@ function GuestHeader() {
     return (
         <header className="guest-header">
             <div className="upper-header">
-                <a href="#">Giao hàng</a> | {" "}
+                <a href="#">Giao hàng</a> |{" "}
                 <a href="#">Thành phố Hồ Chí Minh</a>
                 <div className="tracking">
                     <a href="#">Theo dõi đơn hàng</a> | <a href="#">Trợ giúp</a>
