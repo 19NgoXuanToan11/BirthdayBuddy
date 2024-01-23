@@ -1,0 +1,115 @@
+$primary-color: #3498db; 
+$hover-color: lighten($primary-color, 10%); 
+$font-color: #333;
+$font-hover-color: #fff;
+$background-light: #f8f8f8;
+$background-dark: #eaeaea;
+$border-color: #ddd;
+
+.guest-header {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: $background-dark;
+    color: $font-color;
+
+    .upper-header {
+        background-color: $background-light;
+        padding: 10px 0;
+        text-align: right;
+        font-size: 0.875em;
+
+        a {
+            color: $font-color;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+
+    .middle-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        img {
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        .search-bar {
+            position: relative;
+
+            input {
+                padding: 10px;
+                font-size: 1em;
+                border: 1px solid $border-color;
+                border-radius: 5px 0 0 5px;
+                outline: none;
+            }
+
+            button {
+                padding: 10px;
+                background-color: $primary-color;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                i {
+                    color: $font-hover-color;
+                }
+
+                &:hover {
+                    background-color: $hover-color;
+                }
+            }
+        }
+
+        .user-cart {
+            a {
+                font-size: 1.125em;
+                margin-left: 15px;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $hover-color;
+                }
+            }
+        }
+    }
+
+    .lower-header {
+        ul {
+            list-style: none;
+            display: flex;
+            padding-left: 0;
+            margin: 0;
+            justify-content: center;
+
+            li {
+                padding: 20px 30px;
+
+                a {
+                    text-decoration: none;
+                    color: $font-color;
+                    font-weight: bold;
+                    transition: background-color 0.3s, color 0.3s ease;
+
+                    &:hover {
+                        background-color: $primary-color;
+                        color: $font-hover-color;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
