@@ -44,7 +44,7 @@ const ActionButton = styled.button`
     color: black;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
@@ -52,6 +52,7 @@ const ActionButton = styled.button`
     width: 200px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 15px;
     transition: background-color 0.3s ease;
 
     &:hover {
