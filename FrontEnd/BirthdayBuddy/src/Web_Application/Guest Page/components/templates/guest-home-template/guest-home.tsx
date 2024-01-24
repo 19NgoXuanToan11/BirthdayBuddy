@@ -7,7 +7,7 @@ const CarouselContainer = styled.div`
     max-width: 1200px;
     margin: auto;
     position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     overflow: hidden;
 `;
@@ -16,11 +16,10 @@ const CarouselItem = styled.div`
     min-width: 300px;
     margin: 16px;
     position: relative;
-
     img {
-    width: 100%;
-    display: block;
-    border-radius: 10px;
+        width: 100%;
+        display: block;
+        border-radius: 10px;
     }
 `;
 
@@ -64,7 +63,7 @@ function GuestHomeTemplate() {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
 
