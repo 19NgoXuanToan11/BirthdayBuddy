@@ -27,14 +27,25 @@ body {
         a {
             text-decoration: none;
             color: $primary-color;
-            margin: 5px 40px;
+            margin-top: 10px;
         }
 
-        .tracking {
-            a {
-                margin-left: 20em;
-            }
+        img {
+            height: 40px;
         }
+    }
+
+    .upper-header-1 {
+        margin-left: 50px;
+    }
+
+    .upper-header-2 {
+        margin-top: 10px;
+        margin-right: 50px;
+    }
+
+    span {
+        margin-left: 7px;
     }
 
     .middle-header {
@@ -79,6 +90,10 @@ body {
                 .fa {
                     font-size: 2em;
                 }
+            }
+
+            img {
+                height: 40px;
             }
         }
     }
