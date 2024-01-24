@@ -11,19 +11,19 @@ function GuestHeader() {
                 </div>
             </div>
             <div className="middle-header">
-                <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
+                <div className="logo">
+                    <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo"/>
+                </div>
+                
                 <div className="search-bar">
                     <input type="text" placeholder="Tìm kiếm..." />
-                    <button>
-                        <i className="fa fa-search"></i>
-                    </button>
                 </div>
                 <div className="user-cart">
                     <a href="#">
-                        <i className="fa fa-user"></i>
+                        <i className="fa fa-user"><img src="/src/SWP_RESOURCE/icon/user.png"/></i>
                     </a>
                     <a href="#">
-                        <i className="fa fa-shopping-cart"></i>
+                        <i className="fa fa-shopping-cart"><img src="/src/SWP_RESOURCE/icon/shopping-cart.png"/></i>
                     </a>
                 </div>
             </div>

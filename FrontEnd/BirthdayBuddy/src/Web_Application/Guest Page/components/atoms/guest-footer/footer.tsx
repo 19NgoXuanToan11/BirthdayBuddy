@@ -1,13 +1,13 @@
-import './footer.scss'
+import "./footer.scss";
 
 function GuestFooter() {
-  return (
-    <>
-    <div className="guest-footer-container">
-        <h1>This is guest footer</h1>
-    </div>
-    </>
-  )
+    return (
+        <>
+            <div className="guest-footer-container">
+                <h1>This is guest footer</h1>
+            </div>
+        </>
+    );
 }
 
-export default GuestFooter
+export default GuestFooter;
