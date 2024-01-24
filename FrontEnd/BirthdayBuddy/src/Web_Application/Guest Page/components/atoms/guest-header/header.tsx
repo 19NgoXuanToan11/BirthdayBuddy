@@ -20,10 +20,10 @@ function GuestHeader() {
                 </div>
                 <div className="user-cart">
                     <a href="#">
-                        <i className="fa fa-user">O</i>
+                        <i className="fa fa-user"><img src="/src/SWP_RESOURCE/icon/user.png"/></i>
                     </a>
                     <a href="#">
-                        <i className="fa fa-shopping-cart">X</i>
+                        <i className="fa fa-shopping-cart"><img src="/src/SWP_RESOURCE/icon/shopping-cart.png"/></i>
                     </a>
                 </div>
             </div>
