@@ -4,58 +4,107 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const CarouselContainer = styled.div`
-    max-width: 1200px;
-    margin: auto;
+    width: 100vw; 
+    margin: 0 auto; 
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    border-radius: 0; 
     overflow: hidden;
 `;
 
 const CarouselItem = styled.div`
-    min-width: 300px;
-    margin: 16px;
     position: relative;
+    width: 100%;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); 
+        z-index: 2; 
+    }
+
     img {
         width: 100%;
         display: block;
-        border-radius: 10px;
+        border-radius: 0;
     }
 `;
 
 const images = ['/src/SWP_RESOURCE/pictures/carousel_1.png',
-                '/src/SWP_RESOURCE/pictures/carousel_5(update).png',
-                '/src/SWP_RESOURCE/pictures/carousel_3.png']
+            '/src/SWP_RESOURCE/pictures/carousel_5(update).png',
+            '/src/SWP_RESOURCE/pictures/carousel_3.png']
 
-const Header = styled.h1`
+const IconBody = styled.div`
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%; 
+    overflow: hidden; 
+    background: url("/src/SWP_RESOURCE/pictures/z5120957459050_426078a0d112eb6024986efd8aea3ff3.jpg");
+    background-size: cover; 
+    background-position: center; 
+`;
+
+
+const TitleBody = styled.h1`
+    position: absolute;
+    width: 1199px;
+    height: 115px;
+    left: 362px;
+    top: 420px;
+    font-family: "Itim";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 115px;
+    display: flex;
+    align-items: center;
     text-align: center;
-    color: #333;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 0 20px;
-    word-wrap: break-word; 
-    box-sizing: border-box;
+    color: #ffffff;
+`;
+
+const Content = styled.h2`
+    display: inline-block;
+    position: absolute;
+    width: 650px;
+    height: 180px;
+    left: 525px;
+    top: 550px;
+    font-family: "Itim";
+    font-style: normal;
+    font-size: 24px;
+    line-height: 50px;
+    color: #ffffff;
+    text-indent: 30px;
 `;
 
 const ActionButton = styled.button`
+    position: absolute;
+    top: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #cfa924;
+    font-family: "Itim", cursive;
+    font-size: 20px;
     color: black;
-    border: none;
     padding: 10px 20px;
-    border-radius: 20px;
+    border: none;
+    border-radius: 40px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    display: block;
-    width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-    transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: #0986e0;
+        background: #816916;
+        color: white;
+        color: white; 
+        transition: background 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                    color 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     }
 `;
 
@@ -69,7 +118,7 @@ function GuestHomeTemplate() {
 
         responsive: [
             {
-                breakpoint: 1024,
+            breakpoint: 1024,
                 settings: {
                 slidesToShow: 1,
                 infinite: true,
@@ -101,13 +150,15 @@ function GuestHomeTemplate() {
                     </CarouselItem>
                 ))}
             </Slider>
-            <Header>
-                Một sinh nhật thật ý nghĩa và đặc biệt để đánh dấu cột mốc quan trọng của các thiên thần nhỏ luôn là điều bố mẹ băn khoăn?
-                <br/>
-                Với sự đa dạng trong các gói tiệc sinh nhật, BirthdayBuddy hứa hẹn sẽ mang đến cho các thiên thần nhỏ một bữa tiệc đầy bất ngờ và tràn ngập những khoảnh khắc đáng nhớ.
-            </Header>
+            <IconBody/>
+            <TitleBody>
+                Lưu giữ cột mốc tuổi thơ            
+            </TitleBody>
+            <Content>
+                Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
+            </Content>
             <ActionButton role="button" aria-pressed="false">
-                LIÊN HỆ ĐẶT TIỆC
+                Đặt tiệc ngay
             </ActionButton>
         </CarouselContainer>
     );
