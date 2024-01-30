@@ -35,8 +35,8 @@ const CarouselItem = styled.div`
 `;
 
 const images = ['/src/SWP_RESOURCE/pictures/carousel_1.png',
-            '/src/SWP_RESOURCE/pictures/carousel_5(update).png',
-            '/src/SWP_RESOURCE/pictures/carousel_3.png']
+    '/src/SWP_RESOURCE/pictures/carousel_5(update).png',
+    '/src/SWP_RESOURCE/pictures/carousel_3.png']
 
 const IconBody = styled.div`
     position: absolute;
@@ -87,7 +87,7 @@ const Content = styled.h2`
 
 const ActionButton = styled.button`
     position: absolute;
-    top: 650px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     background: #cfa924;
@@ -118,24 +118,24 @@ function GuestHomeTemplate() {
 
         responsive: [
             {
-            breakpoint: 1024,
+                breakpoint: 1024,
                 settings: {
-                slidesToShow: 1,
-                infinite: true,
+                    slidesToShow: 1,
+                    infinite: true,
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                slidesToShow: 1,
-                dots: true
+                    slidesToShow: 1,
+                    dots: true
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                slidesToShow: 1,
-                dots: false
+                    slidesToShow: 1,
+                    dots: false
                 }
             }
         ]
@@ -150,12 +150,14 @@ function GuestHomeTemplate() {
                     </CarouselItem>
                 ))}
             </Slider>
-            <IconBody/>
+            <IconBody />
             <TitleBody>
-                Lưu giữ cột mốc tuổi thơ            
+            —Lưu giữ cột mốc tuổi thơ—
             </TitleBody>
             <Content>
-                Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
+                Một sinh nhật thật ý nghĩa và đặc biệt để đánh dấu cột mốc quan trọng của các thiên thần nhỏ luôn là điều bố mẹ băn khoăn?
+                Với sự đa dạng trong các gói tiệc sinh nhật, BirthdayBuddy hứa hẹn sẽ mang đến cho các thiên thần nhỏ một bữa tiệc đầy bất ngờ
+                và tràn ngập những khoảnh khắc đáng nhớ.
             </Content>
             <ActionButton role="button" aria-pressed="false">
                 Đặt tiệc ngay

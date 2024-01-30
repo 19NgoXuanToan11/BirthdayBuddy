@@ -1,5 +1,5 @@
-$primary-color: #816916;
-$font-family: "Arial", sans-serif;
+$primary-color: #0986e0;
+$font-family: Itim;
 $secondary-color: #f0f0f0;
 $border-color: #ccc;
 $hover-color: $primary-color;
@@ -17,32 +17,6 @@ body {
 .guest-header {
     background-color: white;
     border-bottom: 1px solid $border-color;
-
-    .upper-header {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.5em;
-        font-size: 0.85em;
-
-        a {
-            text-decoration: none;
-            color: $primary-color;
-            margin-top: 10px;
-        }
-
-        img {
-            height: 40px;
-        }
-    }
-
-    .upper-header-1 {
-        margin-left: 50px;
-    }
-
-    .upper-header-2 {
-        margin-top: 10px;
-        margin-right: 50px;
-    }
 
     span {
         margin-left: 7px;

@@ -3,16 +3,6 @@ import "./header.scss";
 function GuestHeader() {
     return (
         <header className="guest-header">
-            <div className="upper-header">
-                <div className="upper-header-1">
-                    <a href="#"><img src="/src/SWP_RESOURCE/icon/truck.gif"></img>Giao hàng</a><span> |</span> {" "}
-                    <a href="#"><img src="/src/SWP_RESOURCE/icon/airplane.gif"></img>Thành phố Hồ Chí Minh</a>
-                </div>
-                <div className="upper-header-2">
-                    <a href="#">Theo dõi đơn hàng</a><span>|  </span>
-                    <a href="#">Trợ giúp</a>
-                </div>
-            </div>
             <div className="middle-header">
                 <div className="logo">
                     <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo"/>
@@ -36,13 +26,10 @@ function GuestHeader() {
                         <a href="#">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="#">Địa điểm</a>
-                    </li>
-                    <li>
-                        <a href="#">Chủ đề bữa tiệc</a>
-                    </li>
-                    <li>
                         <a href="#">Các gói tiệc</a>
+                    </li>
+                    <li>
+                        <a href="#">Dịch vụ đặc biệt</a>
                     </li>
                     <li>
                         <a href="#">Đặt tiệc sinh nhật</a>
