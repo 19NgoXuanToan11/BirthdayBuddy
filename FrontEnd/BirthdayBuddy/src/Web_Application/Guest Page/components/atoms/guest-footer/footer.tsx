@@ -1,27 +1,14 @@
-import "./footer.scss";
-
-function GuestFooter() {
+export default function GuestFooter() {
     return (
         <>
             <div className="guest-footer-high-page">
-                <ul>
+                <ul className="contact-list">
                     <li>Gọi chúng tôi</li>
                     <li>Gửi tin nhắn cho chúng tôi</li>
                     <li>Theo dõi chúng tôi</li>
-                    <ul>
-                        <li>
-                            <img src="/src/SWP_RESOURCE/icon/facebook (1).png" />
-                        </li>
-                        <li>
-                            <img src="/src/SWP_RESOURCE/icon/twitter.png" />
-                        </li>
-                        <li>
-                            <img src="/src/SWP_RESOURCE/icon/instagram.png" />
-                        </li>
-                    </ul>
                 </ul>
 
-                <ul>
+                <ul className="contact-info">
                     <li>
                         <img src="/src/SWP_RESOURCE/icon/phone.gif" />
                         1900 43 22 31
@@ -29,6 +16,15 @@ function GuestFooter() {
                     <li>
                         <img src="/src/SWP_RESOURCE/icon/message.gif" />
                         birthdaybuddy@gmail.com
+                    </li>
+                    <li>
+                        <img src="/src/SWP_RESOURCE/icon/facebook (1).png" />
+                    </li>
+                    <li>
+                        <img src="/src/SWP_RESOURCE/icon/twitter.png" />
+                    </li>
+                    <li>
+                        <img src="/src/SWP_RESOURCE/icon/instagram.png" />
                     </li>
                 </ul>
             </div>
@@ -52,5 +48,3 @@ function GuestFooter() {
         </>
     );
 }
-
-export default GuestFooter;
