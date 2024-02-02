@@ -40,9 +40,15 @@ export default function GuestFooter() {
                 <img className="footer-logo" src="/src/SWP_RESOURCE/Logo.png" />
 
                 <ul className="footer-nav-link">
-                    <li>Trang chủ</li>
-                    <li>Các gói tiệc</li>
-                    <li>Dịch vụ đặc biệt</li>
+                    <li>
+                        <a href="#!">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="#!">Các gói tiệc</a>
+                    </li>
+                    <li>
+                        <a href="#!">Dịch vụ đặc biệt</a>
+                    </li>
                 </ul>
             </div>
 
