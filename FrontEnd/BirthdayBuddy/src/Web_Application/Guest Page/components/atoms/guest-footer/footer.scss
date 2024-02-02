@@ -1,5 +1,6 @@
 $color-primary: #a48a00;
 $color-text: #fff;
+$color-contact: #ecc769;
 
 .guest-footer-high-page {
     background-color: $color-primary;
@@ -24,6 +25,11 @@ $color-text: #fff;
             vertical-align: middle;
             margin-right: 8px;
         }
+    }
+
+    .call-us li:not(:first-child),
+    .mail-us li:not(:first-child) {
+        color: $color-contact;
     }
 
     .follow-us {
@@ -84,6 +90,10 @@ $color-text: #fff;
             color: $color-text;
             margin-bottom: 10px;
         }
+    }
+
+    .footer-nav-link a {
+        color: $color-contact; 
     }
 
     img {
