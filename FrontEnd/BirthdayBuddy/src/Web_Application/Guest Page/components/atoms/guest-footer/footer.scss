@@ -1,113 +1,122 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
-
-.guest-footer-high-page,
-.guest-footer-middle-page,
-.guest-footer-low-page {
-    background-color: #a48a00;
-    font-family: "Roboto", sans-serif;
-    color: #333;
-    padding: 20px;
-    text-align: center;
-}
+$color-primary: #a48a00;
+$color-text: #fff;
+$color-contact: #ecc769;
 
 .guest-footer-high-page {
+    background-color: $color-primary;
+    color: $color-text;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        text-align: center;
 
         li {
-            margin: 5px 0;
-            &:first-child {
-                font-size: 1.2rem;
-                font-weight: bold;
-            }
+            margin-bottom: 5px;
         }
 
-        ul {
-            display: flex;
-            gap: 10px;
-
-            li {
-                img {
-                    height: 30px; 
-                    width: auto;
-                }
-            }
+        img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
         }
     }
 
-    ul:nth-of-type(2) {
-        flex-direction: row;
-        justify-content: center;
+    .call-us li:not(:first-child),
+    .mail-us li:not(:first-child) {
+        color: $color-contact;
+    }
 
-        li {
+    .follow-us {
+        align-items: center;
+        flex-direction: column;
+
+        .icon {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            justify-content: center;
+            margin-top: 5px;
 
-            img {
-                height: 24px; 
-                width: auto;
+            li {
+                display: inline-block;
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-footer-high-page {
+        flex-direction: column;
+        align-items: center;
+
+        ul {
+            width: 100%;
+            margin-bottom: 20px;
+
+            .icon {
+                justify-content: center;
+                li {
+                    margin: 0 5px;
+                }
             }
         }
     }
 }
 
 .guest-footer-middle-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     padding: 20px 0;
+    background-color: $color-primary;
 
     .footer-logo {
         margin-bottom: 20px;
-        width: 150px; 
-        height: auto;
     }
 
     .footer-nav-link {
         display: flex;
-        justify-content: center;
-        gap: 20px;
         list-style: none;
         padding: 0;
         margin: 0;
 
-        li {
-            cursor: pointer;
-            font-weight: 500;
+        a {
+            margin-left: 200px;
+            color: $color-text;
+            margin-bottom: 10px;
+        }
+    }
 
-            &:hover {
-                text-decoration: underline;
+    .footer-nav-link a {
+        color: $color-contact; 
+    }
+
+    img {
+        width: 258px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-footer-middle-page {
+        .footer-nav-link {
+            text-align: center;
+            li {
+                margin: 5px 0;
             }
         }
     }
 }
 
 .guest-footer-low-page {
-    p {
-        margin-top: 20px;
-        font-size: 0.85rem;
-        color: #666;
-    }
-}
-
-@media (max-width: 768px) {
-    .guest-footer-high-page ul,
-    .guest-footer-middle-page .footer-nav-link {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .guest-footer-middle-page {
-        .footer-logo {
-            margin: 0 auto 10px;
-        }
-    }
-
-    .guest-footer-high-page ul:nth-of-type(2) {
-        flex-direction: column;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #846d19;
 }
