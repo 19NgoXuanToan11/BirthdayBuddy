@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Itim:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="signin-page">
+      <img class="image-1-icon" alt="" src="./public/image-1@2x.png" />
+
+      <div class="main-frame">
+        <div class="main-frame-child"></div>
+        <div class="inner-frame">
+          <img
+            class="input-frame-icon"
+            loading="eager"
+            alt=""
+            src="./public/rectangle-3@2x.png"
+          />
+
+          <div class="username-input">
+            <div class="username-input-child"></div>
+            <input class="tn-ng-nhp" placeholder="Tên đăng nhập" type="text" />
+          </div>
+        </div>
+        <div class="error-message-frame">
+          <div class="frame-wrapper">
+            <div class="frame-wrapper-child"></div>
+            <input class="mt-khu" placeholder="Mật khẩu" type="text" />
+          </div>
+          <div class="frame-wrapper1">
+            <div class="frame-wrapper-item"></div>
+            <div class="ng-nhp" id="ngNhpText">Đăng nhập</div>
+          </div>
+          <div class="register-prompt">
+            <div class="account-absent">
+              <div class="bn-cha-c" id="bnChaC">Bạn chưa có tài khoản?</div>
+              <div class="bn-mun-ng" id="bnMunNg">
+                Bạn muốn đăng kí nhà hàng?
+              </div>
+            </div>
+            <div class="t-li-mt" id="tLiMt">Đặt lại mật khẩu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var ngNhpText = document.getElementById("ngNhpText");
+      if (ngNhpText) {
+        ngNhpText.addEventListener("click", function (e) {
+          // Please sync "Customer Page" to the project
+        });
+      }
+      
+      var bnChaC = document.getElementById("bnChaC");
+      if (bnChaC) {
+        bnChaC.addEventListener("click", function (e) {
+          // Please sync "Signup Page" to the project
+        });
+      }
+      
+      var bnMunNg = document.getElementById("bnMunNg");
+      if (bnMunNg) {
+        bnMunNg.addEventListener("click", function (e) {
+          // Please sync "Signup Host Page" to the project
+        });
+      }
+      
+      var tLiMt = document.getElementById("tLiMt");
+      if (tLiMt) {
+        tLiMt.addEventListener("click", function (e) {
+          // Please sync "Forget password Page" to the project
+        });
+      }
+      </script>
+  </body>
+</html>
