@@ -87,7 +87,7 @@ const Content = styled.h2`
 
 const ActionButton = styled.button`
     position: absolute;
-    bottom: 100px;
+    top: 650px;
     left: 50%;
     transform: translateX(-50%);
     background: #cfa924;
@@ -102,9 +102,9 @@ const ActionButton = styled.button`
     &:hover {
         background: #816916;
         color: white;
-        color: white; 
+        color: white;
         transition: background 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                    color 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            color 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 `;
 
@@ -152,12 +152,10 @@ function GuestHomeTemplate() {
             </Slider>
             <IconBody />
             <TitleBody>
-            —Lưu giữ cột mốc tuổi thơ—
+                Lưu giữ cột mốc tuổi thơ
             </TitleBody>
             <Content>
-                Một sinh nhật thật ý nghĩa và đặc biệt để đánh dấu cột mốc quan trọng của các thiên thần nhỏ luôn là điều bố mẹ băn khoăn?
-                Với sự đa dạng trong các gói tiệc sinh nhật, BirthdayBuddy hứa hẹn sẽ mang đến cho các thiên thần nhỏ một bữa tiệc đầy bất ngờ
-                và tràn ngập những khoảnh khắc đáng nhớ.
+                Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
             </Content>
             <ActionButton role="button" aria-pressed="false">
                 Đặt tiệc ngay
