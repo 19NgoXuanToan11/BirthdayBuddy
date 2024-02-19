@@ -1,12 +1,14 @@
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './introduction.scss'; // Import SCSS file
+import "./introduction.scss"; // Import SCSS file
 
 function Introduction() {
-    const images = ['/src/SWP_RESOURCE/pictures/carousel_1.png',
-        '/src/SWP_RESOURCE/pictures/carousel_5(update).png',
-        '/src/SWP_RESOURCE/pictures/carousel_3.png'];
+    const images = [
+        "/src/SWP_RESOURCE/pictures/carousel_1.png",
+        "/src/SWP_RESOURCE/pictures/carousel_5(update).png",
+        "/src/SWP_RESOURCE/pictures/carousel_3.png",
+    ];
 
     const settings = {
         dots: true,
@@ -21,23 +23,23 @@ function Introduction() {
                 settings: {
                     slidesToShow: 1,
                     infinite: true,
-                }
+                },
             },
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
-                    dots: true
-                }
+                    dots: true,
+                },
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    dots: false
-                }
-            }
-        ]
+                    dots: false,
+                },
+            },
+        ],
     };
 
     return (
@@ -50,13 +52,15 @@ function Introduction() {
                 ))}
             </Slider>
             <div className="icon-body" />
-            <h1 className="title-body">
-                Lưu giữ cột mốc tuổi thơ
-            </h1>
+            <h1 className="title-body">Lưu giữ cột mốc tuổi thơ</h1>
             <h2 className="content">
                 Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
             </h2>
-            <button className="action-button" role="button" aria-pressed="false">
+            <button
+                className="action-button"
+                role="button"
+                aria-pressed="false"
+            >
                 Đặt tiệc ngay
             </button>
         </div>
