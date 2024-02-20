@@ -2,6 +2,7 @@ import React from "react";
 import { listParties } from "../data/ListOfParties.js";
 import { useParams } from "react-router-dom";
 import "./party-detail.scss";
+import { Link } from "react-router-dom";
 
 type Party = {
     id: number;
@@ -141,9 +142,11 @@ export default function PartyDetail() {
                     </div>
 
                     <div className="booking-actions">
-                        <button className="button-book-now">
-                            Đặt tiệc ngay
-                        </button>
+                        <Link to="/checkout">
+                            <button className="button-book-now">
+                                Đặt tiệc ngay
+                            </button>
+                        </Link>
                         <button className="button-view-more">
                             Xem nhà hàng khác
                         </button>
