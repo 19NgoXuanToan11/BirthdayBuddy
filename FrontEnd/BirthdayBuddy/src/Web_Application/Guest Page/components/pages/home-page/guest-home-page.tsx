@@ -5,17 +5,15 @@ import GuestHeader from "../../atoms/guest-header/header";
 function GuestHomePage() {
     return (
         <>
-            <div>
-                <header>
-                    <GuestHeader />
-                </header>
-                <div className="guest-body-container">
-                    <GuestHomeTemplate />
-                </div>
-                <footer>
-                    <GuestFooterHome />
-                </footer>
+            <header>
+                <GuestHeader />
+            </header>
+            <div className="guest-body-container">
+                <GuestHomeTemplate />
             </div>
+            <footer>
+                <GuestFooterHome />
+            </footer>
         </>
     );
 }

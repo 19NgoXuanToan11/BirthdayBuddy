@@ -1,11 +1,14 @@
 import "./header.scss";
+import { Link } from "react-router-dom";
 
 function GuestHeader() {
     return (
         <header className="guest-header">
             <div className="middle-header">
                 <div className="logo">
-                    <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
+                    <Link to="/">
+                        <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
+                    </Link>
                 </div>
 
                 <div className="search-bar">
@@ -27,7 +30,9 @@ function GuestHeader() {
             <nav className="lower-header">
                 <ul>
                     <li>
-                        <a href="#">Trang chủ</a>
+                        <Link to="/">
+                            <span>Trang chủ</span>
+                        </Link>
                     </li>
                     <li>
                         <a href="#">Các gói tiệc</a>
