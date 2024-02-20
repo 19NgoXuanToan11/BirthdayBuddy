@@ -1,9 +1,10 @@
 .party-information-container {
-    margin-top: 60px;
-    margin-bottom: -60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h2 {
-        background-color: #F3DC0C;
+        background-color: #f3dc0c;
         display: flex;
         justify-content: center;
         width: 15%;
@@ -13,45 +14,69 @@
         text-align: center;
         text-transform: uppercase;
         padding: 5px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
-
     .party-list {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        margin-bottom: 50px;
 
-        .party-section-1,
-        .party-section-2,
-        .party-section-3 {
-            img {
-                width: 100%;
-                height: 50%;
-                border-top-right-radius: 10px;
-                border-top-left-radius: 10px;
+        .party-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+
+            &:hover {
+                transform: translateY(-5px);
             }
 
-            width: 30%;
-            height: auto;
-            padding: 50px;
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .upper-box,
+            .party-contents {
+                padding: 10px;
+            }
 
             .upper-box {
-                font-size: 40px;
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
             }
 
             .party-contents {
                 list-style: none;
-                font-size: 20px;
+                padding: 0;
+                li {
+                    margin-bottom: 5px;
+                }
             }
 
             .under-box {
-                background-color: #D9D9D9;
-                padding-left: 5px;
-                border-radius: 0 0 10px 10px;
-
+                margin: 10px 0;
                 a {
+                    display: inline-block;
+                    padding: 8px 15px;
+                    background-color: #a48a00;
+                    color: white;
+                    border-radius: 5px;
                     text-decoration: none;
-                    color: black;
-                    font-size: 17px;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: darken(#a48a00, 10%);
+                    }
                 }
             }
         }
