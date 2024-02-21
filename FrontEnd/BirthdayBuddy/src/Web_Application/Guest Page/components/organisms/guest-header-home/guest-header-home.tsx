@@ -1,11 +1,11 @@
-import GuestHeader from '../../atoms/guest-header/header'
+import GuestHeader from "../../atoms/guest-header/header";
 
 function GuestHeaderHome() {
-  return (
-    <>
-    <GuestHeader />
-    </>
-  )
+    return (
+        <>
+            <GuestHeader />
+        </>
+    );
 }
 
-export default GuestHeaderHome
+export default GuestHeaderHome;
