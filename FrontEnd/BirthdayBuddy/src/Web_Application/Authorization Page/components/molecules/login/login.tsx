@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './login.scss'; // Make sure to adjust the file extension and path if necessary
+import { Link } from 'react-router-dom';
 
 function Login() {
     useEffect(() => {
@@ -65,6 +66,7 @@ function Login() {
                             <div className="bn-cha-c" id="bnChaC">Bạn chưa có tài khoản?</div>
                             <div className="bn-mun-ng" id="bnMunNg">
                                 Bạn muốn đăng kí nhà hàng?
+                                
                             </div>
                         </div>
                         <div className="t-li-mt" id="tLiMt">Đặt lại mật khẩu</div>
