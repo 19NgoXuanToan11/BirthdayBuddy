@@ -1,9 +1,9 @@
-import GuestHeader from "../../atoms/guest-header/header";
+import CustomerHeader from "../../atoms/customer-header/header";
 
 function GuestHeaderHome() {
     return (
         <>
-            <GuestHeader />
+            <CustomerHeader />
         </>
     );
 }

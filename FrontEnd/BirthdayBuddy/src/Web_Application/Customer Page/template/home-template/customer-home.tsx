@@ -4,9 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import PartyDetail from "../../molecules/party-detail/party-detail";
 import PartyCheckout from "../../molecules/party-checkout/party-checkout";
 import RestaurantListTemplate from "../restaurant-list-template/restaurant-list";
-import LoginPage from "../../../../Authorization Page/components/pages/login-page";
 
-function GuestHomeTemplate() {
+function CustomerHomeTemplate() {
     return (
         <>
             <Routes>
@@ -21,10 +20,10 @@ function GuestHomeTemplate() {
                 />
                 <Route path="/restaurant-list" element={<RestaurantListTemplate />} />
                 <Route path="/restaurant-details/:id" element={<PartyDetail />} />
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="/check-out" element={<PartyCheckout />} />
             </Routes>
         </>
     );
 }
 
-export default GuestHomeTemplate;
+export default CustomerHomeTemplate;
