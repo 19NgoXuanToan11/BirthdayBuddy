@@ -1,0 +1,23 @@
+.search-filter-container {
+     margin-left: 100px;
+     margin-bottom: 70px;
+    h2 {
+      text-transform: uppercase;
+      padding: 10px;
+    }
+  
+    h3 {
+      margin-top: 20px;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 8px; 
+    }
+  
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 5px; 
+    }
+  }
+  
