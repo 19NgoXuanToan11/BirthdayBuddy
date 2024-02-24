@@ -1,9 +1,8 @@
-import GuestFooter from "../../atoms/guest-footer/footer";
-
+import CustomerFooter from "../../atoms/customer-footer/footer";
 function GuestFooterHome() {
     return (
         <>
-            <GuestFooter/>
+            <CustomerFooter/>
         </>
     );
 }
