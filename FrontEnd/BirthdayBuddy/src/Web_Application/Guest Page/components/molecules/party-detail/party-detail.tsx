@@ -5,7 +5,7 @@ import "./party-detail.scss";
 import { Link } from "react-router-dom";
 
 type PartyDetailParams = {
-    id: string; // Ensure that id is of type string
+    id: string; 
 };
 
 type Party = {
@@ -14,11 +14,11 @@ type Party = {
     imgUrl: string;
     description: string[];
     introduction: string[];
-    detailName: string; // Add detailName to the Party type
+    detailName: string; 
 };
 
 export default function PartyDetail() {
-    const { id } = useParams<PartyDetailParams>(); // Parse id as string
+    const { id } = useParams<PartyDetailParams>(); 
     const thisParty: Party | undefined = listPartiesDetails.find(
         (party: Party) => String(party.id) === id
     );
@@ -31,22 +31,19 @@ export default function PartyDetail() {
         <>
             <h1 className="restaurant-title">THÔNG TIN NHÀ HÀNG</h1>
             <div className="restaurant-detail">
-                <img
-                    className="restaurant-image"
-                    src={thisParty.imgUrl}
-                    alt={thisParty.name}
-                />
+                <img className="restaurant-image" src={thisParty.imgUrl} alt={thisParty.name}/>
                 <div className="information-container">
-                    <h2 className="restaurant-name">
-                        {thisParty.detailName}
-                    </h2>
+                    <h2 className="restaurant-name">{thisParty.detailName}</h2>
                     <ul className="restaurant-description">
                         {thisParty.description.map((desc, index) => (
                             <li key={index}>{desc}</li>
                         ))}
                     </ul>
-                    {thisParty.introduction.map((desc, index) => (
-                        <li key={index}>{desc}</li>))}
+                    <ul className="restaurant-introduction">
+                        {thisParty.introduction.map((intro, index) => (
+                            <li key={index}>{intro}</li>
+                        ))}
+                    </ul>
                 </div>
             </div>
             <div className="reviews-container">
@@ -55,34 +52,22 @@ export default function PartyDetail() {
                     <div className="review">
                         <h5 className="reviewer-name">Nguyễn Văn A</h5>
                         <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">
-                            Con tôi đã rất vui, nhà hàng chu đáo, tận tình
-                            hỗ trợ
-                        </h5>
+                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
                     </div>
                     <div className="review">
                         <h5 className="reviewer-name">Nguyễn Văn B</h5>
                         <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">
-                            Con tôi đã rất vui, nhà hàng chu đáo, tận tình
-                            hỗ trợ
-                        </h5>
+                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
                     </div>
                     <div className="review">
                         <h5 className="reviewer-name">Nguyễn Văn C</h5>
                         <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">
-                            Con tôi đã rất vui, nhà hàng chu đáo, tận tình
-                            hỗ trợ
-                        </h5>
+                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
                     </div>
                     <div className="review">
                         <h5 className="reviewer-name">Nguyễn Văn D</h5>
                         <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">
-                            Con tôi đã rất vui, nhà hàng chu đáo, tận tình
-                            hỗ trợ
-                        </h5>
+                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
                     </div>
                 </div>
             </div>
@@ -151,13 +136,9 @@ export default function PartyDetail() {
                     </table>
                     <div className="booking-actions">
                         <Link to="/checkout">
-                            <button className="button-book-now">
-                                Đặt tiệc ngay
-                            </button>
+                            <button className="button-book-now">Đặt tiệc ngay</button>
                         </Link>
-                        <button className="button-view-more">
-                            Xem nhà hàng khác
-                        </button>
+                        <button className="button-view-more">Xem nhà hàng khác</button>
                     </div>
                 </form>
             </div>

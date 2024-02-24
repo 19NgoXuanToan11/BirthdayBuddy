@@ -1,7 +1,8 @@
-import "./restaurant-list.scss";
+import React from "react";
 import { listRestaurant } from "../data/ListOfRestaurant.js";
 import SearchFilter from "../search-filter/search-filter.js";
 import { Link } from "react-router-dom";
+import "./restaurant-list.scss"
 
 function RestaurantList() {
     return (
@@ -14,7 +15,7 @@ function RestaurantList() {
                 <div className="restaurant-list">
                     {listRestaurant.map((restaurant) => (
                         <div key={restaurant.id} className="restaurant-section-wrapper">
-                            <Link to={`restaurant-details/${restaurant.id}`} className="link-style">
+                            <Link to={`/restaurant-details/${restaurant.id}`} className="link-style">
                                 <div className="restaurant-section">
                                     <img src={restaurant.imgUrl} alt={restaurant.name} />
                                     <div className="restaurant-contents">
@@ -27,9 +28,7 @@ function RestaurantList() {
                             </Link>
                         </div>
                     ))}
-
                 </div>
-
             </div>
         </div>
     );
