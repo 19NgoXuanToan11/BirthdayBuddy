@@ -1,4 +1,7 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.repository;
 
-public class RoleRepository {
+import com.swp.birthdaybuddy.BirthdayBuddy.model.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RoleRepository extends JpaRepository<Role, Integer> {
 }
