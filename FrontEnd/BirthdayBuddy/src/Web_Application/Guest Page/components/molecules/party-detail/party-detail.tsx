@@ -127,15 +127,15 @@ export default function PartyDetail() {
                                     <div className="cost">
                                         <p>2000000</p>
                                         <p>2000000</p>
-                                        <p>2000000</p>
-                                        <p>2000000</p>
+                                        <p>Tùy vào số lượng khách</p>
+                                        <p>200000/ người</p>
                                     </div>
                                 </td>
                             </tbody>
                         </tr>
                     </table>
                     <div className="booking-actions">
-                        <Link to="/checkout">
+                        <Link to="/login">
                             <button className="button-book-now">Đặt tiệc ngay</button>
                         </Link>
                         <button className="button-view-more">Xem nhà hàng khác</button>
