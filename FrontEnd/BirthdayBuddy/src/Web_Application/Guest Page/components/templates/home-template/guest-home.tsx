@@ -19,7 +19,6 @@ function GuestHomeTemplate() {
                     }
                 />
                 <Route path="/restaurant-list" element={<RestaurantListTemplate />} />
-                {/* Update the path to include the restaurant ID as a parameter */}
                 <Route path="/restaurant-details/:id" element={<PartyDetail />} />
                 <Route path="/checkout" element={<PartyCheckout />} />
             </Routes>
