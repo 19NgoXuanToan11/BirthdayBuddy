@@ -1,6 +1,6 @@
 import CustomerHeader from "../../atoms/customer-header/header";
 
-function GuestHeaderHome() {
+function CustomerHeaderHome() {
     return (
         <>
             <CustomerHeader />
@@ -8,4 +8,4 @@ function GuestHeaderHome() {
     );
 }
 
-export default GuestHeaderHome;
+export default CustomerHeaderHome;

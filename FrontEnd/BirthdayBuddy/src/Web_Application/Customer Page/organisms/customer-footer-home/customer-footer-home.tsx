@@ -1,5 +1,5 @@
 import CustomerFooter from "../../atoms/customer-footer/footer";
-function GuestFooterHome() {
+function CustomerFooterHome() {
     return (
         <>
             <CustomerFooter/>
@@ -7,4 +7,4 @@ function GuestFooterHome() {
     );
 }
 
-export default GuestFooterHome;
+export default CustomerFooterHome;
