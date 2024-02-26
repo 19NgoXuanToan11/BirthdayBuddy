@@ -9,14 +9,13 @@ function CustomerHeader() {
                     <Link to="/">
                         <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
                     </Link>
-                    Nguyễn Văn A
                 </div>
 
                 <div className="search-bar">
                     <input type="text" placeholder="Tìm kiếm..." />
                 </div>
                 <div className="user-cart">
-                    <a href="LoginPage">
+                    <a href="">
                         <i className="fa fa-user">
                             <img src="/src/SWP_RESOURCE/icon/alone.gif" />
                         </i>
