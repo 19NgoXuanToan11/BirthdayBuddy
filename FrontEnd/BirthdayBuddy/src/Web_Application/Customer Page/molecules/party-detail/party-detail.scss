@@ -1,15 +1,16 @@
 .restaurant-title {
     font-size: 30px;
     margin-top: 20px;
+    /* Align the title to the left */
     text-align: left;
-    margin-left: 20px;
+    margin-left: 20px; /* Adjust the margin as needed */
 }
 
 .restaurant-detail {
     display: flex;
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    margin-left: 220px; 
+    justify-content: flex-start; /* Align details to the left */
+    align-items: flex-start; /* Align details to the top */
+    margin-left: 220px; /* Add margin to the left for the restaurant list */
 }
 
 .restaurant-image {
