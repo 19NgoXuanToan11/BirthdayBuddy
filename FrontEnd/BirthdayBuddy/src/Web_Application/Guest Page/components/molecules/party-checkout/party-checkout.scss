@@ -67,9 +67,9 @@ h1 {
     padding: 10px;
 }
 
-// @media (max-width: 600px) {
-//     .input,
-//     .select {
-//         width: 100%;
-//     }
-// }
+@media (max-width: 600px) {
+    .input,
+    .select {
+        width: 100%;
+    }
+}
