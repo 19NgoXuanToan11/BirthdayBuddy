@@ -7,7 +7,7 @@ export default function GuestFooter() {
                 <ul className="call-us">
                     <li>Gọi chúng tôi</li>
                     <li>
-                        <img src="/src/SWP_RESOURCE/icon/phone.gif" />
+                        <img src="/src/SWP_RESOURCE/icon/output-onlinegiftools.gif" />
                         1900 43 22 31
                     </li>
                 </ul>
@@ -15,7 +15,7 @@ export default function GuestFooter() {
                 <ul className="mail-us">
                     <li>Gửi tin nhắn cho chúng tôi</li>
                     <li>
-                        <img src="/src/SWP_RESOURCE/icon/message.gif" />
+                        <img src="/src/SWP_RESOURCE/icon/output-onlinegiftools (1).gif" />
                         birthdaybuddy@gmail.com
                     </li>
                 </ul>

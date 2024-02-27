@@ -27,31 +27,17 @@
         }
     }
 
-    .icon-body {
-        position: absolute;
-        height: 150px;
-        width: 150px;
-        top: 250px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 50%;
-        overflow: hidden;
-        background: url("/src/SWP_RESOURCE/pictures/z5120957459050_426078a0d112eb6024986efd8aea3ff3.jpg");
-        background-size: cover;
-        background-position: center;
-    }
-
     .title-body {
         position: absolute;
         width: 100%;
-        left: 50%; 
-        top: 50%; 
-        transform: translate(-50%, -50%);
+        left: 50%; // Center horizontally
+        top: 50%; // Center vertically
+        transform: translate(-50%, -50%); // Center the element
         font-family: "Itim";
         font-style: normal;
         font-weight: 400;
-        font-size: 100px;
-        line-height: 60px;
+        font-size: 96px;
+        line-height: 115px;
         text-align: center;
         color: #ffffff;
     }
@@ -64,8 +50,8 @@
         transform: translateX(-50%);
         font-family: "Itim";
         font-style: normal;
-        font-size: 18px; // Adjust font size as needed
-        line-height: 30px; // Adjust line height as needed
+        font-size: 24px;
+        line-height: 50px;
         color: #ffffff;
         text-indent: 30px;
         text-align: center;
@@ -73,7 +59,7 @@
 
     .action-button {
         position: absolute;
-        top: 70%; // Adjust top position as needed
+        top: 70%; // Adjust as needed for vertical positioning
         left: 50%;
         transform: translateX(-50%);
         background: #cfa924;
