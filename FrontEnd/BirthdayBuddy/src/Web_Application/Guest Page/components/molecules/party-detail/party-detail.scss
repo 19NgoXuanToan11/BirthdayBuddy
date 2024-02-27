@@ -2,7 +2,7 @@
     font-size: 30px;
     margin-top: 20px;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 220px;
 }
 
 .restaurant-detail {
@@ -31,10 +31,16 @@
     margin-bottom: 5px;
 }
 
-.review-container {
+.restaurant-introduction {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-container .review-details {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     text-align: center;
+    margin-left: 220px;
     margin-top: 20px;
 }
 
@@ -44,15 +50,23 @@
 }
 
 .reviews-container .review {
-    background: linear-gradient(to right,
+    background: linear-gradient(to top,
             rgb(243, 220, 12),
-            rgb(189, 196, 148));
+            rgb(221, 231, 164));
     margin-right: 30px;
-    border-radius: 20px;
+    border-radius: 5px;
+    max-width: 200px;
+    height: 150px;
 }
 
+.review-container a {
+    text-decoration: none;
+    color: rgb(179, 178, 161);
+    margin-left: 220px;
+}
+
+
 .review {
-    border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -62,7 +76,10 @@
 }
 
 .reviewer-rating {
-    margin: 0 5px;
+    color: #cfa924;
+    img {
+        width: 10%;
+    }
 }
 
 .review-text {
