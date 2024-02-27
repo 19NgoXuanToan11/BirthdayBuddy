@@ -1,4 +1,3 @@
-import React from "react";
 import "./party-checkout.scss";
 import { Link } from "react-router-dom";
 

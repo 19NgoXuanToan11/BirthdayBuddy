@@ -61,7 +61,7 @@ function Login() {
                     <div className="frame-wrapper1">
                         <div className="frame-wrapper-item"></div>
                         <div className="ng-nhp" id="ngNhpText">
-                        <Link to="/checkout">
+                        <Link to="/check-out">
                             Đăng nhập
                         </Link>
                         </div>
