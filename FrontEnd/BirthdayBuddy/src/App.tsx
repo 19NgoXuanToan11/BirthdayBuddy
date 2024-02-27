@@ -6,6 +6,7 @@ import RegisterPage from "./Web_Application/Authorization Page/components/pages/
 import ForgetPasswordPage from "./Web_Application/Authorization Page/components/pages/forgetpassword-page";
 import CustomerHome from "./Web_Application/Customer Page/page/home-page/customer-home-page";
 function App() {
+    
     return (
         <>
             <BrowserRouter>

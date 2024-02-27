@@ -1,85 +1,78 @@
-// import React, { useEffect } from "react";
-import { FunctionComponent, useCallback } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./register.scss";
 
+function Register() {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
-
-const Register: FunctionComponent = () => {
-  const onRectangleClick = useCallback(() => {
-    // Please sync "Signin Page" to the project
-  }, []);
-
-  const onNgKTextClick = useCallback(() => {
-    // Please sync "Signin Page" to the project
-  }, []);
-
-  const onBnCClick = useCallback(() => {
-    // Please sync "Signin Page" to the project
-  }, []);
-
+  const togglePasswordVisibility = (): void => {
+    setShowPassword(!showPassword);
+  };
   return (
-    <div className="signup-page"> {/* Move the signup-page class to wrap the form */}
-      <main className="image-1-parent">
-        <img className="image-1-icon" alt="" src="/src/SWP_RESOURCE/pictures/login.jpg" />
-        <form className="rectangle-parent"> {/* Adjust the form positioning */}
-          <div className="frame-child" />
-          <div className="frame-parent">
-            <div className="rectangle-wrapper">
-              <img
-                className="frame-item"
-                loading="eager"
-                alt=""
-                src="/src/SWP_RESOURCE/Logo.png"
-              />
-            </div>
-            <div className="rectangle-group">
-              <div className="frame-inner" />
-              <input
-                className="tn-ng-nhp"
-                placeholder="Tên đăng nhập"
-                type="text"
-              />
-            </div>
+    <>
+      <div className="regisPage">
+        <div className="overlay"></div>
+        <div className="register">
+          <div className="logoLogin">
+            <img src="./Logo.png" alt=""></img>
           </div>
-          <div className="email-frame-parent">
-            <div className="email-frame" />
-            <div className="email">
-              <input className="xc-nhn-mt" placeholder="Email" type="text"  style={{marginBottom:'30px'}}/>
-            </div>
-            
+          <div className="group">
+            <input type="text" placeholder="Tên đăng nhập" />
           </div>
-          <div className="frame-wrapper">
-            <div className="rectangle-container">
-              <div className="rectangle-div" />
-              <input className="mt-khu" placeholder="Mật khẩu" type="password" />
-            </div>
+          <div className="group">
+            <input type="text" placeholder="Email" />
           </div>
-          <div className="frame-container">
-            <div className="group-div">
-              <div className="frame-child1" />
-              <input
-                className="xc-nhn-mt"
-                placeholder="Xác nhận mật khẩu"
-                type="password"
-              />
-            </div>
+          <div className="group">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Mật khẩu"
+            />
+            <button
+              type="button"
+              style={{
+                backgroundColor: "transparent",
+                color: "red",
+                border: "none",
+                marginRight: "17px",
+              }}
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
           </div>
-          <div className="registration-form-frame">
-            <div className="frame-group">
-              <button className="group-button">
-                <div className="frame-child2" onClick={onRectangleClick} />
-                <div className="ng-k" onClick={onNgKTextClick}>{`Đăng ký `}</div>
-              </button>
-              <div className="bn-c-ti-khon-wrapper">
-                <div className="bn-c" onClick={onBnCClick}>
-                  Bạn đã có tài khoản?
-                </div>
-              </div>
-            </div>
+          <div className="group">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Xác nhận lại mật khẩu"
+            />
+            <button
+              type="button"
+              style={{
+                backgroundColor: "transparent",
+                color: "red",
+                border: "none",
+                marginRight: "17px",
+              }}
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
           </div>
-        </form>
-      </main>
-    </div>
+          <div className="signUp">
+            <Link to={"/login"} type="submit">
+              <button>Đăng ký</button>
+            </Link>
+          </div>
+          <Link
+            style={{ color: "#595454", textDecoration: "none" }}
+            to={"/login"}
+          >
+            <div className="title">Bạn đã có tài khoản?</div>
+          </Link>
+        </div>
+      </div>
+    </>
   );
-};
+}
+
 export default Register;
