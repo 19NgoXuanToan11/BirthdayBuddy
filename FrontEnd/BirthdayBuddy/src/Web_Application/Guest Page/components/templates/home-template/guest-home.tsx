@@ -5,7 +5,6 @@ import PartyDetail from "../../molecules/party-detail/party-detail";
 import PartyCheckout from "../../molecules/party-checkout/party-checkout";
 import RestaurantListTemplate from "../restaurant-list-template/restaurant-list-template";
 import LoginPage from "../../../../Authorization Page/components/pages/login-page";
-import PartyCheckout from "../../molecules/party-checkout/party-checkout";
 
 function GuestHomeTemplate() {
     return (

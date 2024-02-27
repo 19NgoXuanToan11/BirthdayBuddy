@@ -1,11 +1,10 @@
-import React from "react";
 import { listPartiesDetails } from "../data/ListOfPartiesDetails.js";
 import { useParams } from "react-router-dom";
 import "./party-detail.scss";
 import { Link } from "react-router-dom";
 
 type PartyDetailParams = {
-    id: string; 
+    id: string;
 };
 
 type Party = {
@@ -14,11 +13,11 @@ type Party = {
     imgUrl: string;
     description: string[];
     introduction: string[];
-    detailName: string; 
+    detailName: string;
 };
 
 export default function PartyDetail() {
-    const { id } = useParams<PartyDetailParams>(); 
+    const { id } = useParams<PartyDetailParams>();
     const thisParty: Party | undefined = listPartiesDetails.find(
         (party: Party) => String(party.id) === id
     );
@@ -31,7 +30,7 @@ export default function PartyDetail() {
         <>
             <h1 className="restaurant-title">THÔNG TIN NHÀ HÀNG</h1>
             <div className="restaurant-detail">
-                <img className="restaurant-image" src={thisParty.imgUrl} alt={thisParty.name}/>
+                <img className="restaurant-image" src={thisParty.imgUrl} alt={thisParty.name} />
                 <div className="information-container">
                     <h2 className="restaurant-name">{thisParty.detailName}</h2>
                     <ul className="restaurant-description">
@@ -49,26 +48,44 @@ export default function PartyDetail() {
             <div className="reviews-container">
                 <h2>ĐÁNH GIÁ</h2>
                 <div className="review-container">
-                    <div className="review">
-                        <h5 className="reviewer-name">Nguyễn Văn A</h5>
-                        <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                    <div className="review-details">
+                        <div className="review">
+                            <h5 className="reviewer-name">Nguyễn Văn A</h5>
+                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
+                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ, tôi không tìm đc lí do để chê dịch vụ ở đây</h5>
+                        </div>
+                        <div className="review">
+                            <h5 className="reviewer-name">Nguyễn Văn B</h5>
+                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
+                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                        </div>
+                        <div className="review">
+                            <h5 className="reviewer-name">Nguyễn Văn C</h5>
+                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
+                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                        </div>
+                        <div className="review">
+                            <h5 className="reviewer-name">Nguyễn Văn D</h5>
+                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
+                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                        </div>
+                        <div className="review">
+                            <h5 className="reviewer-name">Nguyễn Văn E</h5>
+                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
+                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                        </div>
+                        <div className="review">
+                            <h5 className="reviewer-name">Nguyễn Văn F</h5>
+                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
+                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                        </div>
+                        <div className="review">
+                            <h5 className="reviewer-name">Nguyễn Văn G</h5>
+                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
+                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                        </div>
                     </div>
-                    <div className="review">
-                        <h5 className="reviewer-name">Nguyễn Văn B</h5>
-                        <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
-                    </div>
-                    <div className="review">
-                        <h5 className="reviewer-name">Nguyễn Văn C</h5>
-                        <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
-                    </div>
-                    <div className="review">
-                        <h5 className="reviewer-name">Nguyễn Văn D</h5>
-                        <h5 className="reviewer-rating">@</h5>
-                        <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
-                    </div>
+                    <a href="">Xem thêm đánh giá</a>
                 </div>
             </div>
             <div className="booking-container">

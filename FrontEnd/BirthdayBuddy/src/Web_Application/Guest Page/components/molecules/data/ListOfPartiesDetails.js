@@ -13,12 +13,9 @@ export const listPartiesDetails = [
             "Đánh giá: 5 sao",
         ],
         introduction: [
-            "Nhà hàng Hello là một nhà hàng chuyên tổ chức tiệc sinh nhật",
-            "cho trẻ em ở Sài Gòn. Nhà hàng cung cấp đa dạng chủ đề trang trí, ",
-            "hoặc phụ huynh có thể liên hệ để tự trang trí cho bữa tiệc con mình.",
-            "Bên cạnh đó, nhà hàng còn có các dịch vụ đặc biệt như MC tiếng anh",
-            "trong các bữa tiệc để cho các bé vừa học vừa chơi, đập kẹo Pinata, ...",
-            "Hãy đến với nhà hàng Hello để các bé có 1 bữa tiệc sinh nhật thật tuyệt vời!",
+            "Nhà hàng Hello là một nhà hàng chuyên tổ chức tiệc sinh nhật cho trẻ em ở Sài Gòn. Nhà hàng cung cấp đa dạng chủ đề trang trí,hoặc phụ huynh có thể liên hệ",
+            "để tự trang trí cho bữa tiệc con mình. Bên cạnh đó, nhà hàng còn có các dịch vụ đặc biệt như MC tiếng anh trong các bữa tiệc để cho các bé vừa học vừa chơi, đập",
+            "kẹo Pinata, ... Hãy đến với chúng tôi để các bé có 1 bữa tiệc sinh nhật thật tuyệt vời!",
         ]
     },
     {
