@@ -1,9 +1,6 @@
-import { useState } from "react";
-import "./login.scss";
-import { Link } from "react-router-dom";
-
 export default function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+
 
   const togglePasswordVisibility = (): void => {
     setShowPassword(!showPassword);
@@ -49,6 +46,7 @@ export default function Login() {
               <div className="bn-mun-ng" id="bnMunNg">
                 Bạn muốn đăng kí nhà hàng?
               </div>
+
             </div>
             <Link
               style={{ color: "#595454", textDecoration: "none" }}

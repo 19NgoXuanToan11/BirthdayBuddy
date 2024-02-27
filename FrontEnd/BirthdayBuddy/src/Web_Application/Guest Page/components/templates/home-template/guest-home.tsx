@@ -9,26 +9,25 @@ import RegisterPage from "../../../../Authorization Page/components/pages/regist
 import Register from "../../../../Authorization Page/components/molecules/register/register";
 import ForgetPassword from "../../../../Authorization Page/components/molecules/forget-password/forgetpw";
 function GuestHomeTemplate() {
-  return (
-    <>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Introduction />
-              <PartyInformation />
-            </>
-          }
-        />
-        <Route path="/restaurant-list" element={<RestaurantListTemplate />} />
-        <Route path="/restaurant-details/:id" element={<PartyDetail />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/forgetpw" element={<ForgetPassword />} />
-      </Routes>
-    </>
-  );
+    return (
+        <>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <Introduction />
+                            <PartyInformation />
+                        </>
+                    }
+                />
+                <Route path="/restaurant-list" element={<RestaurantListTemplate />} />
+                <Route path="/restaurant-details/:id" element={<PartyDetail />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/checkout" element={<PartyCheckout />} />
+            </Routes>
+        </>
+    );
 }
 
 export default GuestHomeTemplate;

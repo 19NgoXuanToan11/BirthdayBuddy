@@ -8,6 +8,7 @@ function Register() {
   const togglePasswordVisibility = (): void => {
     setShowPassword(!showPassword);
   };
+
   return (
     <>
       <div className="regisPage">

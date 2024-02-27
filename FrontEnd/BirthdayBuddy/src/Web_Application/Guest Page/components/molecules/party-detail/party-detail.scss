@@ -2,14 +2,14 @@
     font-size: 30px;
     margin-top: 20px;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 220px;
 }
 
 .restaurant-detail {
     display: flex;
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    margin-left: 220px; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 220px;
 }
 
 .restaurant-image {
@@ -31,10 +31,16 @@
     margin-bottom: 5px;
 }
 
-.review-container {
+.restaurant-introduction {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-container .review-details {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     text-align: center;
+    margin-left: 220px;
     margin-top: 20px;
 }
 
@@ -44,15 +50,23 @@
 }
 
 .reviews-container .review {
-    background: linear-gradient(to right,
+    background: linear-gradient(to top,
             rgb(243, 220, 12),
-            rgb(189, 196, 148));
+            rgb(221, 231, 164));
     margin-right: 30px;
-    border-radius: 20px;
+    border-radius: 5px;
+    max-width: 200px;
+    height: 150px;
 }
 
+.review-container a {
+    text-decoration: none;
+    color: rgb(179, 178, 161);
+    margin-left: 220px;
+}
+
+
 .review {
-    border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -62,7 +76,11 @@
 }
 
 .reviewer-rating {
-    margin: 0 5px;
+    color: #cfa924;
+
+    img {
+        width: 10%;
+    }
 }
 
 .review-text {
@@ -70,62 +88,74 @@
 }
 
 .booking-container h2 {
-    text-align: center;
+    text-align: left;
+    margin-left: 220px;
+    margin-top: 20px;
 }
 
-.booking-container {
-    .booking-container-form {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        table {
-            .booking-header {
-                background-color: #cfa924;
-                color: #fff;
-                list-style: none;
-                th {
-                    padding: 8px;
-                }
-            }
+.booking-container-table {
+    width: 75%;
+    margin-left: 220px;
 
-            .sub-content {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                li {
-                    margin-bottom: 5px;
-                }
-            }
+    .party-details-title {
+        text-align: center;
+    }
 
-            .booking-details {
-                padding: 0;
-                margin: 0;
-                li {
-                    list-style: none;
-                    text-align: left;
-                    justify-content: right;
-                    margin-bottom: 5px;
-                }
+    .party-cost-title {
+        text-align: right;
+    }
 
-            }
+    .booking-header th {
+        background-color: #cfa924;
+        color: #fff;
+        padding: 5px;
+        font-size: 20px;
 
-            .cost {
-                p {
-                    padding: 5px;
-                    margin: 0;
-                }
-            }
+    }
+
+    .sub-content {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+
+        li {
+            margin-bottom: 15px;
         }
     }
 
-    .booking-actions {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 30px;
+    .booking-details {
+        padding: 10px;
+        li {
+            list-style: none;
+            text-align: center;
+            justify-content: right;
+            margin-bottom: 10px;
+            select {
+                width: 200px;
+                border-radius: 5px;
+                height: 30px;
+            }
+        }
+
+    }
+
+    .cost-container {
+        li {
+            list-style: none;
+            text-align: right;
+            margin-bottom: 15px;
+        }
     }
 }
+
+
+.booking-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 
 .booking-actions button {
     border-radius: 20px;
