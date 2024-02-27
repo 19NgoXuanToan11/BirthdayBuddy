@@ -2,8 +2,6 @@
 import { FunctionComponent, useCallback } from "react";
 import "./register.scss";
 
-
-
 const Register: FunctionComponent = () => {
   const onRectangleClick = useCallback(() => {
     // Please sync "Signin Page" to the project

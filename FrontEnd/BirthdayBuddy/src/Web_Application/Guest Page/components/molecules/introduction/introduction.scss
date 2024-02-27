@@ -43,24 +43,24 @@
 
     .title-body {
         position: absolute;
-        width: 100%; // Adjust width as needed
+        width: 100%;
         left: 50%; 
         top: 50%; 
         transform: translate(-50%, -50%);
         font-family: "Itim";
         font-style: normal;
         font-weight: 400;
-        font-size: 100px; // Adjust font size as needed
-        line-height: 60px; // Adjust line height as needed
+        font-size: 100px;
+        line-height: 60px;
         text-align: center;
         color: #ffffff;
     }
 
     .content {
         position: absolute;
-        width: 100%; // Adjust width as needed
+        width: 100%;
         left: 50%;
-        top: 60%; // Adjust top position as needed
+        top: 60%;
         transform: translateX(-50%);
         font-family: "Itim";
         font-style: normal;
