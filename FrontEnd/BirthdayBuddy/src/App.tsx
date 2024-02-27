@@ -5,6 +5,7 @@ import LoginPage from "./Web_Application/Authorization Page/components/pages/log
 import PartyCheckout from "./Web_Application/Guest Page/components/molecules/party-checkout/party-checkout";
 
 function App() {
+    
     return (
         <Router>
             <Routes>
