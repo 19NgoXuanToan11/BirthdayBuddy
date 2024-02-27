@@ -1,19 +1,23 @@
-import React from "react";
+import { useState } from 'react';
 import { listRestaurant } from "../data/ListOfRestaurant.js";
-import SearchFilter from "../search-filter/search-filter.js";
 import { Link } from "react-router-dom";
-import "./restaurant-list.scss"
+import "./restaurant-list.scss";
 
 function RestaurantList() {
+    const [currentPage, setCurrentPage] = useState(1);
+    const restaurantsPerPage = 4;
+
+    const indexOfLastRestaurant = currentPage * restaurantsPerPage;
+    const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantsPerPage;
+    const currentRestaurants = listRestaurant.slice(indexOfFirstRestaurant, indexOfLastRestaurant);
+
+    const paginate = pageNumber => setCurrentPage(pageNumber);
+
     return (
         <div className="restaurant-list-container">
-            <h1>Danh sách nhà hàng</h1>
             <div className="restaurant-box">
-                <div className="search-filter">
-                    <SearchFilter />
-                </div>
                 <div className="restaurant-list">
-                    {listRestaurant.map((restaurant) => (
+                    {currentRestaurants.map((restaurant) => (
                         <div key={restaurant.id} className="restaurant-section-wrapper">
                             <Link to={`/restaurant-details/${restaurant.id}`} className="link-style">
                                 <div className="restaurant-section">
@@ -29,9 +33,37 @@ function RestaurantList() {
                         </div>
                     ))}
                 </div>
+                <Pagination
+                    restaurantsPerPage={restaurantsPerPage}
+                    totalRestaurants={listRestaurant.length}
+                    paginate={paginate}
+                />
             </div>
         </div>
     );
 }
+
+// Pagination component
+const Pagination = ({ restaurantsPerPage, totalRestaurants, paginate }) => {
+    const pageNumbers = [];
+
+    for (let i = 1; i <= Math.ceil(totalRestaurants / restaurantsPerPage); i++) {
+        pageNumbers.push(i);
+    }
+
+    return (
+        <nav>
+            <ul className="pagination">
+                {pageNumbers.map(number => (
+                    <li key={number} className="page-item">
+                        <button onClick={() => paginate(number)} className="page-link">
+                            {number}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+};
 
 export default RestaurantList;
