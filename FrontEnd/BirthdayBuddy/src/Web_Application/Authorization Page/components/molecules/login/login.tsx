@@ -1,82 +1,64 @@
-import React, { useEffect } from 'react';
-import './login.scss'; 
-import { Link } from 'react-router-dom';
+export default function Login() {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
-function Login() {
 
-    useEffect(() => {
-        const ngNhpText = document.getElementById("ngNhpText");
-        if (ngNhpText) {
-            ngNhpText.addEventListener("click", function (e) {
-                // Please sync "Customer Page" to the project
-            });
-        }
+  const togglePasswordVisibility = (): void => {
+    setShowPassword(!showPassword);
+  };
 
-        const bnChaC = document.getElementById("bnChaC");
-        if (bnChaC) {
-            bnChaC.addEventListener("click", function (e) {
-                // Please sync "Signup Page" to the project
-            });
-        }
-
-        const bnMunNg = document.getElementById("bnMunNg");
-        if (bnMunNg) {
-            bnMunNg.addEventListener("click", function (e) {
-                // Please sync "Signup Host Page" to the project
-            });
-        }
-
-        const tLiMt = document.getElementById("tLiMt");
-        if (tLiMt) {
-            tLiMt.addEventListener("click", function (e) {
-                // Please sync "Forget password Page" to the project
-            });
-        }
-    }, []);
-
-    return (
-        <div className="signin-page">
-            <img className="image-1-icon" alt="login" src="../../../../../src/SWP_RESOURCE/pictures/login.jpg" />
-
-            <div className="main-frame">
-                <div className="main-frame-child"></div>
-                <div className="inner-frame">
-                    <img
-                        className="input-frame-icon"
-                        loading="eager"
-                        alt=""
-                        src="../../../../../src/SWP_RESOURCE/Logo.png"
-                    />
-
-                    <div className="username-input">
-                        <div className="username-input-child"></div>
-                        <input className="tn-ng-nhp" placeholder="Tên đăng nhập" type="text" />
-                    </div>
-                </div>
-                <div className="error-message-frame">
-                    <div className="frame-wrapper">
-                        <div className="frame-wrapper-child"></div>
-                        <input className="mt-khu" placeholder="Mật khẩu" type="text" />
-                    </div>
-                    <div className="frame-wrapper1">
-                        <div className="frame-wrapper-item"></div>
-                        <div className="ng-nhp" id="ngNhpText">
-                        <Link to="/check-out">
-                            Đăng nhập
-                        </Link>
-                        </div>
-                    </div>
-                    <div className="register-prompt">
-                        <div className="account-absent">
-                            <div className="bn-cha-c" id="bnChaC">Bạn chưa có tài khoản?</div>
-                            <div className="bn-mun-ng" id="bnMunNg">Bạn muốn đăng kí nhà hàng?</div>
-                        </div>
-                        <div className="t-li-mt" id="tLiMt">Đặt lại mật khẩu</div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="loginPage">
+      <div className="login">
+        <div className="logoLogin">
+          <img src="./Logo.png" alt="" />
         </div>
-    );
-}
+        <form>
+          <div className="group">
+            <input type="text" placeholder="Tên Đăng Nhập" />
+          </div>
+          <div className="group">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Mật Khẩu"
+            />
+            <button
+              type="button"
+              style={{ backgroundColor: "transparent", color: "red" }}
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
 
-export default Login;
+          <div className="signIn">
+            <button type="submit">Login</button>
+          </div>
+          <div className="register-prompt">
+            <div className="account-absent">
+              <div className="bn-cha-c" id="bnChaC">
+                <Link
+                  style={{ color: "#595454", textDecoration: "none" }}
+                  to={"/register"}
+                >
+                  Bạn chưa có tài khoản ?
+                </Link>
+              </div>
+              <div className="bn-mun-ng" id="bnMunNg">
+                Bạn muốn đăng kí nhà hàng?
+              </div>
+
+            </div>
+            <Link
+              style={{ color: "#595454", textDecoration: "none" }}
+              to={"/forgetpw"}
+            >
+              <div className="t-li-mt" id="tLiMt">
+                Đặt lại mật khẩu
+              </div>
+            </Link>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
