@@ -2,7 +2,8 @@ import Introduction from "../../molecules/introduction/introduction";
 import PartyInformation from "../../molecules/party-information/party-information";
 import { Routes, Route } from "react-router-dom";
 import PartyDetail from "../../molecules/party-detail/party-detail";
-import RestaurantListTemplate from "../restaurant-list-template/restaurant-list";
+import PartyCheckout from "../../molecules/party-checkout/party-checkout";
+import RestaurantListTemplate from "../restaurant-list-template/restaurant-list-template";
 import LoginPage from "../../../../Authorization Page/components/pages/login-page";
 import PartyCheckout from "../../molecules/party-checkout/party-checkout";
 
