@@ -53,9 +53,9 @@ function Introduction() {
             </Slider>
             <div className="icon-body" />
             <h1 className="title-body">Lưu giữ cột mốc tuổi thơ</h1>
-            <h3 className="content">
+            <h2 className="content">
                 Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
-            </h3>
+            </h2>
             <button
                 className="action-button"
                 role="button"

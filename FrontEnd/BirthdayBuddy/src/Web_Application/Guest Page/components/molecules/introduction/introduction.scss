@@ -1,6 +1,6 @@
 .carousel-container {
-    margin: 0 auto;
     position: relative;
+    margin: 0 auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     border-radius: 0;
     overflow: hidden;
@@ -43,40 +43,37 @@
 
     .title-body {
         position: absolute;
-        width: 1290px;
-        height: 115px;
-        left: 362px;
-        top: 420px;
+        width: 100%; // Adjust width as needed
+        left: 50%; 
+        top: 50%; 
+        transform: translate(-50%, -50%);
         font-family: "Itim";
         font-style: normal;
         font-weight: 400;
-        font-size: 96px;
-        line-height: 115px;
-        display: flex;
-        align-items: center;
+        font-size: 100px; // Adjust font size as needed
+        line-height: 60px; // Adjust line height as needed
         text-align: center;
         color: #ffffff;
     }
 
     .content {
-        display: flex;
-        justify-content: center;
         position: absolute;
-        width: 850px;
-        height: 180px;
-        left: 525px;
-        top: 550px;
+        width: 100%; // Adjust width as needed
+        left: 50%;
+        top: 60%; // Adjust top position as needed
+        transform: translateX(-50%);
         font-family: "Itim";
         font-style: normal;
-        font-size: 24px;
-        line-height: 50px;
+        font-size: 18px; // Adjust font size as needed
+        line-height: 30px; // Adjust line height as needed
         color: #ffffff;
         text-indent: 30px;
+        text-align: center;
     }
 
     .action-button {
         position: absolute;
-        top: 650px;
+        top: 70%; // Adjust top position as needed
         left: 50%;
         transform: translateX(-50%);
         background: #cfa924;
@@ -90,7 +87,6 @@
 
         &:hover {
             background: #816916;
-            color: white;
             color: white;
             transition: background 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
                 color 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
