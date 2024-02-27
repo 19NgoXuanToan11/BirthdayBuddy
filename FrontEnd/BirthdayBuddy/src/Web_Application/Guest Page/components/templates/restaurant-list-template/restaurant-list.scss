@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.restaurant-search-container {
+    display: flex;
+    flex-direction: row;
+}
+.restaurant-search-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 10px;
+
+    .search-filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%; 
+    }
+
+}

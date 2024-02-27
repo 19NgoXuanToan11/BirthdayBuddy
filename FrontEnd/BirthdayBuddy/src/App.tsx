@@ -9,8 +9,8 @@ function App() {
     return (
         <>
             <BrowserRouter>
-            <CustomerHome />
-                {/* <GuestHomePage /> */}
+            {/* <CustomerHome /> */}
+                <GuestHomePage />
                 {/* <LoginPage/> */}
                 {/* <RegisterPage/> */}
                 {/* <ForgetPasswordPage /> */}

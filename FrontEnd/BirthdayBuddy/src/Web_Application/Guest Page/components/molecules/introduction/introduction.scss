@@ -1,5 +1,4 @@
 .carousel-container {
-    width: 100vw;
     margin: 0 auto;
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -44,7 +43,7 @@
 
     .title-body {
         position: absolute;
-        width: 1199px;
+        width: 1290px;
         height: 115px;
         left: 362px;
         top: 420px;
@@ -60,9 +59,10 @@
     }
 
     .content {
-        display: inline-block;
+        display: flex;
+        justify-content: center;
         position: absolute;
-        width: 650px;
+        width: 850px;
         height: 180px;
         left: 525px;
         top: 550px;
