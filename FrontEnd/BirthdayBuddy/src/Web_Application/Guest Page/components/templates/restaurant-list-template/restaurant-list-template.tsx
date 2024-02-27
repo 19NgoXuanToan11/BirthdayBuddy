@@ -1,6 +1,6 @@
 import RestaurantList from '../../molecules/restaurants-list/restaurant-list'
 import SearchFilter from '../../molecules/search-filter/search-filter'
-import './restaurant-list.scss'
+import './restaurant-list-template.scss'
 function RestaurantListTemplate() {
   return (
     <>
