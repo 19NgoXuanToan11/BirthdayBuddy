@@ -1,5 +1,6 @@
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+import { Link as Forward } from "react-router-dom"
 
 function GuestHeader() {
     return (
@@ -29,17 +30,21 @@ function GuestHeader() {
             </div>
             <nav className="lower-header">
                 <ul>
-                    <li>
-                        <Link to="/">
-                            <span>Trang chủ</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <a href="#">Các gói tiệc</a>
-                    </li>
-                    <li>
-                        <a href="#">Đặt tiệc sinh nhật</a>
-                    </li>
+                    <Link to="carousel-container">
+                        <li>
+                            <a href="">Trang chủ</a>
+                        </li>
+                    </Link>
+                    <Link to="party-information-container">
+                        <li>
+                            <a href="">Các gói tiệc</a>
+                        </li>
+                    </Link>
+                    <Forward to="login">
+                        <li>
+                            <a href="">Đặt tiệc sinh nhật</a>
+                        </li>
+                    </Forward>
                     <li>
                         <a href="#">Về BirthdayBuddy</a>
                     </li>
