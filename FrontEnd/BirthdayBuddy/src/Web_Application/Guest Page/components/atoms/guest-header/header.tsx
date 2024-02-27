@@ -38,9 +38,6 @@ function GuestHeader() {
                         <a href="#">Các gói tiệc</a>
                     </li>
                     <li>
-                        <a href="#">Dịch vụ đặc biệt</a>
-                    </li>
-                    <li>
                         <a href="#">Đặt tiệc sinh nhật</a>
                     </li>
                     <li>
