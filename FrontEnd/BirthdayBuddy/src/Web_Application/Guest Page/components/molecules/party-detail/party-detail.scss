@@ -7,9 +7,9 @@
 
 .restaurant-detail {
     display: flex;
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    margin-left: 220px; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 220px;
 }
 
 .restaurant-image {
@@ -77,6 +77,7 @@
 
 .reviewer-rating {
     color: #cfa924;
+
     img {
         width: 10%;
     }
@@ -87,62 +88,74 @@
 }
 
 .booking-container h2 {
-    text-align: center;
+    text-align: left;
+    margin-left: 220px;
+    margin-top: 20px;
 }
 
-.booking-container {
-    .booking-container-form {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        table {
-            .booking-header {
-                background-color: #cfa924;
-                color: #fff;
-                list-style: none;
-                th {
-                    padding: 8px;
-                }
-            }
-            
-            .sub-content {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                li {
-                    margin-bottom: 5px;
-                }
-            }
+.booking-container-table {
+    width: 75%;
+    margin-left: 220px;
 
-            .booking-details {
-                padding: 0;
-                margin: 0;
-                li {
-                    list-style: none;
-                    text-align: left;
-                    justify-content: right;
-                    margin-bottom: 5px;
-                }
+    .party-details-title {
+        text-align: center;
+    }
 
-            }
+    .party-cost-title {
+        text-align: right;
+    }
 
-            .cost {
-                p {
-                    padding: 5px;
-                    margin: 0;
-                }
-            }
+    .booking-header th {
+        background-color: #cfa924;
+        color: #fff;
+        padding: 5px;
+        font-size: 20px;
+
+    }
+
+    .sub-content {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+
+        li {
+            margin-bottom: 15px;
         }
     }
 
-    .booking-actions {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 30px;
+    .booking-details {
+        padding: 10px;
+        li {
+            list-style: none;
+            text-align: center;
+            justify-content: right;
+            margin-bottom: 10px;
+            select {
+                width: 200px;
+                border-radius: 5px;
+                height: 30px;
+            }
+        }
+
+    }
+
+    .cost-container {
+        li {
+            list-style: none;
+            text-align: right;
+            margin-bottom: 15px;
+        }
     }
 }
+
+
+.booking-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 
 .booking-actions button {
     border-radius: 20px;

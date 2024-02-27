@@ -90,76 +90,72 @@ export default function PartyDetail() {
             </div>
             <div className="booking-container">
                 <h2>GÓI TIỆC</h2>
-                <form action="" className="booking-container-form">
-                    <table>
-                        <tr className="booking-header">
-                            <thead>
-                                <th>Gói tiệc</th>
-                                <th>Thông tin chi tiết</th>
-                                <th>Giá tiền</th>
-                            </thead>
-                        </tr>
-                        <tr>
-                            <tbody >
-                                <td>
-                                    <ul className="sub-content">
-                                        <li>Chủ đề bữa tiệc</li>
-                                        <li>Dịch vụ đặc biệt</li>
-                                        <li>Menu</li>
-                                        <li>Số lượng người tham gia</li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    <div className="booking-details">
-                                        <li>
-                                            <select>
-                                                <option value="">Bãi biển</option>
-                                                <option value="">Công chúa</option>
-                                                <option value="">Siêu nhân</option>
-                                                <option value="">Robot</option>
-                                                <option value="">Tự chọn</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <select>
-                                                <option value="">Quà dự tiệc cho bé</option>
-                                                <option value="">Đập kẹo Pinata</option>
-                                                <option value="">Karaoke</option>
-                                                <option value="">MC tiếng anh</option>
-                                                <option value="">Ảo thuật diệu kì</option>
-                                                <option value="">Vẽ mặt nghệ thuật</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <select>
-                                                <option value="">Món Âu</option>
-                                                <option value="">Món Á</option>
-                                                <option value="">Món ăn nhanh</option>
-                                            </select>
-                                        </li>
-                                        <p>--</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="cost">
-                                        <p>2000000</p>
-                                        <p>2000000</p>
-                                        <p>Tùy vào số lượng khách</p>
-                                        <p>200000/ người</p>
-                                    </div>
-                                </td>
-                            </tbody>
-                        </tr>
-                    </table>
-                    <div className="booking-actions">
-                        <Link to="/login">
-                            <button className="button-book-now">Đặt tiệc ngay</button>
-                        </Link>
-                        <Link to="/restaurant-list">
-                            <button className="button-view-more">Xem nhà hàng khác</button>
-                        </Link>
-                    </div>
-                </form>
+                <table className="booking-container-table">
+                    <tr className="booking-header">
+                        <th className="party-packages-title">Gói tiệc</th>
+                        <th className="party-details-title">Thông tin chi tiết</th>
+                        <th className="party-cost-title">Giá tiền</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul className="sub-content">
+                                <li>Chủ đề bữa tiệc</li>
+                                <li>Dịch vụ đặc biệt</li>
+                                <li>Menu</li>
+                                <li>Số lượng người tham gia</li>
+                            </ul>
+                        </td>
+                        <td>
+                             <ul className="booking-details">
+                                <li>
+                                    <select>
+                                        <option value="">Bãi biển</option>
+                                        <option value="">Công chúa</option>
+                                        <option value="">Siêu nhân</option>
+                                        <option value="">Robot</option>
+                                        <option value="">Tự chọn</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select>
+                                        <option value="">Quà dự tiệc cho bé</option>
+                                        <option value="">Đập kẹo Pinata</option>
+                                        <option value="">Karaoke</option>
+                                        <option value="">MC tiếng anh</option>
+                                        <option value="">Ảo thuật diệu kì</option>
+                                        <option value="">Vẽ mặt nghệ thuật</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select>
+                                        <option value="">Món Âu</option>
+                                        <option value="">Món Á</option>
+                                        <option value="">Món ăn nhanh</option>
+                                    </select>
+                                </li>
+                                <li>--</li>
+                                </ul>
+                        </td>
+                        <td>
+                            <div className="cost-container">
+                                <ul className="cost">
+                                    <li>2000000</li>
+                                    <li>2000000</li>
+                                    <li>Tùy vào số lượng khách</li>
+                                    <li>200000/ người</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div className="booking-actions">
+                    <Link to="/login">
+                        <button className="button-book-now">Đặt tiệc ngay</button>
+                    </Link>
+                    <Link to="/restaurant-list">
+                        <button className="button-view-more">Xem nhà hàng khác</button>
+                    </Link>
+                </div>
             </div>
         </>
     );
