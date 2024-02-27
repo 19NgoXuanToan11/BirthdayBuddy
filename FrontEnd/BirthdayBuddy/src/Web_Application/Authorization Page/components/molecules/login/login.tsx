@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import './login.scss'; // Make sure to adjust the file extension and path if necessary
+import './login.scss'; 
 import { Link } from 'react-router-dom';
 
 function Login() {
+
     useEffect(() => {
         const ngNhpText = document.getElementById("ngNhpText");
         if (ngNhpText) {
@@ -59,15 +60,16 @@ function Login() {
                     </div>
                     <div className="frame-wrapper1">
                         <div className="frame-wrapper-item"></div>
-                        <div className="ng-nhp" id="ngNhpText">Đăng nhập</div>
+                        <div className="ng-nhp" id="ngNhpText">
+                        <Link to="/checkout">
+                            Đăng nhập
+                        </Link>
+                        </div>
                     </div>
                     <div className="register-prompt">
                         <div className="account-absent">
                             <div className="bn-cha-c" id="bnChaC">Bạn chưa có tài khoản?</div>
-                            <div className="bn-mun-ng" id="bnMunNg">
-                                Bạn muốn đăng kí nhà hàng?
-                                
-                            </div>
+                            <div className="bn-mun-ng" id="bnMunNg">Bạn muốn đăng kí nhà hàng?</div>
                         </div>
                         <div className="t-li-mt" id="tLiMt">Đặt lại mật khẩu</div>
                     </div>

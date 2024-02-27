@@ -118,9 +118,10 @@ export default function PartyCheckout() {
                 </div>
             </div>
             <div className="checkout-button">
-                <Link to="/"></Link>
                 <button className="button-checkout-now">Đặt tiệc ngay</button>
-                <button className="button-cancel">Hủy</button>
+                <Link to="/restaurant-list">
+                    <button className="button-cancel">Hủy</button>
+                </Link>
             </div>
         </>
     );

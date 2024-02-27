@@ -138,7 +138,9 @@ export default function PartyDetail() {
                         <Link to="/login">
                             <button className="button-book-now">Đặt tiệc ngay</button>
                         </Link>
-                        <button className="button-view-more">Xem nhà hàng khác</button>
+                        <Link to="/restaurant-list">
+                            <button className="button-view-more">Xem nhà hàng khác</button>
+                        </Link>
                     </div>
                 </form>
             </div>
