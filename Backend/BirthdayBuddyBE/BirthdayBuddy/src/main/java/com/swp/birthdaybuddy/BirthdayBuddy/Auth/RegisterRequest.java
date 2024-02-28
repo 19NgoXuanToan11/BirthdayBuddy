@@ -1,27 +1,11 @@
-package com.swp.birthdaybuddy.BirthdayBuddy.dto;
+package com.swp.birthdaybuddy.BirthdayBuddy.Auth;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class UserDTO {
-    private Long userId;
+public class RegisterRequest {
     private String username;
     private String password;
     private String fullName;
     private String email;
     private String phone;
-    private String status;
-    private RoleDTO role;
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
 
     public String getUsername() {
         return username;
@@ -61,21 +45,5 @@ public class UserDTO {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public RoleDTO getRole() {
-        return role;
-    }
-
-    public void setRole(RoleDTO role) {
-        this.role = role;
     }
 }
