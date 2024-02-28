@@ -10,7 +10,7 @@ import CustomerHome from "./Web_Application/Customer Page/page/home-page/custome
 import CustomerRestaurantListPage from "./Web_Application/Customer Page/page/restaurant-page/customer-restaurant-page";
 import CustomerRestaurantDetailsPage from "./Web_Application/Customer Page/page/customer-restaurant-details-page/customer-restaurant-details-page";
 import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
-import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/CustomerCheckoutPage";
+import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/customer-checkout-page";
 
 function App() {
     return (
@@ -24,7 +24,7 @@ function App() {
                 <Route path="/forgetpw" element={<ForgetPassword />} />
                 <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
                 <Route path='/customer' element={<CustomerHome />} />
-                <Route path='/scan-payment' element={<ScanPayment />} />
+                <Route path='/customer/scan-payment' element={<ScanPayment />} />
                 <Route path='/customer/restaurant-list' element={<CustomerRestaurantListPage />} />
                 <Route path='/customer/restaurant-details/:id' element={<CustomerRestaurantDetailsPage />} />
             </Routes>
