@@ -8,6 +8,7 @@ import LoginPage from "../../../../Authorization Page/components/pages/login-pag
 import RegisterPage from "../../../../Authorization Page/components/pages/register-page";
 import Register from "../../../../Authorization Page/components/molecules/register/register";
 import ForgetPassword from "../../../../Authorization Page/components/molecules/forget-password/forgetpw";
+
 function GuestHomeTemplate() {
     return (
         <>
