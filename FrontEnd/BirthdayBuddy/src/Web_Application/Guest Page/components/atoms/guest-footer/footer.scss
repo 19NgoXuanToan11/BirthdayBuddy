@@ -1,0 +1,122 @@
+$color-primary: #a48a00;
+$color-text: #fff;
+$color-contact: #ecc769;
+
+.guest-footer-high-page {
+    background-color: $color-primary;
+    color: $color-text;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    }
+
+    .call-us li:not(:first-child),
+    .mail-us li:not(:first-child) {
+        color: $color-contact;
+    }
+
+    .follow-us {
+        align-items: center;
+        flex-direction: column;
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+
+            li {
+                display: inline-block;
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-footer-high-page {
+        flex-direction: column;
+        align-items: center;
+
+        ul {
+            width: 100%;
+            margin-bottom: 20px;
+
+            .icon {
+                justify-content: center;
+                li {
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+.guest-footer-middle-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    background-color: $color-primary;
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-nav-link {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        a {
+            margin-left: 200px;
+            color: $color-text;
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer-nav-link a {
+        color: $color-contact; 
+    }
+
+    img {
+        width: 258px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-footer-middle-page {
+        .footer-nav-link {
+            text-align: center;
+            li {
+                margin: 5px 0;
+            }
+        }
+    }
+}
+
+.guest-footer-low-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #846d19;
+}
