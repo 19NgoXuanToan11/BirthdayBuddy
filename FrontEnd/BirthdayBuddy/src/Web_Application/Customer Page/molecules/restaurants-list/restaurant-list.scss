@@ -1,13 +1,7 @@
 .restaurant-list-container {
-    h1 {
-        text-align: center;
-        text-transform: uppercase;
-        padding: 10px;
-    }
-
     .restaurant-box {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
         .restaurant-list {
             flex: 1;
@@ -43,3 +37,25 @@
         }
     }
 }
+
+.page-item {
+    list-style: none;
+    margin: 0 5px; 
+}
+
+.page-link {
+    display: inline-block;
+    padding: 5px 10px; 
+    background-color: #cfa924;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+.page-link:hover {
+    background-color: #9D801B;
+    color: aliceblue;
+}
+
+

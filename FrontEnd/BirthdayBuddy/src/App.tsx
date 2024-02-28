@@ -7,6 +7,10 @@ import RegisterPage from "./Web_Application/Authorization Page/components/pages/
 import ForgetPassword from "./Web_Application/Authorization Page/components/molecules/forget-password/forgetpw";
 import GuestRestaurantListPage from "./Web_Application/Guest Page/components/pages/restaurant-list-page/guest-restaurant-list-page";
 import GuestRestaurantDetailsPage from "./Web_Application/Guest Page/components/pages/restaurant-details-page/restaurant-details-page";
+import PartyCheckout from "./Web_Application/Customer Page/molecules/party-checkout/party-checkout";
+import CustomerHome from "./Web_Application/Customer Page/page/home-page/customer-home-page";
+import CustomerRestaurantListPage from "./Web_Application/Customer Page/page/restaurant-page/customer-restaurant-page";
+import CustomerRestaurantDetailsPage from "./Web_Application/Customer Page/page/customer-restaurant-details-page/customer-restaurant-details-page";
 import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
 import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/CustomerCheckoutPage";
 
@@ -20,9 +24,10 @@ function App() {
                 <Route path='/login' element={<LoginPage />} /> 
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
-                {/* <Route path='/check-out' element={<PartyCheckout /> } /> */}
-                <Route path='/scan-payment' element={<ScanPayment />} />
-                <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
+                <Route path='/check-out' element={<PartyCheckout />} />
+                <Route path='/customer' element={<CustomerHome />} />
+                <Route path='/customer/restaurant-list' element={<CustomerRestaurantListPage />} />
+                <Route path='/customer/restaurant-details/:id' element={<CustomerRestaurantDetailsPage />} />
             </Routes>
         </Router>
     );
