@@ -149,7 +149,7 @@ export default function PartyDetail() {
                     </tr>
                 </table>
                 <div className="booking-actions">
-                    <Link to="/check-out">
+                    <Link to="/customer/check-out">
                         <button className="button-book-now">Đặt tiệc ngay</button>
                     </Link>
                     <Link to="/restaurant-list">
