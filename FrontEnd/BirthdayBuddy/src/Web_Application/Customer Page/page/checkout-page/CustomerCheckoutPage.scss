@@ -1,0 +1,331 @@
+$primary-color: #a48a00;
+$font-family: Itim;
+$secondary-color: #f0f0f0;
+$border-color: #ccc;
+$hover-color: $primary-color;
+$color-primary: #a48a00;
+$color-text: #fff;
+$color-contact: #ecc769;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family;
+}
+
+.guest-header {
+    background-color: white;
+    border-bottom: 1px solid $border-color;
+
+    span {
+        margin-left: 7px;
+    }
+
+    .middle-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.2em;
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-right: 0em;
+            margin-left: 50px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .search-bar {
+            position: relative;
+            box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.1);
+
+            input[type="text"] {
+                width: 700px;
+                padding: 1em;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+        }
+
+        .user-cart {
+            display: flex;
+            margin-right: 100px;
+
+            a {
+                text-decoration: none;
+                color: $primary-color;
+                margin-right: 3em;
+
+                .fa {
+                    font-size: 2em;
+                }
+            }
+
+            img {
+                height: 40px;
+            }
+        }
+    }
+
+    .lower-header {
+        background-color: #f0f0f0;
+
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 10px;
+            margin: 0;
+            justify-content: center;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    font-family: $font-family;
+                    font-size: 1.2em;
+                    margin-right: 40px;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive
+    @media (max-width: 768px) {
+        .upper-header,
+        .middle-header,
+        .lower-header {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-bar {
+            input[type="text"] {
+                width: 90%;
+            }
+        }
+
+        .user-cart {
+            a {
+                margin: 0.5em 0;
+            }
+        }
+
+        nav.lower-header ul {
+            flex-direction: column;
+
+            li {
+                a {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.container {
+    background-color: #eadcdc;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 900px;
+    height: 900px;
+    border-radius: 20px;
+}
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 20px;
+    width: 1025px;
+}
+
+.input-container .input-version-2 {
+    display: flex;
+}
+
+.input,
+.select {
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.input .select {
+    background-color: #d9d9d9;
+}
+
+.checkout-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.checkout-button button {
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.button-checkout-now {
+    background-color: #cfa924;
+    color: #fff;
+    border: none;
+    padding: 10px;
+}
+
+.button-cancel {
+    color: #fff;
+    border: none;
+    background-color: rgb(108, 20, 20);
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .input,
+    .select {
+        width: 100%;
+    }
+}
+
+.guest-footer-high-page {
+    background-color: $color-primary;
+    color: $color-text;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    }
+
+    .call-us li:not(:first-child),
+    .mail-us li:not(:first-child) {
+        color: $color-contact;
+    }
+
+    .follow-us {
+        align-items: center;
+        flex-direction: column;
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+
+            li {
+                display: inline-block;
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-footer-high-page {
+        flex-direction: column;
+        align-items: center;
+
+        ul {
+            width: 100%;
+            margin-bottom: 20px;
+
+            .icon {
+                justify-content: center;
+                li {
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+.guest-footer-middle-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    background-color: $color-primary;
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-nav-link {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        a {
+            margin-left: 200px;
+            color: $color-text;
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer-nav-link a {
+        color: $color-contact; 
+    }
+
+    img {
+        width: 258px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-footer-middle-page {
+        .footer-nav-link {
+            text-align: center;
+            li {
+                margin: 5px 0;
+            }
+        }
+    }
+}
+
+.guest-footer-low-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #846d19;
+}

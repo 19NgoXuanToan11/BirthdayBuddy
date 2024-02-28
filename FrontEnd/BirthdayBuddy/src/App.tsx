@@ -2,13 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import GuestHomePage from "./Web_Application/Guest Page/components/pages/home-page/guest-home-page";
 import LoginPage from "./Web_Application/Authorization Page/components/pages/login-page";
-import PartyCheckout from "./Web_Application/Guest Page/components/molecules/party-checkout/party-checkout";
+// import PartyCheckout from "./Web_Application/Guest Page/components/molecules/party-checkout/party-checkout";
 import RegisterPage from "./Web_Application/Authorization Page/components/pages/register-page";
 import ForgetPassword from "./Web_Application/Authorization Page/components/molecules/forget-password/forgetpw";
 import GuestRestaurantListPage from "./Web_Application/Guest Page/components/pages/restaurant-list-page/guest-restaurant-list-page";
 import GuestRestaurantDetailsPage from "./Web_Application/Guest Page/components/pages/restaurant-details-page/restaurant-details-page";
 import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
-import CustomerFooter from "./Web_Application/Customer Page/atoms/customer-footer/footer";
+import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/CustomerCheckoutPage";
 
 function App() {
     return (
@@ -20,8 +20,9 @@ function App() {
                 <Route path='/login' element={<LoginPage />} /> 
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
-                <Route path='/check-out' element={<PartyCheckout /> } />
+                {/* <Route path='/check-out' element={<PartyCheckout /> } /> */}
                 <Route path='/scan-payment' element={<ScanPayment />} />
+                <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
             </Routes>
         </Router>
     );
