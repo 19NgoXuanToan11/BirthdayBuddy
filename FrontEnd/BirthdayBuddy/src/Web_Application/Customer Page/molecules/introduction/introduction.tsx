@@ -51,7 +51,6 @@ function Introduction() {
                     </div>
                 ))}
             </Slider>
-            <div className="icon-body" />
             <h1 className="title-body">Lưu giữ cột mốc tuổi thơ</h1>
             <h2 className="content">
                 Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
