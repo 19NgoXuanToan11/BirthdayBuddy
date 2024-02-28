@@ -1,0 +1,45 @@
+.restaurant-list-container {
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px;
+    }
+
+    .restaurant-box {
+        display: flex;
+        flex-direction: row;
+
+        .restaurant-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .link-style {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .restaurant-section {
+                display: flex;
+                align-items: center;
+                width: auto;
+                margin-bottom: 20px;
+
+                img {
+                    width: 300px;
+                    height: 200px;
+                    object-fit: cover;
+                    margin-right: 20px;
+                }
+
+                .upper-box {
+                    font-weight: bold;
+                }
+
+                .restaurant-contents {
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+}

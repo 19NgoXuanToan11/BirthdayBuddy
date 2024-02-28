@@ -37,7 +37,6 @@ CREATE TABLE Parties (
   partyTheme VARCHAR(255),
   numberOfGuests INTEGER,
   price DECIMAL(10,2),
-  hostID INTEGER REFERENCES Users(userID),
   status VARCHAR(50),
   bookingDate DATE,
   startDate DATE,
@@ -81,8 +80,7 @@ CREATE TABLE PartyShowcases (
   partyID INTEGER REFERENCES Parties(partyID),
   rating DECIMAL(2,1),
   description TEXT,
-  comments TEXT,
-  imgLink TEXT
+  comments TEXT
 );
 
 -- Create Notifications table
@@ -99,11 +97,6 @@ CREATE TABLE Notifications (
 ALTER TABLE Notifications
 ADD CONSTRAINT fk_notification_user
 FOREIGN KEY (userID)
-REFERENCES Users(userID);
-
-ALTER TABLE Parties
-ADD CONSTRAINT fk_parties_user
-FOREIGN KEY (hostID)
 REFERENCES Users(userID);
 
 ALTER TABLE Notifications
@@ -127,7 +120,6 @@ REFERENCES Districts(districtID);
 INSERT INTO Roles (roleName) VALUES
   ('Admin'),
   ('Staff'),
-  ('Host'),
   ('Customer');
 
   INSERT INTO Users (roleID, userName, fullName, email, phone, status) VALUES
