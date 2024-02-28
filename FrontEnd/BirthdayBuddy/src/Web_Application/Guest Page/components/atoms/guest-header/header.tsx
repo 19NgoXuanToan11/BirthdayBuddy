@@ -16,11 +16,11 @@ function GuestHeader() {
                     <input type="text" placeholder="Tìm kiếm..." />
                 </div>
                 <div className="user-cart">
-                    <Link to="/login">
+                    <Forward to="/login">
                         <i className="fa fa-user">
                             <img src="/src/SWP_RESOURCE/icon/alone.gif" />
                         </i>
-                    </Link>
+                    </Forward>
                     <a href="#">
                         <i className="fa fa-shopping-cart">
                             <img src="/src/SWP_RESOURCE/icon/shopping-cart.gif" />

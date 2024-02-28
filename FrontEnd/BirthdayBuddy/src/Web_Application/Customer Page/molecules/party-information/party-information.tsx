@@ -18,7 +18,7 @@ function PartyInformation() {
                         </div>
                         <div className="under-box">
                             <Link
-                                to={`/restaurant-list/`}
+                                to={`/customer/restaurant-list/`}
                                 className="view-more"
                             >
                                 Xem thêm
