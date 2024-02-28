@@ -1,6 +1,9 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./login.scss";
+
 export default function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-
 
   const togglePasswordVisibility = (): void => {
     setShowPassword(!showPassword);
@@ -30,9 +33,11 @@ export default function Login() {
             </button>
           </div>
 
-          <div className="signIn">
-            <button type="submit">Login</button>
-          </div>
+          <Link to="/check-out">
+            <div className="signIn">
+              <button type="submit">Login</button>
+            </div>
+          </Link>
           <div className="register-prompt">
             <div className="account-absent">
               <div className="bn-cha-c" id="bnChaC">
@@ -46,7 +51,6 @@ export default function Login() {
               <div className="bn-mun-ng" id="bnMunNg">
                 Bạn muốn đăng kí nhà hàng?
               </div>
-
             </div>
             <Link
               style={{ color: "#595454", textDecoration: "none" }}

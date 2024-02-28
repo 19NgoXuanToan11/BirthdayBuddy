@@ -14,12 +14,12 @@ function App() {
     return (
         <Router>
             <Routes>
-                {/* <Route path='/' element={<GuestHomePage />} />
+                <Route path='/' element={<GuestHomePage />} />
                 <Route path='/restaurant-list' element={<GuestRestaurantListPage />} />
-                <Route path='/restaurant-details/:id' element={<GuestRestaurantDetailsPage />} /> */}
-                {/* <Route path='/login' element={<LoginPage />} /> */}
-                {/* <Route path="/register" element={<RegisterPage />} />
-                <Route path="/forgetpw" element={<ForgetPassword />} /> */}
+                <Route path='/restaurant-details/:id' element={<GuestRestaurantDetailsPage />} /> 
+                <Route path='/login' element={<LoginPage />} /> 
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/forgetpw" element={<ForgetPassword />} />
                 <Route path='/check-out' element={<PartyCheckout /> } />
                 <Route path='/scan-payment' element={<ScanPayment />} />
             </Routes>
