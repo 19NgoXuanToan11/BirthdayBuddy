@@ -4,17 +4,17 @@ import PartyCheckout from '../../molecules/party-checkout/party-checkout'
 
 function CustomerCheckoutPage() {
     return (
-      <>
-      <header>
-        <CustomerHeaderHome />
-      </header>
-      <div className="body-container">
-        <PartyCheckout />
-      </div>
-      <footer>
-          <CustomerFooterHome />
-      </footer>
-      </>
+        <>
+            <header>
+                <CustomerHeaderHome />
+            </header>
+            <div className="body-container">
+                <PartyCheckout />
+            </div>
+            <footer>
+                <CustomerFooterHome />
+            </footer>
+        </>
     )
 }
 
