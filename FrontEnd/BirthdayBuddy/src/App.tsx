@@ -16,18 +16,24 @@ import CustomerRestaurantListPage from "./Web_Application/Customer Page/page/res
 import CustomerRestaurantDetailsPage from "./Web_Application/Customer Page/page/customer-restaurant-details-page/customer-restaurant-details-page";
 import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/customer-checkout-page";
 import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
+import PartyBookingInformation from "./Web_Application/Customer Page/molecules/party-booking-information/party-booking-information";
 
-//import Party Hosts Pages 
+//import Party Hosts Pages
 //import Administator Pages
 
 function App() {
     return (
         <Router>
-            <Routes>
-                <Route path='/' element={<GuestHomePage />} />
-                <Route path='/restaurant-list' element={<GuestRestaurantListPage />} />
-                <Route path='/restaurant-details/:id' element={<GuestRestaurantDetailsPage />} /> 
-                <Route path='/login' element={<LoginPage />} /> 
+            <Routes> <Route path="/" element={<GuestHomePage />} />
+                <Route
+                    path="/restaurant-list"
+                    element={<GuestRestaurantListPage />}
+                />
+                <Route
+                    path="/restaurant-details/:id"
+                    element={<GuestRestaurantDetailsPage />}
+                />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
                 <Route path='/customer' element={<CustomerHome />} />
@@ -36,6 +42,8 @@ function App() {
                 <Route path='/customer/restaurant-details/:id' element={<CustomerRestaurantDetailsPage />} />
                 <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
                 <Route path='/customer/check-out/payment' element={<ScanPayment />} />
+                <Route path='/customer/booking-information' element={<PartyBookingInformation />} />
+                
             </Routes>
         </Router>
     );
