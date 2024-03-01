@@ -1,12 +1,8 @@
-import React from "react";
-import CustomerHeaderHome from "../../organisms/customer-header-home/customer-header-home";
-import CustomerFooterHome from "../../organisms/customer-footer-home/customer-footer-home";
 import "./restaurant-booking-success.scss";
 
 export default function RestaurantBookingSuccess() {
   return (
     <>
-      <CustomerHeaderHome />
       <h2 className="title-information">THÔNG TIN ĐẶT TIỆC</h2>
 
       <div className="container">
@@ -40,7 +36,6 @@ export default function RestaurantBookingSuccess() {
 
         <button>Quay về</button>
       </div>
-      <CustomerFooterHome />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./party-booking-information.scss";
 import { Star } from "lucide-react";
 
@@ -54,8 +55,10 @@ export default function PartyBookingInformation() {
                             id="fieldID"
                         ></input>
                     </div>
+                    <Link to="/customer">
+                        <button>Đánh giá</button>
 
-                    <button>Đánh giá</button>
+                    </Link>
                 </div>
             </div>
         </>
