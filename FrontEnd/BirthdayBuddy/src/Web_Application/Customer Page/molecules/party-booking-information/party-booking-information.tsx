@@ -1,15 +1,10 @@
-import React from "react";
-import CustomerHeaderHome from "../../organisms/customer-header-home/customer-header-home";
-import CustomerFooterHome from "../../organisms/customer-footer-home/customer-footer-home";
 import "./party-booking-information.scss";
 import { Star } from "lucide-react";
 
 export default function PartyBookingInformation() {
     return (
         <>
-            <CustomerHeaderHome />
             <h2 className="title-information">THÔNG TIN ĐẶT TIỆC</h2>
-
             <div className="container">
                 <div className="box-1">
                     <div className="status">
@@ -63,7 +58,6 @@ export default function PartyBookingInformation() {
                     <button>Đánh giá</button>
                 </div>
             </div>
-            <CustomerFooterHome />
         </>
     );
 }

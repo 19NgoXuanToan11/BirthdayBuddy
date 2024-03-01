@@ -1,4 +1,3 @@
-import React from "react";
 import "./party-checkout.scss";
 import { Link } from "react-router-dom";
 
@@ -11,18 +10,15 @@ export default function PartyCheckout() {
                     <input
                         type="text"
                         placeholder="Họ và tên phụ huynh"
-                        className="input input-bordered w-full max-w-xs"
                     />
                     <input
                         type="text"
                         placeholder="Số điện thoại"
-                        className="input input-bordered w-full max-w-xs"
                     />
                     <div className="baby-name">
                         <input
                             type="text"
                             placeholder="Họ và tên của bé"
-                            className="input input-bordered w-full max-w-xs"
                         />
                         Nam{" "}
                         <input
@@ -41,7 +37,6 @@ export default function PartyCheckout() {
                     <input
                         type="text"
                         placeholder="Tuổi"
-                        className="input input-bordered w-full max-w-xs"
                     />
                     <div className="input-version-2">
                         <h5>Chủ đề trang trí</h5>
@@ -60,7 +55,7 @@ export default function PartyCheckout() {
                         </select>
                     </div>
                     <div className="input-version-2">
-                        <h5>Menu</h5>
+                        <h5 className="menu">Menu</h5>
                         <select className="select select-bordered w-full max-w-xs">
                             <option>Món ăn nhanh</option>
                             <option>Han Solo</option>
@@ -70,58 +65,35 @@ export default function PartyCheckout() {
                     <input
                         type="text"
                         placeholder="Số lượng người tham gia"
-                        className="input input-bordered w-full max-w-xs"
                     />
                     <input
                         type="text"
                         placeholder="Ngày đặt tiệc"
-                        className="input input-bordered w-full max-w-xs"
                     />
                     <input
                         type="text"
                         placeholder="Thời gian tổ chức"
-                        className="input input-bordered w-full max-w-xs"
                     />
                     <input
                         type="text"
                         placeholder="Ghi chú"
-                        className="input input-bordered w-full max-w-xs"
                     />
                     <input
                         type="text"
                         placeholder="Tổng tiền"
-                        className="input input-bordered w-full max-w-xs"
                     />
-                    <div className="checkout">
-                        <label style={{marginRight: "30px"}}>
-                            <input 
-                            type="radio"
-                            name="radio-2"
-                            className="radio radio-primary"
-                            checked
-                            />
-                            Thanh toán bằng tiền mặt (Cọc 50%)
-                        </label>
-                        <label style={{marginRight: "30px"}}>
-                            <input
-                                type="radio"
-                                name="radio-2"
-                                className="radio radio-primary"
-                            />
-                            Thanh toán online bằng momo
-                        </label>
-                        <input
-                            type="radio"
-                            name="radio-2"
-                            className="radio radio-primary"
-                            checked
-                        />
-                        Thanh toán online bằng VNPay
+                    <div className="check-out">
+                        <h5>Phương thức thanh toán</h5>
+                        <select className="select select-bordered w-full max-w-xs">
+                            <option>Thanh toán trước bằng ngân hàng</option>
+                            <option>Thanh toán trước bằng momo</option>
+                            <option>Thanh toán sau bằng tiền mặt (Cọc 50%)</option>
+                        </select>
                     </div>
                 </div>
             </div>
             <div className="checkout-button">
-                <Link to="/customer/scan-payment">
+                <Link to="/customer/payment">
                     <button className="button-checkout-now">Đặt tiệc ngay</button>
                 </Link>
                 <button className="button-cancel">Hủy</button>
