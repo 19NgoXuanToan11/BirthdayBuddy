@@ -15,10 +15,9 @@ import CustomerHome from "./Web_Application/Customer Page/page/home-page/custome
 import CustomerRestaurantListPage from "./Web_Application/Customer Page/page/restaurant-page/customer-restaurant-page";
 import CustomerRestaurantDetailsPage from "./Web_Application/Customer Page/page/customer-restaurant-details-page/customer-restaurant-details-page";
 import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/customer-checkout-page";
-import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";import PartyBookingInformation from "./Web_Application/Customer Page/molecules/party-booking-information/party-booking-information";
-import BookingInformationPage from "./Web_Application/Customer Page/page/booking-information-page/booking-information-page";
-import MomoPaymentPage from "./Web_Application/Customer Page/page/momo-payment-page/momo-payment-page";
-
+import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
+import PartyBookingInformation from "./Web_Application/Customer Page/molecules/party-booking-information/party-booking-information";
+import RestaurantBookingSuccess from "./Web_Application/Customer Page/molecules/restaurant-booking-success/restaurant-booking-success";
 //import Party Hosts Pages
 //import Administator Pages
 
