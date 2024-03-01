@@ -24,16 +24,12 @@ import MomoPaymentPage from "./Web_Application/Customer Page/page/momo-payment-p
 
 function App() {
     return (
+        <>
         <Router>
-            <Routes> <Route path="/" element={<GuestHomePage />} />
-                <Route
-                    path="/restaurant-list"
-                    element={<GuestRestaurantListPage />}
-                />
-                <Route
-                    path="/restaurant-details/:id"
-                    element={<GuestRestaurantDetailsPage />}
-                />
+            <Routes> 
+                <Route path="/" element={<GuestHomePage />} />
+                <Route path="/restaurant-list" element={<GuestRestaurantListPage />}/>
+                <Route path="/restaurant-details/:id" element={<GuestRestaurantDetailsPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
@@ -44,9 +40,10 @@ function App() {
                 <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
                 <Route path='/customer/payment' element={<MomoPaymentPage />} />
                 <Route path='/customer/booking-information' element={<BookingInformationPage />} />
-                
             </Routes>
         </Router>
+        </>
+        
     );
 }
 

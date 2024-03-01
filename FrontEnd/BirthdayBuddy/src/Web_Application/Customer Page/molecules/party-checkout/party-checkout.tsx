@@ -19,20 +19,25 @@ export default function PartyCheckout() {
                         <input
                             type="text"
                             placeholder="Họ và tên của bé"
+                            className="baby"
                         />
-                        Nam{" "}
-                        <input
-                            type="radio"
-                            name="radio-6"
-                            className="radio radio-warning"
-                            checked
-                        />
-                        Nữ{" "}
-                        <input
-                            type="radio"
-                            name="radio-6"
-                            className="radio radio-warning"
-                        />
+                        <div className="baby-gender">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="radio-6"
+                                    className="radio radio-warning"
+                                    checked
+                                /> Nam
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="radio-6"
+                                    className="radio radio-warning"
+                                /> Nữ
+                            </label>
+                        </div>
                     </div>
                     <input
                         type="text"
@@ -66,14 +71,16 @@ export default function PartyCheckout() {
                         type="text"
                         placeholder="Số lượng người tham gia"
                     />
-                    <input
-                        type="text"
-                        placeholder="Ngày đặt tiệc"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Thời gian tổ chức"
-                    />
+                    <div className="choose-time">
+                        <input
+                            type="text"
+                            placeholder="Ngày đặt tiệc"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Thời gian tổ chức"
+                        />
+                    </div>
                     <input
                         type="text"
                         placeholder="Ghi chú"

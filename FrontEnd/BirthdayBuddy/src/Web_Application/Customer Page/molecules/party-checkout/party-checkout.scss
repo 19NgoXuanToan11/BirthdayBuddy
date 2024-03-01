@@ -39,13 +39,26 @@ h1 {
     }
 
 }
+.baby-name {
+    display: flex;
+    .baby {
+       width: 79%; 
+    }
+}
+
+
+.choose-time {
+    display: flex;
+}
 
 .input-container .input-version-2 {
     margin-left: 2.5rem;
     display: flex;
+
     h5 {
         margin-right: 10rem;
-        .menu{
+
+        .menu {
             margin-right: 15rem;
         }
     }
