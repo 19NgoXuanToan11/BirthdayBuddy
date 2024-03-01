@@ -1,4 +1,3 @@
-import React from "react";
 import "./party-checkout.scss";
 import { Link } from "react-router-dom";
 
@@ -121,7 +120,7 @@ export default function PartyCheckout() {
                 </div>
             </div>
             <div className="checkout-button">
-                <Link to="/customer/scan-payment">
+                <Link to="/customer/check-out/payment">
                     <button className="button-checkout-now">Đặt tiệc ngay</button>
                 </Link>
                 <button className="button-cancel">Hủy</button>

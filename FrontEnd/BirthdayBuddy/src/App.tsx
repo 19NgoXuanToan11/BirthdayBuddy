@@ -35,6 +35,7 @@ function App() {
                 <Route path='/customer/restaurant-list' element={<CustomerRestaurantListPage />} />
                 <Route path='/customer/restaurant-details/:id' element={<CustomerRestaurantDetailsPage />} />
                 <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
+                <Route path='/customer/check-out/payment' element={<ScanPayment />} />
             </Routes>
         </Router>
     );
