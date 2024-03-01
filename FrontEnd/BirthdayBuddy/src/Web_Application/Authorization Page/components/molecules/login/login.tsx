@@ -5,7 +5,6 @@ import "./login.scss";
 export default function Login() {
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
-
     const togglePasswordVisibility = (): void => {
         setShowPassword(!showPassword);
     };
@@ -36,7 +35,7 @@ export default function Login() {
 
                     <div className="signIn">
                         <Link to={'/customer'}>
-                        <button type="submit">Login</button>
+                            <button type="submit">Login</button>
                         </Link>
                     </div>
                     <div className="register-prompt">

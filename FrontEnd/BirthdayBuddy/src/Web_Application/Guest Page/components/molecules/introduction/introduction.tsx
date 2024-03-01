@@ -1,7 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./introduction.scss"; // Import SCSS file
+import "./introduction.scss"; 
+import { Link } from "react-router-dom";
 
 function Introduction() {
     const images = [
@@ -55,13 +56,15 @@ function Introduction() {
             <h2 className="content">
                 Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
             </h2>
-            <button
-                className="action-button"
-                role="button"
-                aria-pressed="false"
-            >
-                Đặt tiệc ngay
-            </button>
+            <Link to="/login">
+                <button
+                    className="action-button"
+                    role="button"
+                    aria-pressed="false"
+                >
+                    Đặt tiệc ngay
+                </button>
+            </Link>
         </div>
     );
 }

@@ -5,7 +5,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     width: 900px;
-    height: 900px;
+    height: 1100px;
     border-radius: 20px;
 }
 
@@ -27,6 +27,10 @@ h1 {
 
 .input-container .input-version-2 {
     display: flex;
+}
+
+.input-container .checkout .radio-primary {
+    margin-right: 5px;
 }
 
 .input,

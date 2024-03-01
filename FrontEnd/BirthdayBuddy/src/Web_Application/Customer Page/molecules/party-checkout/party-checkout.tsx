@@ -92,21 +92,24 @@ export default function PartyCheckout() {
                         placeholder="Tổng tiền"
                         className="input input-bordered w-full max-w-xs"
                     />
-                    Phương thức thanh toán
                     <div className="checkout">
-                        <input
+                        <label style={{marginRight: "30px"}}>
+                            <input 
                             type="radio"
                             name="radio-2"
                             className="radio radio-primary"
                             checked
-                        />
-                        Thanh toán bằng tiền mặt (Cọc 50%)
-                        <input
-                            type="radio"
-                            name="radio-2"
-                            className="radio radio-primary"
-                        />
-                        Thanh toán online bằng momo
+                            />
+                            Thanh toán bằng tiền mặt (Cọc 50%)
+                        </label>
+                        <label style={{marginRight: "30px"}}>
+                            <input
+                                type="radio"
+                                name="radio-2"
+                                className="radio radio-primary"
+                            />
+                            Thanh toán online bằng momo
+                        </label>
                         <input
                             type="radio"
                             name="radio-2"
@@ -118,8 +121,9 @@ export default function PartyCheckout() {
                 </div>
             </div>
             <div className="checkout-button">
-                <Link to="/"></Link>
-                <button className="button-checkout-now">Đặt tiệc ngay</button>
+                <Link to="/customer/scan-payment">
+                    <button className="button-checkout-now">Đặt tiệc ngay</button>
+                </Link>
                 <button className="button-cancel">Hủy</button>
             </div>
         </>
