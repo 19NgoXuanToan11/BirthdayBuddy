@@ -22,50 +22,28 @@ import RestaurantBookingSuccess from "./Web_Application/Customer Page/molecules/
 //import Administator Pages
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        {/* <Route path="/" element={<GuestHomePage />} />
-                <Route
-                    path="/restaurant-list"
-                    element={<GuestRestaurantListPage />}
-                />
-                <Route
-                    path="/restaurant-details/:id"
-                    element={<GuestRestaurantDetailsPage />}
-                />
+    return (
+        <>
+        <Router>
+            <Routes> 
+                <Route path="/" element={<GuestHomePage />} />
+                <Route path="/restaurant-list" element={<GuestRestaurantListPage />}/>
+                <Route path="/restaurant-details/:id" element={<GuestRestaurantDetailsPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
-                <Route path="/customer" element={<CustomerHome />} />
-                <Route
-                    path="/customer/scan-payment"
-                    element={<ScanPayment />}
-                />
-                <Route
-                    path="/customer/restaurant-list"
-                    element={<CustomerRestaurantListPage />}
-                />
-                <Route
-                    path="/customer/restaurant-details/:id"
-                    element={<CustomerRestaurantDetailsPage />}
-                />
-                <Route
-                    path="/customer/check-out"
-                    element={<CustomerCheckoutPage />}
-                /> */}
-        {/* <Route
-                    path="/customer/booking-information"
-                    element={<PartyBookingInformation />}
-                />
-            </Routes> */}
-        <Route
-          path="/customer/restaurant-booking-success"
-          element={<RestaurantBookingSuccess />}
-        />
-      </Routes>
-    </Router>
-  );
+                <Route path='/customer' element={<CustomerHome />} />
+                <Route path='/customer/scan-payment' element={<ScanPayment />} />
+                <Route path='/customer/restaurant-list' element={<CustomerRestaurantListPage />} />
+                <Route path='/customer/restaurant-details/:id' element={<CustomerRestaurantDetailsPage />} />
+                <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
+                <Route path='/customer/payment' element={<MomoPaymentPage />} />
+                <Route path='/customer/booking-information' element={<BookingInformationPage />} />
+            </Routes>
+        </Router>
+        </>
+        
+    );
 }
 
 export default App;
