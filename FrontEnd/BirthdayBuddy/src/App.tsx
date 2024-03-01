@@ -15,8 +15,9 @@ import CustomerHome from "./Web_Application/Customer Page/page/home-page/custome
 import CustomerRestaurantListPage from "./Web_Application/Customer Page/page/restaurant-page/customer-restaurant-page";
 import CustomerRestaurantDetailsPage from "./Web_Application/Customer Page/page/customer-restaurant-details-page/customer-restaurant-details-page";
 import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/customer-checkout-page";
-import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
-import PartyBookingInformation from "./Web_Application/Customer Page/molecules/party-booking-information/party-booking-information";
+import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";import PartyBookingInformation from "./Web_Application/Customer Page/molecules/party-booking-information/party-booking-information";
+import BookingInformationPage from "./Web_Application/Customer Page/page/booking-information-page/booking-information-page";
+import MomoPaymentPage from "./Web_Application/Customer Page/page/momo-payment-page/momo-payment-page";
 
 //import Party Hosts Pages
 //import Administator Pages
@@ -41,8 +42,8 @@ function App() {
                 <Route path='/customer/restaurant-list' element={<CustomerRestaurantListPage />} />
                 <Route path='/customer/restaurant-details/:id' element={<CustomerRestaurantDetailsPage />} />
                 <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
-                <Route path='/customer/check-out/payment' element={<ScanPayment />} />
-                <Route path='/customer/booking-information' element={<PartyBookingInformation />} />
+                <Route path='/customer/payment' element={<MomoPaymentPage />} />
+                <Route path='/customer/booking-information' element={<BookingInformationPage />} />
                 
             </Routes>
         </Router>

@@ -4,41 +4,60 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 900px;
-    height: 1100px;
+    width: 100%;
+    height: fit-content;
     border-radius: 20px;
 }
 
 h1 {
     margin-top: 30px;
-    text-align: center;
+    text-align: left;
+    margin-left: 11.5rem;
 }
 
 .input-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 0.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    line-height: 1.5;
+
+    input {
+        margin-bottom: 1.5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        height: 3rem;
+        border-radius: 3rem;
+        border: 0.5px solid #ccc;
+
+        &::placeholder {
+            padding-left: 1rem;
+        }
+    }
+
 }
 
 .input-container .input-version-2 {
+    margin-left: 2.5rem;
     display: flex;
-}
-
-.input-container .checkout .radio-primary {
-    margin-right: 5px;
+    h5 {
+        margin-right: 10rem;
+        .menu{
+            margin-right: 15rem;
+        }
+    }
 }
 
 .input,
 .select {
     padding: 10px;
     border-radius: 30px;
-    border: 1px solid #ccc;
+    border: 0.5px solid #ccc;
     font-size: 16px;
+    margin-bottom: 1.5rem;
 }
 
 .input .select {
@@ -72,6 +91,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
+
     .input,
     .select {
         width: 100%;
