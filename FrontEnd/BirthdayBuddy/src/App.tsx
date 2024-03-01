@@ -15,6 +15,7 @@ import CustomerHome from "./Web_Application/Customer Page/page/home-page/custome
 import CustomerRestaurantListPage from "./Web_Application/Customer Page/page/restaurant-page/customer-restaurant-page";
 import CustomerRestaurantDetailsPage from "./Web_Application/Customer Page/page/customer-restaurant-details-page/customer-restaurant-details-page";
 import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/customer-checkout-page";
+import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
 
 //import Party Hosts Pages 
 //import Administator Pages

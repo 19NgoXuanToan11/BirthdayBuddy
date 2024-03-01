@@ -35,7 +35,7 @@ export default function Login() {
 
                     <div className="signIn">
                         <Link to={'/customer'}>
-                        <button type="submit">Login</button>
+                            <button type="submit">Login</button>
                         </Link>
                     </div>
                     <div className="register-prompt">
