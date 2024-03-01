@@ -17,15 +17,15 @@ import CustomerRestaurantDetailsPage from "./Web_Application/Customer Page/page/
 import CustomerCheckoutPage from "./Web_Application/Customer Page/page/checkout-page/customer-checkout-page";
 import ScanPayment from "./Web_Application/Customer Page/molecules/scan-payment/scan-payment";
 import PartyBookingInformation from "./Web_Application/Customer Page/molecules/party-booking-information/party-booking-information";
-
+import RestaurantBookingSuccess from "./Web_Application/Customer Page/molecules/restaurant-booking-success/restaurant-booking-success";
 //import Party Hosts Pages
 //import Administator Pages
 
 function App() {
-    return (
-        <Router>
-            <Routes>
-                {/* <Route path="/" element={<GuestHomePage />} />
+  return (
+    <Router>
+      <Routes>
+        {/* <Route path="/" element={<GuestHomePage />} />
                 <Route
                     path="/restaurant-list"
                     element={<GuestRestaurantListPage />}
@@ -54,13 +54,18 @@ function App() {
                     path="/customer/check-out"
                     element={<CustomerCheckoutPage />}
                 /> */}
-                <Route
+        {/* <Route
                     path="/customer/booking-information"
                     element={<PartyBookingInformation />}
                 />
-            </Routes>
-        </Router>
-    );
+            </Routes> */}
+        <Route
+          path="/customer/restaurant-booking-success"
+          element={<RestaurantBookingSuccess />}
+        />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
