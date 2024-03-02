@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./introduction.scss"; 
+import "./introduction.scss";
 import { Link } from "react-router-dom";
 
 function Introduction() {
@@ -17,6 +17,8 @@ function Introduction() {
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
 
         responsive: [
             {
