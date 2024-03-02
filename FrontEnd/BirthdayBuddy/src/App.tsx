@@ -36,6 +36,7 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
+                <Route path="/signuphost" element={<SignUpHostPage />} />
                 <Route path="/customer" element={<CustomerHome />} />
                 <Route path="/customer/restaurant-list" element={<CustomerRestaurantListPage />} />
                 <Route path="/customer/restaurant-details/:id" element={<CustomerRestaurantDetailsPage />} />
