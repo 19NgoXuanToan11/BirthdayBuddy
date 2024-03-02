@@ -30,7 +30,7 @@ function CustomerHeader() {
             <nav className="lower-header">
                 <ul>
                     <li>
-                        <Link to="/">
+                        <Link to="/customer">
                             <span>Trang chủ</span>
                         </Link>
                     </li>
@@ -38,7 +38,9 @@ function CustomerHeader() {
                         <a href="#">Các gói tiệc</a>
                     </li>
                     <li>
-                        <a href="#">Giỏ hàng</a>
+                        <Link to="/customer/booking-list">
+                            <span>Giỏ hàng</span>
+                        </Link>
                     </li>
                     <li>
                         <a href="#">Về BirthdayBuddy</a>
