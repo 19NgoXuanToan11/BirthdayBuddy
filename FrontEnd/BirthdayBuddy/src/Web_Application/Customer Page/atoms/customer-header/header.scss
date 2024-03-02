@@ -43,6 +43,7 @@ body {
         .search-bar {
             position: relative;
             box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 10px 10px 10px 10px;
 
             input[type="text"] {
                 width: 700px;
@@ -52,9 +53,9 @@ body {
             }
         }
 
-        .user-cart {
+        .cus-cart {
             display: flex;
-            margin-right: 100px;
+            margin-right: 14px;
 
             a {
                 text-decoration: none;
@@ -67,7 +68,17 @@ body {
             }
 
             img {
-                height: 40px;
+                height: 50px;
+                width: 50px;
+            }
+            .user-name {
+                color: #333;
+                font-size: 20px;
+                margin-top: -38px;
+            }
+            .user-icon {
+                margin-left: -50px;
+                margin-bottom: -34px;
             }
         }
     }
