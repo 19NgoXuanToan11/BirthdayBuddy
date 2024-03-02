@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./introduction.scss"; 
+import "./introduction.scss";
 import { Link } from "react-router-dom";
 
 function Introduction() {

@@ -20,7 +20,7 @@ import RestaurantBookingSuccess from "./Web_Application/Customer Page/molecules/
 import MomoPaymentPage from "./Web_Application/Customer Page/page/momo-payment-page/momo-payment-page";
 import BookingInformationPage from "./Web_Application/Customer Page/page/booking-information-page/booking-information-page";
 import BookingSuccessPage from "./Web_Application/Customer Page/page/booking-success-page/booking-success-page";
-import BookingListPage from "./Web_Application/Customer Page/page/booking-list-page/booking-list-page";
+import BookingListPage from "./Web_Application/Customer Page/page/booking-list-page/booking-list-page";>>>>>>> main
 //import Party Hosts Pages
 //import Administator Pages
 
@@ -46,7 +46,6 @@ function App() {
             </Routes>
         </Router>
         </>
-        
     );
 }
 
