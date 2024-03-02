@@ -29,4 +29,8 @@ public class PartyController {
         partyService.deleteParty(partyID);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/all")
+    public List<PartyDTO> getAllParty() {
+        return partyService.getAllParty();
+    }
 }
