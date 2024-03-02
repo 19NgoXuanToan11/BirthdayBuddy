@@ -20,11 +20,11 @@ function CustomerHeader() {
                             <img src="/src/SWP_RESOURCE/icon/alone.gif" />
                         </i>
                     </a>
-                    <a href="#">
+                    <Link to="/customer/notification">
                         <i className="fa fa-shopping-cart">
-                            <img src="/src/SWP_RESOURCE/icon/shopping-cart.gif" />
+                            <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" />
                         </i>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <nav className="lower-header">
