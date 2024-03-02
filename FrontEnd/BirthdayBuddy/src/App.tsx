@@ -11,6 +11,7 @@ import GuestRestaurantDetailsPage from "./Web_Application/Guest Page/components/
 import LoginPage from "./Web_Application/Authorization Page/components/pages/login-page";
 import RegisterPage from "./Web_Application/Authorization Page/components/pages/register-page";
 import ForgetPassword from "./Web_Application/Authorization Page/components/molecules/forget-password/forgetpw";
+import SignUpHostPage from "./Web_Application/Authorization Page/components/pages/signuphost-page";
 
 // Import Customer Pages
 import CustomerHome from "./Web_Application/Customer Page/page/home-page/customer-home-page";
