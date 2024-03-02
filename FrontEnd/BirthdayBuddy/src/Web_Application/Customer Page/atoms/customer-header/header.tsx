@@ -20,17 +20,17 @@ function CustomerHeader() {
                             <img src="/src/SWP_RESOURCE/icon/alone.gif" />
                         </i>
                     </a>
-                    <a href="#">
+                    <Link to="/customer/notification">
                         <i className="fa fa-shopping-cart">
-                            <img src="/src/SWP_RESOURCE/icon/shopping-cart.gif" />
+                            <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" />
                         </i>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <nav className="lower-header">
                 <ul>
                     <li>
-                        <Link to="/">
+                        <Link to="/customer">
                             <span>Trang chủ</span>
                         </Link>
                     </li>
@@ -38,7 +38,9 @@ function CustomerHeader() {
                         <a href="#">Các gói tiệc</a>
                     </li>
                     <li>
-                        <a href="#">Giỏ hàng</a>
+                        <Link to="/customer/booking-list">
+                            <span>Giỏ hàng</span>
+                        </Link>
                     </li>
                     <li>
                         <a href="#">Về BirthdayBuddy</a>

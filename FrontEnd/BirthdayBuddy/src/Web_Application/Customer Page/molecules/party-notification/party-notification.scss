@@ -1,0 +1,58 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.notification button {
+    background-color: #cfa924;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notification button:hover {
+    background-color: #a88a1d;
+}
+
+.notification-content {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.notification-content p {
+    margin-bottom: 10px;
+}
+
+.all {
+    background-color: #28a745;
+}
+
+.not-yet {
+    background-color: #dc3545;
+}
+
+.all:hover,
+.not-yet:hover {
+    opacity: 0.8;
+}
