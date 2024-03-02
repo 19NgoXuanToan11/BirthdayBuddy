@@ -1,14 +1,15 @@
-import "./guest-restaurant-list-header.scss";
-import { Link as Forward } from "react-router-dom";
+import "./guest-header-restaurantlist.scss";
+import { Link } from "react-scroll";
+import { Link as Forward } from "react-router-dom"
 
-function GuestRestaurantListHeader() {
+function GuestHeaderRestaurantList() {
     return (
         <header className="guest-header">
             <div className="middle-header">
                 <div className="logo">
-                    <Forward to="/">
+                    <Link to="/">
                         <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
-                    </Forward>
+                    </Link>
                 </div>
 
                 <div className="search-bar">
@@ -22,24 +23,24 @@ function GuestRestaurantListHeader() {
                     </Forward>
                     <a href="#">
                         <i className="fa fa-shopping-cart">
-                            <img src="/src/SWP_RESOURCE/icon/shopping-cart.gif" />
+                            <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" />
                         </i>
                     </a>
                 </div>
             </div>
             <nav className="lower-header">
                 <ul>
-                    <Forward to="/">
+                    <Link to="carousel-container">
                         <li>
                             <a href="">Trang chủ</a>
                         </li>
-                    </Forward>
-                    <Forward to="/">
+                    </Link>
+                    <Link to="party-information-container">
                         <li>
                             <a href="">Các gói tiệc</a>
                         </li>
-                    </Forward>
-                    <Forward to="/login">
+                    </Link>
+                    <Forward to="login">
                         <li>
                             <a href="">Đặt tiệc sinh nhật</a>
                         </li>
@@ -53,4 +54,4 @@ function GuestRestaurantListHeader() {
     );
 }
 
-export default GuestRestaurantListHeader;
+export default GuestHeaderRestaurantList;
