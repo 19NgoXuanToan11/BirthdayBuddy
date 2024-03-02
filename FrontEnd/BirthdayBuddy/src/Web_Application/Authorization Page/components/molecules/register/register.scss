@@ -26,7 +26,7 @@ a {
 .register {
   background-color: rgba(234, 220, 220, 0.77);
   width: 500px;
-  height: 550px;
+  height: 580px;
   text-align: center;
   border-radius: 30px;
   padding: 0px 30px;
@@ -41,6 +41,8 @@ a {
 .register .title {
   font-size: 18px;
   font-weight: bold;
+  margin-left: -240px;
+  margin-top: -15px;
 }
 
 .register .group {

@@ -9,6 +9,7 @@ import GuestRestaurantDetailsPage from "./Web_Application/Guest Page/components/
 import LoginPage from "./Web_Application/Authorization Page/components/pages/login-page";
 import RegisterPage from "./Web_Application/Authorization Page/components/pages/register-page";
 import ForgetPassword from "./Web_Application/Authorization Page/components/molecules/forget-password/forgetpw";
+import SignUpHostPage from "./Web_Application/Authorization Page/components/pages/signuphost-page";
 
 //import Customer Pages
 import CustomerHome from "./Web_Application/Customer Page/page/home-page/customer-home-page";
@@ -24,28 +25,49 @@ import BookingSuccessPage from "./Web_Application/Customer Page/page/booking-suc
 //import Administator Pages
 
 function App() {
-    return (
-        <>
-        <Router>
-            <Routes> 
-                <Route path="/" element={<GuestHomePage />} />
-                <Route path="/restaurant-list" element={<GuestRestaurantListPage />}/>
-                <Route path="/restaurant-details/:id" element={<GuestRestaurantDetailsPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/forgetpw" element={<ForgetPassword />} />
-                <Route path='/customer' element={<CustomerHome />} />
-                <Route path='/customer/restaurant-list' element={<CustomerRestaurantListPage />} />
-                <Route path='/customer/restaurant-details/:id' element={<CustomerRestaurantDetailsPage />} />
-                <Route path='/customer/check-out' element={<CustomerCheckoutPage />} />
-                <Route path='/customer/payment' element={<MomoPaymentPage />} />
-                <Route path='/customer/booking-success' element={<BookingSuccessPage />} />
-                <Route path='/customer/booking-information' element={<BookingInformationPage />} />
-            </Routes>
-        </Router>
-        </>
-        
-    );
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<GuestHomePage />} />
+          <Route
+            path="/restaurant-list"
+            element={<GuestRestaurantListPage />}
+          />
+          <Route
+            path="/restaurant-details/:id"
+            element={<GuestRestaurantDetailsPage />}
+          />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/forgetpw" element={<ForgetPassword />} />
+          <Route path="/signuphost" element={<SignUpHostPage />} />
+          <Route path="/customer" element={<CustomerHome />} />
+          <Route
+            path="/customer/restaurant-list"
+            element={<CustomerRestaurantListPage />}
+          />
+          <Route
+            path="/customer/restaurant-details/:id"
+            element={<CustomerRestaurantDetailsPage />}
+          />
+          <Route
+            path="/customer/check-out"
+            element={<CustomerCheckoutPage />}
+          />
+          <Route path="/customer/payment" element={<MomoPaymentPage />} />
+          <Route
+            path="/customer/booking-success"
+            element={<BookingSuccessPage />}
+          />
+          <Route
+            path="/customer/booking-information"
+            element={<BookingInformationPage />}
+          />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
 export default App;
