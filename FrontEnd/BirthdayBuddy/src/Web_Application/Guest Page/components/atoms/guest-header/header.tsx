@@ -23,7 +23,7 @@ function GuestHeader() {
                     </Forward>
                     <a href="#">
                         <i className="fa fa-shopping-cart">
-                            <img src="/src/SWP_RESOURCE/icon/shopping-cart.gif" />
+                            <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" />
                         </i>
                     </a>
                 </div>
