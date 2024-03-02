@@ -27,22 +27,21 @@
         }
     }
 
-    .title-body {
+    h1 {
         position: absolute;
         width: 100%;
-        left: 50%; // Center horizontally
+        left: 42%; // Center horizontally
         top: 35%; // Center vertically
         transform: translate(-50%, -50%); // Center the element
         font-family: "Itim";
         font-style: normal;
         font-weight: 400;
         font-size: 96px;
-        line-height: 115px;
         text-align: center;
         color: #ffffff;
     }
 
-    .content {
+    h2 {
         position: absolute;
         width: 100%;
         left: 50%;
