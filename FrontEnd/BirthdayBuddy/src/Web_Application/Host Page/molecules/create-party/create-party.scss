@@ -1,0 +1,31 @@
+.main-content {
+    text-align: center;
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #cfa924; // Màu chữ cho tiêu đề
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input {
+            margin-bottom: 10px;
+        }
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; // Khoảng cách từ form xuống nút
+
+        button {
+            margin: 0 5px;
+            background-color: #cfa924; // Màu nền cho nút
+            color: #fff; // Màu chữ cho nút
+        }
+    }
+}

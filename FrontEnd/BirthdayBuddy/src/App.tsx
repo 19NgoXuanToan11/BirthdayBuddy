@@ -22,47 +22,65 @@ import MomoPaymentPage from "./Web_Application/Customer Page/page/momo-payment-p
 import BookingInformationPage from "./Web_Application/Customer Page/page/booking-information-page/booking-information-page";
 import BookingSuccessPage from "./Web_Application/Customer Page/page/booking-success-page/booking-success-page";
 import BookingListPage from "./Web_Application/Customer Page/page/booking-list-page/booking-list-page";
+import PartyNotification from "./Web_Application/Customer Page/molecules/party-notification/party-notification";
+import PartyList from "./Web_Application/Host Page/molecules/party-list/party-list";
+import CreateParty from "./Web_Application/Host Page/molecules/create-party/create-party";
 //import Party Hosts Pages
 //import Administator Pages
 
 function App() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<GuestHomePage />} />
-        <Route path="/restaurant-list" element={<GuestRestaurantListPage />} />
-        <Route
-          path="/restaurant-details/:id"
-          element={<GuestRestaurantDetailsPage />}
-        />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/forgetpw" element={<ForgetPassword />} />
-        <Route path="/signuphost" element={<SignUpHostPage />} />
-        <Route path="/customer" element={<CustomerHome />} />
-        <Route
-          path="/customer/restaurant-list"
-          element={<CustomerRestaurantListPage />}
-        />
-        <Route
-          path="/customer/restaurant-details/:id"
-          element={<CustomerRestaurantDetailsPage />}
-        />
-        <Route path="/customer/check-out" element={<CustomerCheckoutPage />} />
-        <Route path="/customer/payment" element={<MomoPaymentPage />} />
-        <Route
-          path="/customer/booking-success"
-          element={<BookingSuccessPage />}
-        />
-        <Route
-          path="/customer/booking-information"
-          element={<BookingInformationPage />}
-        />
-        <Route path="/customer/booking-list" element={<BookingListPage />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<GuestHomePage />} />
+                <Route
+                    path="/restaurant-list"
+                    element={<GuestRestaurantListPage />}
+                />
+                <Route
+                    path="/restaurant-details/:id"
+                    element={<GuestRestaurantDetailsPage />}
+                />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/forgetpw" element={<ForgetPassword />} />
+                <Route path="/signuphost" element={<SignUpHostPage />} />
+                <Route path="/customer" element={<CustomerHome />} />
+                <Route
+                    path="/customer/restaurant-list"
+                    element={<CustomerRestaurantListPage />}
+                />
+                <Route
+                    path="/customer/restaurant-details/:id"
+                    element={<CustomerRestaurantDetailsPage />}
+                />
+                <Route
+                    path="/customer/check-out"
+                    element={<CustomerCheckoutPage />}
+                />
+                <Route path="/customer/payment" element={<MomoPaymentPage />} />
+                <Route
+                    path="/customer/booking-success"
+                    element={<BookingSuccessPage />}
+                />
+                <Route
+                    path="/customer/booking-information"
+                    element={<BookingInformationPage />}
+                />
+                <Route
+                    path="/customer/booking-list"
+                    element={<BookingListPage />}
+                />
+                <Route
+                    path="/customer/notification"
+                    element={<PartyNotification />}
+                />
+                <Route path="/host" element={<PartyList />} />
+                <Route path="/host/create-party" element={<CreateParty />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

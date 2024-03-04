@@ -1,0 +1,46 @@
+.main-content {
+    text-align: center;
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: 700px;
+    }
+
+    .list-party {
+        .overflow-x-auto {
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+                border-radius: 5px;
+                overflow: hidden;
+
+                thead {
+                    background-color: #209cee;
+                    color: #fff;
+                    font-weight: bold;
+
+                    th {
+                        padding: 10px;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        td,
+                        th {
+                            border: 1px solid #ccc;
+                            padding: 10px;
+                            text-align: left;
+                        }
+
+                        &:nth-child(even) {
+                            background-color: #f8f9fa;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
