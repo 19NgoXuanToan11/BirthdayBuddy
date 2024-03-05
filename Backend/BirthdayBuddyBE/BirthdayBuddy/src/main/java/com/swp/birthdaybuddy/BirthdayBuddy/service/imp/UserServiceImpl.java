@@ -11,34 +11,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.Optional;
+
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
     private final ModelMapper modelMapper;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, ModelMapper modelMapper) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
         this.modelMapper = modelMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-    public void register(RegisterRequest request) {
-        User user = modelMapper.map(request, User.class);
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setStatus("ACTIVE"); // Set default status
-        // Set role (you can fetch it from the database or set a default role)
-        // user.setRole(role);
-        userRepository.save(user);
+    public UserDTO createUser(UserDTO userDTO) {
+        userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        User user = modelMapper.map(userDTO, User.class);
+        return modelMapper.map(userRepository.save(user), UserDTO.class);
     }
 
     @Override
-    public User login(LoginRequest request) {
-        User user = userRepository.findByUsername(request.getUsername());
-        if (user != null && passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-            return modelMapper.map(user, User.class);
-        }
-        return null;
+    public boolean login(String username, String password) {
+        User user = userRepository.findByUsername(username);
+        return user != null && passwordEncoder.matches(password, user.getPassword());
     }
 }

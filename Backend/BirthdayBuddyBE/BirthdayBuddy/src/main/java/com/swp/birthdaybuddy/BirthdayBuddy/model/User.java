@@ -11,9 +11,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+
 @Entity
 @Table(name = "users")
-public class User {
+public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,15 +26,15 @@ public class User {
     private String email;
     private String phone;
     private String status;
+
     @ManyToOne
     @JoinColumn(name = "role_id")
-
-    private String role;
+    private Role role;
 
     public User() {
     }
 
-    public User(Long userId, String username, String password, String fullName, String email, String phone, String status, String role) {
+    public User(Long userId, String username, String password, String fullName, String email, String phone, String status, Role role) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -99,11 +101,11 @@ public class User {
         this.status = status;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 }

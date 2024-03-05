@@ -5,13 +5,13 @@ import lombok.ToString;
 
 import java.util.Set;
 @Entity
-@Table(name = "role")
+@Table(name = "roles")
 public class Role {
 
     @Id
-    @Column(name = "role_id")
+    @Column(name = "roleId")
     private int roleId;
-    @Column(name = "role_name")
+    @Column(name = "roleName")
     private String roleName;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
