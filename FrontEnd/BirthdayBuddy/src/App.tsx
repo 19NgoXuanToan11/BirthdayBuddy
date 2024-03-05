@@ -92,7 +92,7 @@ function App() {
                 />
 
                 {/* Host */}
-                <Route path="/host" element={<PartyList />} />
+                {/* <Route path="/host" element={<PartyList />} /> */}
                 <Route path="/host/list-party" element={<PartyList />} />
                 <Route path="/host/create-party" element={<CreateParty />} />
                 <Route

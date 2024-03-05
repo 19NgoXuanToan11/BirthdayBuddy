@@ -16,7 +16,7 @@ export default function CreateSpecialService() {
                         <input type="text" placeholder="Tìm kiếm..." />
                     </div>
                     <div className="cus-cart">
-                        <Link to={"/host/create-party"}>
+                        <Link to={""}>
                             <div className="user-icon">
                                 <i className="fa fa-user">
                                     <img src="/src/SWP_RESOURCE/icon/alone.gif" />
@@ -37,12 +37,16 @@ export default function CreateSpecialService() {
                                     <li>
                                         <a>Tài khoản của tôi</a>
                                     </li>
-                                    <li>
-                                        <a>Danh sách bữa tiệc</a>
-                                    </li>
-                                    <li>
-                                        <a>Tạo bữa tiệc</a>
-                                    </li>
+                                    <Link to="/host/list-party">
+                                        <li>
+                                            <a>Danh sách bữa tiệc</a>
+                                        </li>
+                                    </Link>
+                                    <Link to="/host/create-party">
+                                        <li>
+                                            <a>Tạo bữa tiệc</a>
+                                        </li>
+                                    </Link>
                                 </ul>
                             </div>
                         </Link>
@@ -82,7 +86,7 @@ export default function CreateSpecialService() {
                     />
                 </div>
                 <div className="theme-buttons">
-                    <Link to="/host/restaurant-booking-tracking">
+                    <Link to="/host/create-party/create-party-theme/create-special-service/create-food-menu">
                         <button className="create-button">Tạo</button>
                     </Link>
                     <Link to="/host/create-party/create-party-theme">
@@ -90,7 +94,7 @@ export default function CreateSpecialService() {
                     </Link>
                 </div>
             </div>
-            
+
             <div className="guest-footer-high-page">
                 <ul className="call-us">
                     <li>Gọi chúng tôi</li>

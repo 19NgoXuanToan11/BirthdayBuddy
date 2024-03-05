@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./restaurant-booking-tracking.scss";
 
 export default function RestaurantBookingTracking() {
     return (
@@ -16,7 +17,7 @@ export default function RestaurantBookingTracking() {
                         <input type="text" placeholder="Tìm kiếm..." />
                     </div>
                     <div className="cus-cart">
-                        <Link to={"/host/create-party"}>
+                        <Link to={""}>
                             <div className="user-icon">
                                 <i className="fa fa-user">
                                     <img src="/src/SWP_RESOURCE/icon/alone.gif" />
@@ -37,12 +38,16 @@ export default function RestaurantBookingTracking() {
                                     <li>
                                         <a>Tài khoản của tôi</a>
                                     </li>
-                                    <li>
-                                        <a>Danh sách bữa tiệc</a>
-                                    </li>
-                                    <li>
-                                        <a>Tạo bữa tiệc</a>
-                                    </li>
+                                    <Link to="/host/list-party">
+                                        <li>
+                                            <a>Danh sách bữa tiệc</a>
+                                        </li>
+                                    </Link>
+                                    <Link to="/host/create-party">
+                                        <li>
+                                            <a>Tạo bữa tiệc</a>
+                                        </li>
+                                    </Link>
                                 </ul>
                             </div>
                         </Link>
@@ -61,7 +66,7 @@ export default function RestaurantBookingTracking() {
                 <div className="box-1">
                     <div className="status">
                         <div className="status0">Tên nhà hàng: Hello</div>
-                        <div className="status1">Tình trạng: Đang xử lí</div>
+                        <div className="status123">Tình trạng: Đang xử lí</div>
                     </div>
                     <div className="event">
                         <h6>Mã tiệc: H001</h6>
@@ -89,9 +94,11 @@ export default function RestaurantBookingTracking() {
                 </div>
 
                 <Link to="/host/restaurant-booking-tracking/restaurant-booking-success">
-                    <button>Duyệt</button>
+                    <button className="accept-button">Duyệt</button>
                 </Link>
-                <button>Hủy</button>
+                <Link to="/host/create-party/create-party-theme/create-special-service/create-food-menu">
+                    <button className="cancel-button">Hủy</button>
+                </Link>
             </div>
 
             <div className="guest-footer-high-page">

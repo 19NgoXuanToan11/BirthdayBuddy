@@ -17,7 +17,7 @@ export default function CreatePartyTheme() {
                         <input type="text" placeholder="Tìm kiếm..." />
                     </div>
                     <div className="cus-cart">
-                        <Link to={"/host/create-party"}>
+                        <Link to={""}>
                             <div className="user-icon">
                                 <i className="fa fa-user">
                                     <img src="/src/SWP_RESOURCE/icon/alone.gif" />
@@ -38,12 +38,16 @@ export default function CreatePartyTheme() {
                                     <li>
                                         <a>Tài khoản của tôi</a>
                                     </li>
-                                    <li>
-                                        <a>Danh sách bữa tiệc</a>
-                                    </li>
-                                    <li>
-                                        <a>Tạo bữa tiệc</a>
-                                    </li>
+                                    <Link to="/host/list-party">
+                                        <li>
+                                            <a>Danh sách bữa tiệc</a>
+                                        </li>
+                                    </Link>
+                                    <Link to="/host/create-party">
+                                        <li>
+                                            <a>Tạo bữa tiệc</a>
+                                        </li>
+                                    </Link>
                                 </ul>
                             </div>
                         </Link>

@@ -1,0 +1,33 @@
+.status123 {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #b19f9f;
+}
+
+.accept-button {
+    background-color: #ff0000; /* Màu đỏ cho accept-button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button {
+    background-color: #bcbaba; /* Màu đen nhạt cho cancel-button */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accept-button:hover {
+    background-color: #cc0000; /* Màu đỏ sậm khi hover */
+}
+
+.cancel-button:hover {
+    background-color: #868686; /* Màu xám nhạt khi hover */
+}
