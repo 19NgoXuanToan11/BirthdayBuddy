@@ -1,0 +1,66 @@
+.main {
+    h1 {
+        text-align: center;
+        margin-right: 180px;
+    }
+
+    .content-theme {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .input {
+            width: 100%;
+            width: 850px;
+            height: 80px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: #ffc107;
+            }
+        }
+    }
+
+    .theme-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-right: 50px;
+
+        .create-button,
+        .cancel-button {
+            padding: 10px 20px;
+            margin-top: 0px;
+            margin-bottom: 25px;
+            margin-left: 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+
+            &.create-button {
+                background-color: #cfa924;
+                color: #fff;
+
+                &:hover {
+                    background-color: #907619;
+                }
+            }
+
+            &.cancel-button {
+                background-color: #ccc;
+
+                &:hover {
+                    background-color: #999;
+                }
+            }
+        }
+    }
+}

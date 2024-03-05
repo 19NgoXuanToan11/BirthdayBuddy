@@ -22,47 +22,102 @@ import MomoPaymentPage from "./Web_Application/Customer Page/page/momo-payment-p
 import BookingInformationPage from "./Web_Application/Customer Page/page/booking-information-page/booking-information-page";
 import BookingSuccessPage from "./Web_Application/Customer Page/page/booking-success-page/booking-success-page";
 import BookingListPage from "./Web_Application/Customer Page/page/booking-list-page/booking-list-page";
+import PartyNotification from "./Web_Application/Customer Page/molecules/party-notification/party-notification";
+
 //import Party Hosts Pages
+import PartyList from "./Web_Application/Host Page/molecules/party-list/party-list";
+import CreateParty from "./Web_Application/Host Page/molecules/create-party/create-party";
+import CreatePartyTheme from "./Web_Application/Host Page/molecules/create-party-theme/create-party-theme";
+import CreateSpecialService from "./Web_Application/Host Page/molecules/create-special-service/create-special-service";
+import CreateFoodMenu from "./Web_Application/Host Page/molecules/create-food-menu/create-food-menu";
+import RestaurantBookingTracking from "./Web_Application/Host Page/molecules/restaurant-booking-tracking/restaurant-booking-tracking";
+import RestaurantBookingSuccess from "./Web_Application/Host Page/molecules/restaurant-booking-success/restaurant-booking-success";
+
 //import Administator Pages
 
 function App() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<GuestHomePage />} />
-        <Route path="/restaurant-list" element={<GuestRestaurantListPage />} />
-        <Route
-          path="/restaurant-details/:id"
-          element={<GuestRestaurantDetailsPage />}
-        />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/forgetpw" element={<ForgetPassword />} />
-        <Route path="/signuphost" element={<SignUpHostPage />} />
-        <Route path="/customer" element={<CustomerHome />} />
-        <Route
-          path="/customer/restaurant-list"
-          element={<CustomerRestaurantListPage />}
-        />
-        <Route
-          path="/customer/restaurant-details/:id"
-          element={<CustomerRestaurantDetailsPage />}
-        />
-        <Route path="/customer/check-out" element={<CustomerCheckoutPage />} />
-        <Route path="/customer/payment" element={<MomoPaymentPage />} />
-        <Route
-          path="/customer/booking-success"
-          element={<BookingSuccessPage />}
-        />
-        <Route
-          path="/customer/booking-information"
-          element={<BookingInformationPage />}
-        />
-        <Route path="/customer/booking-list" element={<BookingListPage />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <ScrollToTop />
+
+            <Routes>
+                {/* Guest */}
+                <Route path="/" element={<GuestHomePage />} />
+                <Route
+                    path="/restaurant-list"
+                    element={<GuestRestaurantListPage />}
+                />
+                <Route
+                    path="/restaurant-details/:id"
+                    element={<GuestRestaurantDetailsPage />}
+                />
+
+                {/* Login, Register, Forgot password */}
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/forgetpw" element={<ForgetPassword />} />
+
+                <Route path="/signuphost" element={<SignUpHostPage />} />
+
+                {/* Customer */}
+                <Route path="/customer" element={<CustomerHome />} />
+                <Route
+                    path="/customer/restaurant-list"
+                    element={<CustomerRestaurantListPage />}
+                />
+                <Route
+                    path="/customer/restaurant-details/:id"
+                    element={<CustomerRestaurantDetailsPage />}
+                />
+                <Route
+                    path="/customer/check-out"
+                    element={<CustomerCheckoutPage />}
+                />
+                <Route path="/customer/payment" element={<MomoPaymentPage />} />
+                <Route
+                    path="/customer/booking-success"
+                    element={<BookingSuccessPage />}
+                />
+                <Route
+                    path="/customer/booking-information"
+                    element={<BookingInformationPage />}
+                />
+                <Route
+                    path="/customer/booking-list"
+                    element={<BookingListPage />}
+                />
+                <Route
+                    path="/customer/notification"
+                    element={<PartyNotification />}
+                />
+
+                {/* Host */}
+                {/* <Route path="/host" element={<PartyList />} /> */}
+                <Route path="/host/list-party" element={<PartyList />} />
+                <Route path="/host/create-party" element={<CreateParty />} />
+                <Route
+                    path="/host/create-party/create-party-theme"
+                    element={<CreatePartyTheme />}
+                />
+                <Route
+                    path="/host/create-party/create-party-theme/create-special-service"
+                    element={<CreateSpecialService />}
+                />
+                <Route
+                    path="/host/create-party/create-party-theme/create-special-service/create-food-menu"
+                    element={<CreateFoodMenu />}
+                />
+                <Route
+                    path="/host/restaurant-booking-tracking"
+                    element={<RestaurantBookingTracking />}
+                />
+                <Route
+                    path="/host/restaurant-booking-tracking/restaurant-booking-success"
+                    element={<RestaurantBookingSuccess />}
+                />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
