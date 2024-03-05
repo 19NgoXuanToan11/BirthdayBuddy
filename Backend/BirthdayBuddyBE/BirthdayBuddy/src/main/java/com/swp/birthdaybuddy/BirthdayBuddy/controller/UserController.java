@@ -17,7 +17,7 @@ public class UserController {
     UserConverter userConverter;
 
 
-
+    //Đăng ký user
     @PostMapping("/register")
     public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
         UserDTO createdUserDTO = userService.createUser(userDTO);
