@@ -17,7 +17,7 @@ export default function PartyList() {
                         <input type="text" placeholder="Tìm kiếm..." />
                     </div>
                     <div className="cus-cart">
-                        <Link to={"/host"}>
+                        <Link to={"/host/list-party"}>
                             <div className="user-icon">
                                 <i className="fa fa-user">
                                     <img src="/src/SWP_RESOURCE/icon/alone.gif" />
@@ -38,9 +38,11 @@ export default function PartyList() {
                                     <li>
                                         <a>Tài khoản của tôi</a>
                                     </li>
-                                    <li>
-                                        <a>Danh sách bữa tiệc</a>
-                                    </li>
+                                    <Link to="/host/list-party">
+                                        <li>
+                                            <a>Danh sách bữa tiệc</a>
+                                        </li>
+                                    </Link>
                                     <Link to="/host/create-party">
                                         <li>
                                             <a>Tạo bữa tiệc</a>

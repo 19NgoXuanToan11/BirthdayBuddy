@@ -38,9 +38,11 @@ export default function CreateParty() {
                                     <li>
                                         <a>Tài khoản của tôi</a>
                                     </li>
-                                    <li>
-                                        <a>Danh sách bữa tiệc</a>
-                                    </li>
+                                    <Link to="/host/list-party">
+                                        <li>
+                                            <a>Danh sách bữa tiệc</a>
+                                        </li>
+                                    </Link>
                                     <li>
                                         <a>Tạo bữa tiệc</a>
                                     </li>
@@ -57,34 +59,30 @@ export default function CreateParty() {
             </header>
 
             <div className="main-content">
-                <h1>TẠO BỮA TIỆC</h1>
+                <p>TẠO BỮA TIỆC</p>
                 <div className="form">
                     <input
                         type="text"
                         placeholder="Thêm chủ đề bữa tiệc"
-                        className="input input-bordered w-full max-w-xs"
+                        className="input"
                     />
                     <input
                         type="text"
                         placeholder="Thêm dịch vụ đặc biệt"
-                        className="input input-bordered w-full max-w-xs"
+                        className="input"
                     />
                     <input
                         type="text"
                         placeholder="Thêm menu món ăn"
-                        className="input input-bordered "
+                        className="input"
                     />
                 </div>
             </div>
             <div className="form-buttons">
                 <Link to="/host/create-party/create-party-theme">
-                    <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-                        Tạo
-                    </button>
+                    <button className="create-button">Tạo</button>
                 </Link>
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-                    Hủy
-                </button>
+                <button className="cancel-button">Hủy</button>
             </div>
             <div className="guest-footer-high-page">
                 <ul className="call-us">

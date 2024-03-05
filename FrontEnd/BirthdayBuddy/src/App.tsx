@@ -39,7 +39,7 @@ function App() {
     return (
         <Router>
             <ScrollToTop />
-            
+
             <Routes>
                 {/* Guest */}
                 <Route path="/" element={<GuestHomePage />} />
@@ -51,14 +51,14 @@ function App() {
                     path="/restaurant-details/:id"
                     element={<GuestRestaurantDetailsPage />}
                 />
-                
+
                 {/* Login, Register, Forgot password */}
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
-                
+
                 <Route path="/signuphost" element={<SignUpHostPage />} />
-                
+
                 {/* Customer */}
                 <Route path="/customer" element={<CustomerHome />} />
                 <Route
@@ -93,6 +93,7 @@ function App() {
 
                 {/* Host */}
                 <Route path="/host" element={<PartyList />} />
+                <Route path="/host/list-party" element={<PartyList />} />
                 <Route path="/host/create-party" element={<CreateParty />} />
                 <Route
                     path="/host/create-party/create-party-theme"

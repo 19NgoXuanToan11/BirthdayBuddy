@@ -1,31 +1,65 @@
 .main-content {
     text-align: center;
+    margin-top: 30px;
 
-    h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #cfa924; // Màu chữ cho tiêu đề
+    p {
+        font-size: 30px;
     }
 
     .form {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 20px;
 
-        input {
+        .input {
+            width: 850px;
+            height: 80px;
             margin-bottom: 10px;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: #cfa924;
+            }
         }
     }
+}
 
-    .form-buttons {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px; // Khoảng cách từ form xuống nút
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 
-        button {
-            margin: 0 5px;
-            background-color: #cfa924; // Màu nền cho nút
-            color: #fff; // Màu chữ cho nút
+    .create-button,
+    .cancel-button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+
+        &.create-button {
+            background-color: #cfa924;
+            color: #fff;
+
+            &:hover {
+                background-color: #947a1b;
+            }
+        }
+
+        &.cancel-button {
+            background-color: #ccc;
+
+            &:hover {
+                background-color: #999;
+            }
         }
     }
 }
