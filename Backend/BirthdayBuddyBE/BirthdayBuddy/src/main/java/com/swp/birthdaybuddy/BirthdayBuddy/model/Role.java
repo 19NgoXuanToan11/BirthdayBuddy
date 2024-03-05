@@ -3,36 +3,36 @@ package com.swp.birthdaybuddy.BirthdayBuddy.model;
 import jakarta.persistence.*;
 import lombok.ToString;
 
+import java.util.Collection;
 import java.util.Set;
 @Entity
-@Table(name = "role")
+@Table(name = "Roles")
 public class Role {
-
     @Id
-    @Column(name = "role_id")
-    private int roleId;
-    @Column(name = "role_name")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "roleid")
+    private Long id;
+
+    @Column(name = "roleName", nullable = false, unique = true)
     private String roleName;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private Set<User> user;
+    @OneToMany(mappedBy = "role")
+    private Collection<User> users;
 
     public Role() {
     }
 
-    public Role(int roleId, String roleName, Set<User> user) {
-        this.roleId = roleId;
+    public Role(Long id, String roleName) {
+        this.id = id;
         this.roleName = roleName;
-        this.user = user;
     }
 
-    public int getRoleId() {
-        return roleId;
+    public Long getId() {
+        return id;
     }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getRoleName() {
@@ -41,13 +41,5 @@ public class Role {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
-    }
-
-    public Set<User> getUser() {
-        return user;
-    }
-
-    public void setUser(Set<User> user) {
-        this.user = user;
     }
 }

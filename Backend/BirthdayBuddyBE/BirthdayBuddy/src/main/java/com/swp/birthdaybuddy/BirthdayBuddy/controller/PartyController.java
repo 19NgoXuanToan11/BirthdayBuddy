@@ -18,7 +18,7 @@ public class PartyController {
         this.partyConverter = partyConverter;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<PartyDTO> createParty(@RequestBody PartyDTO partyDTO) {
         PartyDTO createdPartyDTO = partyService.createParty(partyDTO);
         return new ResponseEntity<>(createdPartyDTO, HttpStatus.CREATED);

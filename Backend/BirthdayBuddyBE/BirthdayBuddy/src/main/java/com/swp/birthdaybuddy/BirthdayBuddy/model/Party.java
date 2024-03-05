@@ -1,90 +1,84 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.model;
 
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
-@Table(name = "party")
+@Table(name = "Parties")
 public class Party {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long partyID;
+    @Column(name = "partyID")
+    private Long id;
 
-    @Column(name = "restaurant_id")
-    private Long restaurantID;
+    @ManyToOne
+    @JoinColumn(name = "restaurantID")
+    private Restaurant restaurant;
 
-    @Column(name = "district_id")
-    private Long districtID;
+    @ManyToOne
+    @JoinColumn(name = "districtID")
+    private District district;
 
+    @Column(name = "partyTheme")
     private String partyTheme;
 
-    @Column(name = "number_of_guest")
-    private int numberOfGuest;
+    @Column(name = "numberOfGuests")
+    private Integer numberOfGuests;
 
-    private double price;
+    @Column(name = "price")
+    private BigDecimal price;
 
-    @Column(name = "host_id")
-    private Long hostID;
+    @ManyToOne
+    @JoinColumn(name = "hostID")
+    private User host;
 
+    @Column(name = "status", length = 50)
     private String status;
 
-    @Column(name = "booking_date")
-    private Date bookingDate;
+    @Column(name = "bookingDate")
+    private LocalDate bookingDate;
 
-    @Column(name = "start_date")
-    private Date startDate;
+    @Column(name = "startDate")
+    private LocalDate startDate;
 
-    @Column(name = "available_date")
-    private Date availableDate;
+    @Column(name = "availableDate")
+    private LocalDate availableDate;
 
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "slot_id")
-    private Long slotID;
-
-    // Getters and setters
+    @ManyToOne
+    @JoinColumn(name = "slotID")
+    private Slot slot;
 
     public Party() {
     }
 
-    public Party(Long partyID, Long restaurantID, Long districtID, String partyTheme, int numberOfGuest, double price, Long hostID, String status, Date bookingDate, Date startDate, Date availableDate, String description, Long slotID) {
-        this.partyID = partyID;
-        this.restaurantID = restaurantID;
-        this.districtID = districtID;
-        this.partyTheme = partyTheme;
-        this.numberOfGuest = numberOfGuest;
-        this.price = price;
-        this.hostID = hostID;
-        this.status = status;
-        this.bookingDate = bookingDate;
-        this.startDate = startDate;
-        this.availableDate = availableDate;
-        this.description = description;
-        this.slotID = slotID;
+    public Long getId() {
+        return id;
     }
 
-    public Long getPartyID() {
-        return partyID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setPartyID(Long partyID) {
-        this.partyID = partyID;
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public Long getRestaurantID() {
-        return restaurantID;
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
-    public void setRestaurantID(Long restaurantID) {
-        this.restaurantID = restaurantID;
+    public District getDistrict() {
+        return district;
     }
 
-    public Long getDistrictID() {
-        return districtID;
-    }
-
-    public void setDistrictID(Long districtID) {
-        this.districtID = districtID;
+    public void setDistrict(District district) {
+        this.district = district;
     }
 
     public String getPartyTheme() {
@@ -95,28 +89,28 @@ public class Party {
         this.partyTheme = partyTheme;
     }
 
-    public int getNumberOfGuest() {
-        return numberOfGuest;
+    public Integer getNumberOfGuests() {
+        return numberOfGuests;
     }
 
-    public void setNumberOfGuest(int numberOfGuest) {
-        this.numberOfGuest = numberOfGuest;
+    public void setNumberOfGuests(Integer numberOfGuests) {
+        this.numberOfGuests = numberOfGuests;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public Long getHostID() {
-        return hostID;
+    public User getHost() {
+        return host;
     }
 
-    public void setHostID(Long hostID) {
-        this.hostID = hostID;
+    public void setHost(User host) {
+        this.host = host;
     }
 
     public String getStatus() {
@@ -127,27 +121,27 @@ public class Party {
         this.status = status;
     }
 
-    public Date getBookingDate() {
+    public LocalDate getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(Date bookingDate) {
+    public void setBookingDate(LocalDate bookingDate) {
         this.bookingDate = bookingDate;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getAvailableDate() {
+    public LocalDate getAvailableDate() {
         return availableDate;
     }
 
-    public void setAvailableDate(Date availableDate) {
+    public void setAvailableDate(LocalDate availableDate) {
         this.availableDate = availableDate;
     }
 
@@ -159,12 +153,12 @@ public class Party {
         this.description = description;
     }
 
-    public Long getSlotID() {
-        return slotID;
+    public Slot getSlot() {
+        return slot;
     }
 
-    public void setSlotID(Long slotID) {
-        this.slotID = slotID;
+    public void setSlot(Slot slot) {
+        this.slot = slot;
     }
 }
 

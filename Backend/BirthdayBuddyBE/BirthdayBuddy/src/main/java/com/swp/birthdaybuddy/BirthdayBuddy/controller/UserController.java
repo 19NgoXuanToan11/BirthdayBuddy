@@ -1,9 +1,7 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.controller;
 
-import com.swp.birthdaybuddy.BirthdayBuddy.Auth.LoginRequest;
-import com.swp.birthdaybuddy.BirthdayBuddy.Auth.RegisterRequest;
+import com.swp.birthdaybuddy.BirthdayBuddy.converter.UserConverter;
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.UserDTO;
-import com.swp.birthdaybuddy.BirthdayBuddy.model.User;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,27 +9,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
-@RequestMapping(path = "api/v1/user")
+@RequestMapping("/api/users")
 public class UserController {
     @Autowired
-    private UserService userService;
+    UserService userService;
+    @Autowired
+    UserConverter userConverter;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
-        userService.register(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully.");
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
+        UserDTO createdUserDTO = userService.createUser(userDTO);
+        return new ResponseEntity<>(createdUserDTO, HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> login(@RequestBody LoginRequest request) {
-        User user = userService.login(request);
-        if (user != null) {
-            return ResponseEntity.ok(user);
+    public ResponseEntity<Void> login(@RequestParam String username, @RequestParam String password) {
+        if (userService.login(username, password)) {
+            return ResponseEntity.ok().build();
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
