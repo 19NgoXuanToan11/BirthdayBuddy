@@ -1,62 +1,73 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 @Entity
-@Table(name = "users")
-public class User{
-
+@Table(name = "Users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
-    private String username;
-    private String password;
-    private String fullName;
-    private String email;
-    private String phone;
+    @Column(name = "userID")
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "roleid")
     private Role role;
 
+    @Column(name = "userName", nullable = false)
+    private String userName;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "fullName", nullable = false)
+    private String fullName;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "phone", length = 20)
+    private String phone;
+
+    @Column(name = "status", length = 50)
+    private String status;
+
     public User() {
     }
 
-    public User(Long userId, String username, String password, String fullName, String email, String phone, Role role) {
-        this.userId = userId;
-        this.username = username;
+    public User(Long id, Role role, String userName, String password, String fullName, String email, String phone, String status) {
+        this.id = id;
+        this.role = role;
+        this.userName = userName;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
+        this.status = status;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
         this.role = role;
     }
 
-    public Long getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -91,11 +102,11 @@ public class User{
         this.phone = phone;
     }
 
-    public Role getRole() {
-        return role;
+    public String getStatus() {
+        return status;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -6,29 +6,29 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDTO {
-    private Long userId;
-    private String username;
+    private Long id;
+    private String userName;
     private String password;
     private String fullName;
     private String email;
     private String phone;
     private String status;
-    private RoleDTO role;
+    private Long roleId;
 
-    public Long getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -71,25 +71,11 @@ public class UserDTO {
         this.status = status;
     }
 
-    public RoleDTO getRole() {
-        return role;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setRole(RoleDTO role) {
-        this.role = role;
-    }
-
-    @Override
-    public String toString() {
-        return "UserDTO{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", status='" + status + '\'' +
-                ", role=" + role +
-                '}';
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 }

@@ -3,21 +3,20 @@ package com.swp.birthdaybuddy.BirthdayBuddy.controller;
 import com.swp.birthdaybuddy.BirthdayBuddy.converter.UserConverter;
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.UserDTO;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api/users")
 public class UserController {
-    private final UserService userService;
-    private final UserConverter userConverter;
+    @Autowired
+    UserService userService;
+    @Autowired
+    UserConverter userConverter;
 
-    public UserController(UserService userService, UserConverter userConverter) {
-        this.userService = userService;
-        this.userConverter = userConverter;
-    }
+
 
     @PostMapping("/register")
     public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
