@@ -23,9 +23,16 @@ import BookingInformationPage from "./Web_Application/Customer Page/page/booking
 import BookingSuccessPage from "./Web_Application/Customer Page/page/booking-success-page/booking-success-page";
 import BookingListPage from "./Web_Application/Customer Page/page/booking-list-page/booking-list-page";
 import PartyNotification from "./Web_Application/Customer Page/molecules/party-notification/party-notification";
+
+//import Party Hosts Pages
 import PartyList from "./Web_Application/Host Page/molecules/party-list/party-list";
 import CreateParty from "./Web_Application/Host Page/molecules/create-party/create-party";
-//import Party Hosts Pages
+import CreatePartyTheme from "./Web_Application/Host Page/molecules/create-party-theme/create-party-theme";
+import CreateSpecialService from "./Web_Application/Host Page/molecules/create-special-service/create-special-service";
+import CreateFoodMenu from "./Web_Application/Host Page/molecules/create-food-menu/create-food-menu";
+import RestaurantBookingTracking from "./Web_Application/Host Page/molecules/restaurant-booking-tracking/restaurant-booking-tracking";
+import RestaurantBookingSuccess from "./Web_Application/Host Page/molecules/restaurant-booking-success/restaurant-booking-success";
+
 //import Administator Pages
 
 function App() {
@@ -42,10 +49,13 @@ function App() {
                     path="/restaurant-details/:id"
                     element={<GuestRestaurantDetailsPage />}
                 />
+                
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/forgetpw" element={<ForgetPassword />} />
+                
                 <Route path="/signuphost" element={<SignUpHostPage />} />
+                
                 <Route path="/customer" element={<CustomerHome />} />
                 <Route
                     path="/customer/restaurant-list"
@@ -76,8 +86,29 @@ function App() {
                     path="/customer/notification"
                     element={<PartyNotification />}
                 />
+
                 <Route path="/host" element={<PartyList />} />
                 <Route path="/host/create-party" element={<CreateParty />} />
+                <Route
+                    path="/host/create-party/create-party-theme"
+                    element={<CreatePartyTheme />}
+                />
+                <Route
+                    path="/host/create-party/create-party-theme/create-special-service"
+                    element={<CreateSpecialService />}
+                />
+                <Route
+                    path="/host/create-party/create-party-theme/create-special-service/create-food-menu"
+                    element={<CreateFoodMenu />}
+                />
+                <Route
+                    path="/host/restaurant-booking-tracking"
+                    element={<RestaurantBookingTracking />}
+                />
+                <Route
+                    path="/host/restaurant-booking-tracking/restaurant-booking-success"
+                    element={<RestaurantBookingSuccess />}
+                />
             </Routes>
         </Router>
     );

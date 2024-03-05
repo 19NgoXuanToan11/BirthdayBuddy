@@ -77,7 +77,7 @@ export default function CreateParty() {
                 </div>
             </div>
             <div className="form-buttons">
-                <Link to="/host/create-party/">
+                <Link to="/host/create-party/create-party-theme">
                     <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
                         Tạo
                     </button>
