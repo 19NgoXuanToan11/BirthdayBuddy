@@ -25,23 +25,21 @@ public class User{
     private String fullName;
     private String email;
     private String phone;
-    private String status;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "roleid")
     private Role role;
 
     public User() {
     }
 
-    public User(Long userId, String username, String password, String fullName, String email, String phone, String status, Role role) {
+    public User(Long userId, String username, String password, String fullName, String email, String phone, Role role) {
         this.userId = userId;
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-        this.status = status;
         this.role = role;
     }
 
@@ -91,14 +89,6 @@ public class User{
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Role getRole() {

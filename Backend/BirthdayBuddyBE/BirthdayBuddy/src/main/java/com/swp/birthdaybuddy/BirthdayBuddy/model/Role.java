@@ -9,9 +9,9 @@ import java.util.Set;
 public class Role {
 
     @Id
-    @Column(name = "roleId")
+    @Column(name = "roleid")
     private int roleId;
-    @Column(name = "roleName")
+    @Column(name = "rolename")
     private String roleName;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)

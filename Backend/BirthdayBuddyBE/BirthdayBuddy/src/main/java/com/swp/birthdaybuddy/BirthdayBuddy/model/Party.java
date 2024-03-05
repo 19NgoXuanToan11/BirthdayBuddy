@@ -4,42 +4,25 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "party")
+@Table(name = "parties")
 public class Party {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long partyID;
 
-    @Column(name = "restaurant_id")
     private Long restaurantID;
-
-    @Column(name = "district_id")
     private Long districtID;
-
     private String partyTheme;
-
-    @Column(name = "number_of_guest")
     private int numberOfGuest;
-
     private double price;
-
-    @Column(name = "host_id")
     private Long hostID;
 
     private String status;
-
-    @Column(name = "booking_date")
     private Date bookingDate;
-
-    @Column(name = "start_date")
     private Date startDate;
-
-    @Column(name = "available_date")
     private Date availableDate;
 
     private String description;
-
-    @Column(name = "slot_id")
     private Long slotID;
 
     // Getters and setters
