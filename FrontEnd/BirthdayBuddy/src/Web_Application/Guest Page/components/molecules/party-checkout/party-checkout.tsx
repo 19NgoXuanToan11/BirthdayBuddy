@@ -59,7 +59,7 @@ export default function PartyCheckout() {
                         </select>
                     </div>
                     <div className="input-version-2">
-                        <h5>Menu</h5>
+                        <h5>Menu món ăn</h5>
                         <select className="select select-bordered w-full max-w-xs">
                             <option>Món ăn nhanh</option>
                             <option>Han Solo</option>

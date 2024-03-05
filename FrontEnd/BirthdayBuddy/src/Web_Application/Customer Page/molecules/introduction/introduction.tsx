@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./introduction.scss"; // Import SCSS file
-
+import { Link } from "react-scroll"
 function Introduction() {
     const images = [
         "/src/SWP_RESOURCE/pictures/carousel_1.png",
@@ -16,6 +16,8 @@ function Introduction() {
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
 
         responsive: [
             {
@@ -51,14 +53,19 @@ function Introduction() {
                     </div>
                 ))}
             </Slider>
-            <h1 className="title-body">Lưu giữ cột mốc tuổi thơ</h1>
-            <button
-                className="action-button"
-                role="button"
-                aria-pressed="false"
-            >
-                Đặt tiệc ngay
-            </button>
+            <h1>Lưu giữ cột mốc tuổi thơ</h1>
+            <h2>
+                Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
+            </h2>
+            <Link to="party-information-container">
+                <button
+                    className="action-button"
+                    role="button"
+                    aria-pressed="false"
+                >
+                    Đặt tiệc ngay
+                </button>
+            </Link>
         </div>
     );
 }

@@ -43,7 +43,6 @@ body {
         .search-bar {
             position: relative;
             box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.1);
-            border-radius: 10px 10px 10px 10px;
 
             input[type="text"] {
                 width: 700px;
@@ -53,9 +52,9 @@ body {
             }
         }
 
-        .cus-cart {
+        .user-cart {
             display: flex;
-            margin-right: 14px;
+            margin-right: 100px;
 
             a {
                 text-decoration: none;
@@ -68,17 +67,7 @@ body {
             }
 
             img {
-                height: 50px;
-                width: 50px;
-            }
-            .user-name {
-                color: #333;
-                font-size: 20px;
-                margin-top: -38px;
-            }
-            .user-icon {
-                margin-left: -50px;
-                margin-bottom: -34px;
+                height: 40px;
             }
         }
     }
@@ -103,6 +92,27 @@ body {
 
                     &:hover {
                         color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    nav.lower-header {
+        background-color: #f8f8f8;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        ul {
+            li {
+                a {
+                    padding: 0.75em 1em;
+                    margin: 1 3px;
+                    display: block;
+                    transition: background-color 0.5s, color 0.5s;
+
+                    &:hover {
+                        background-color: $primary-color;
+                        color: white;
                     }
                 }
             }
