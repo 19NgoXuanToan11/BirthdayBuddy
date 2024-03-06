@@ -1,0 +1,141 @@
+$primary-color: #a48a00;
+$font-family: Itim;
+$secondary-color: #f0f0f0;
+$border-color: #ccc;
+$hover-color: $primary-color;
+$color-primary: #a48a00;
+$color-text: #fff;
+$color-contact: #ecc769;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: $font-family;
+}
+.user-body {
+    height: 800px;
+
+    .user-body-container-left {
+        .user-title {
+            margin-left: 87px;
+            position: relative;
+            top: 20px;
+            font-size: 30px;
+            font-family: $font-family;
+            font-weight: 500;
+            line-height: 60px;
+        }
+        .userPic img {
+            width: 169px;
+        }
+    }
+
+    .user-body-container-right {
+        width: 1000px;
+        margin-top: 25px;
+        margin-left: 450px;
+
+        .user-table {
+            border-radius: 15px;
+            height: 640px;
+            border: 1px solid black;
+            width: 87%;
+            margin-left: 70px;
+            .user-table-top {
+                border-radius: 15px 15px 0 0;
+                background-color: #cfa924;
+                display: flex;
+                align-items: center;
+                height: 100px;
+                .user-name {
+                    margin-left: 30px;
+                    text-align: center;
+                    font-size: 27px;
+                    font-family: $font-family;
+                    font-weight: 500;
+                    line-height: 60px;
+                }
+            }
+            .user-table-middle {
+                border-top: 0.5px solid black;
+                border-bottom: 0.5px solid black;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 100%;
+                height: 350px;
+                .thong-tin-chung {
+                    margin-bottom: 169px;
+                    .thong-tin {
+                        font-size: 25px;
+                        color: black;
+                        margin-left: 45px;
+                        margin-top: 127px;
+                    }
+
+                    .middle-left {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 50px;
+                        margin-top: 30px;
+                        font-size: 15px;
+                    }
+                    .middle-left span {
+                        margin-bottom: 30px; /* Thêm một khoảng cách 10px giữa các thẻ span */
+                    }
+                    .user-info {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 100px;
+                        margin-top: -215px;
+                        font-size: 17px;
+                    }
+                    .user-info span {
+                        margin-bottom: 28px;
+                    }
+                    .middle-right {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 15px;
+                        margin-top: -204px;
+                        margin-left: 500px;
+                    }
+                    .middle-right span {
+                        margin-bottom: 30px; /* Thêm một khoảng cách 10px giữa các thẻ span */
+                    }
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 100px;
+                        margin-top: -160px;
+                        font-size: 17px;
+                    }
+                    .info span {
+                        margin-bottom: 28px;
+                    }
+                }
+            }
+
+            .user-table-bottom {
+                height: 350px;
+                .mua-hang-chung {
+                    .mua-hang {
+                        font-size: 25px;
+                        color: black;
+                        margin-left: 45px;
+                        margin-top: 20px;
+                    }
+                    .xem-button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 17vh;
+                    }
+                }
+            }
+        }
+    }
+}
