@@ -15,7 +15,7 @@ function CustomerHeader() {
                     <input type="text" placeholder="Tìm kiếm..." />
                 </div>
                 <div className="cus-cart">
-                    <Link to={"/customer/"}>
+                    <Link to={"/customer/information"}>
                         <div className="user-icon">
                             <i className="fa fa-user">
                                 <img src="/src/SWP_RESOURCE/icon/alone.gif" />
