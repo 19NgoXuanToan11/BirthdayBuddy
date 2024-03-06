@@ -11,24 +11,15 @@ function CustomerHeader() {
           </Link>
         </div>
 
-                <div className="search-bar">
-                    <input type="text" placeholder="Tìm kiếm..." />
-                </div>
-                <div className="cus-cart">
-                    <Link to={"/customer/information"}>
-                        <div className="user-icon">
-                            <i className="fa fa-user">
-                                <img src="/src/SWP_RESOURCE/icon/alone.gif" />
-                            </i>
-                        </div>
-                        <div className="user-name">Nguyễn Văn A</div>
-                    </Link>
-                    <Link to="/customer/notification">
-                        <i className="fa fa-shopping-cart">
-                            <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" />
-                        </i>
-                    </Link>
-                </div>
+        <div className="search-bar">
+          <input type="text" placeholder="Tìm kiếm..." />
+        </div>
+        <div className="cus-cart">
+          <Link to={"/customer/information"}>
+            <div className="user-icon">
+              <i className="fa fa-user">
+                <img src="/src/SWP_RESOURCE/icon/alone.gif" />
+              </i>
             </div>
             <div className="user-name">Nguyễn Văn A</div>
           </Link>
