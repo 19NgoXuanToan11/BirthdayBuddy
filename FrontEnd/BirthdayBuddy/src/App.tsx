@@ -61,6 +61,7 @@ function App() {
 
         {/* Customer */}
         <Route path="/customer" element={<CustomerHome />} />
+        <Route path="/customer/information" element={<UserInformationPage />} />
         <Route
           path="/customer/restaurant-list"
           element={<CustomerRestaurantListPage />}

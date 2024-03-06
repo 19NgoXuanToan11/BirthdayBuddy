@@ -39,7 +39,7 @@ export default function Login() {
           </div>
 
           <div className="signIn">
-            <Link to={"/host/list-party"}>
+            <Link to={"/customer"}>
               <button type="submit">Login</button>
             </Link>
           </div>
