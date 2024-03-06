@@ -52,7 +52,7 @@ export default function PartyList() {
                                     <td>Chưa diễn ra</td>
                                 </tr>
                                 <tr>
-                                    <th>3</th>
+                                    <th>4</th>
                                     <td>8:30 15/02/2024</td>
                                     <td>20/02/2024</td>
                                     <td>Bãi biển</td>
