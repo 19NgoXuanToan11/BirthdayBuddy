@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./config/scrollToTop";
 import "./App.scss";
+import axios from "axios";
 
 // Import Guest Pages
 import GuestHomePage from "./Web_Application/Guest Page/components/pages/home-page/guest-home-page";
@@ -26,21 +27,23 @@ import PartyNotification from "./Web_Application/Customer Page/molecules/party-n
 import UserInformationPage from "./Web_Application/Customer Page/page/user-information-page/user-information-page";
 
 //import Party Hosts Pages
-import PartyList from "./Web_Application/Host Page/molecules/party-list/party-list";
-import CreateParty from "./Web_Application/Host Page/molecules/create-party/create-party";
-import CreatePartyTheme from "./Web_Application/Host Page/molecules/create-party-theme/create-party-theme";
-import CreateSpecialService from "./Web_Application/Host Page/molecules/create-special-service/create-special-service";
-import CreateFoodMenu from "./Web_Application/Host Page/molecules/create-food-menu/create-food-menu";
-import RestaurantBookingTracking from "./Web_Application/Host Page/molecules/restaurant-booking-tracking/restaurant-booking-tracking";
-import RestaurantBookingSuccess from "./Web_Application/Host Page/molecules/restaurant-booking-success/restaurant-booking-success";
+import CreateFoodMenuPage from "./Web_Application/Party Host Page/components/pages/host-create-food-menu-page/create-food-menu-page";
+import HostPartyListPage from "./Web_Application/Party Host Page/components/pages/host-party-list-page/host-party-list-page";
+import HostCreatePartyPage from "./Web_Application/Party Host Page/components/pages/host-create-party-page/host-create-party-page";
+import HostCreatePartyThemePage from "./Web_Application/Party Host Page/components/pages/host-create-party-theme-page/host-create-party-theme-page";
+import HostCreateSpecialServicePage from "./Web_Application/Party Host Page/components/pages/host-create-special-service-page/host-create-special-service-page";
+import RestaurantBookingTracking from "./Web_Application/Party Host Page/components/molecules/restaurant-booking-tracking/restaurant-booking-tracking";
+import RestaurantBookingSuccess from "./Web_Application/Party Host Page/components/molecules/restaurant-booking-success/restaurant-booking-success";
 
 //import Administator Pages
 
 function App() {
+  const user = sessionStorage.getItem("loginedUser")
+    ? JSON.parse(sessionStorage.getItem("loginedUser"))
+    : null;
   return (
     <Router>
       <ScrollToTop />
-
       <Routes>
         {/* Guest */}
         <Route path="/" element={<GuestHomePage />} />
@@ -50,11 +53,10 @@ function App() {
           element={<GuestRestaurantDetailsPage />}
         />
 
-        {/* Login, Register, Forgot password */}
+        {/* Authorized */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgetpw" element={<ForgetPassword />} />
-
         <Route path="/signuphost" element={<SignUpHostPage />} />
 
         {/* Customer */}
@@ -79,26 +81,21 @@ function App() {
         />
         <Route path="/customer/booking-list" element={<BookingListPage />} />
         <Route path="/customer/notification" element={<PartyNotification />} />
-        <Route
-          path="/customer/user-information"
-          element={<UserInformationPage />}
-        />
 
         {/* Host */}
-        {/* <Route path="/host" element={<PartyList />} /> */}
-        <Route path="/host/list-party" element={<PartyList />} />
-        <Route path="/host/create-party" element={<CreateParty />} />
+        <Route path="/host/list-party" element={<HostPartyListPage />} />
+        <Route path="/host/create-party" element={<HostCreatePartyPage />} />
         <Route
           path="/host/create-party/create-party-theme"
-          element={<CreatePartyTheme />}
+          element={<HostCreatePartyThemePage />}
         />
         <Route
           path="/host/create-party/create-party-theme/create-special-service"
-          element={<CreateSpecialService />}
+          element={<HostCreateSpecialServicePage />}
         />
         <Route
           path="/host/create-party/create-party-theme/create-special-service/create-food-menu"
-          element={<CreateFoodMenu />}
+          element={<CreateFoodMenuPage />}
         />
         <Route
           path="/host/restaurant-booking-tracking"
