@@ -24,6 +24,7 @@ import BookingInformationPage from "./Web_Application/Customer Page/page/booking
 import BookingSuccessPage from "./Web_Application/Customer Page/page/booking-success-page/booking-success-page";
 import BookingListPage from "./Web_Application/Customer Page/page/booking-list-page/booking-list-page";
 import PartyNotification from "./Web_Application/Customer Page/molecules/party-notification/party-notification";
+import UserInformationPage from "./Web_Application/Customer Page/page/user-information-page/user-information-page";
 
 //import Party Hosts Pages
 import CreateFoodMenuPage from "./Web_Application/Party Host Page/components/pages/host-create-food-menu-page/create-food-menu-page";
@@ -37,44 +38,76 @@ import RestaurantBookingSuccess from "./Web_Application/Party Host Page/componen
 //import Administator Pages
 
 function App() {
-    const user = sessionStorage.getItem('loginedUser') ? JSON.parse(sessionStorage.getItem('loginedUser')) : null;
-    return (
-        <Router>
-            <ScrollToTop />
-            <Routes>
-                {/* Guest */}
-                <Route path="/" element={<GuestHomePage />} />
-                <Route path="/restaurant-list" element={<GuestRestaurantListPage />} />
-                <Route path="/restaurant-details/:id" element={<GuestRestaurantDetailsPage />} />
+  const user = sessionStorage.getItem("loginedUser")
+    ? JSON.parse(sessionStorage.getItem("loginedUser"))
+    : null;
+  return (
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        {/* Guest */}
+        <Route path="/" element={<GuestHomePage />} />
+        <Route path="/restaurant-list" element={<GuestRestaurantListPage />} />
+        <Route
+          path="/restaurant-details/:id"
+          element={<GuestRestaurantDetailsPage />}
+        />
 
-                {/* Authorized */}
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/forgetpw" element={<ForgetPassword />} />
-                <Route path="/signuphost" element={<SignUpHostPage />} />
+        {/* Authorized */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgetpw" element={<ForgetPassword />} />
+        <Route path="/signuphost" element={<SignUpHostPage />} />
 
-                {/* Customer */}
-                <Route path="/customer" element={<CustomerHome />} />
-                <Route path="/customer/restaurant-list" element={<CustomerRestaurantListPage />} />
-                <Route path="/customer/restaurant-details/:id" element={<CustomerRestaurantDetailsPage />} />
-                <Route path="/customer/check-out" element={<CustomerCheckoutPage />} />
-                <Route path="/customer/payment" element={<MomoPaymentPage />} />
-                <Route path="/customer/booking-success" element={<BookingSuccessPage />} />
-                <Route path="/customer/booking-information" element={<BookingInformationPage />} />
-                <Route path="/customer/booking-list" element={<BookingListPage />} />
-                <Route path="/customer/notification" element={<PartyNotification />} />
+        {/* Customer */}
+        <Route path="/customer" element={<CustomerHome />} />
+        <Route
+          path="/customer/restaurant-list"
+          element={<CustomerRestaurantListPage />}
+        />
+        <Route
+          path="/customer/restaurant-details/:id"
+          element={<CustomerRestaurantDetailsPage />}
+        />
+        <Route path="/customer/check-out" element={<CustomerCheckoutPage />} />
+        <Route path="/customer/payment" element={<MomoPaymentPage />} />
+        <Route
+          path="/customer/booking-success"
+          element={<BookingSuccessPage />}
+        />
+        <Route
+          path="/customer/booking-information"
+          element={<BookingInformationPage />}
+        />
+        <Route path="/customer/booking-list" element={<BookingListPage />} />
+        <Route path="/customer/notification" element={<PartyNotification />} />
 
-                {/* Host */}
-                <Route path="/host/list-party" element={<HostPartyListPage />} />
-                <Route path="/host/create-party" element={<HostCreatePartyPage />} />
-                <Route path="/host/create-party/create-party-theme" element={<HostCreatePartyThemePage />} />
-                <Route path="/host/create-party/create-party-theme/create-special-service" element={<HostCreateSpecialServicePage />} />
-                <Route path="/host/create-party/create-party-theme/create-special-service/create-food-menu" element={<CreateFoodMenuPage />} />
-                <Route path="/host/restaurant-booking-tracking" element={<RestaurantBookingTracking />} />
-                <Route path="/host/restaurant-booking-tracking/restaurant-booking-success" element={<RestaurantBookingSuccess />} />
-            </Routes>
-        </Router>
-    );
+        {/* Host */}
+        <Route path="/host/list-party" element={<HostPartyListPage />} />
+        <Route path="/host/create-party" element={<HostCreatePartyPage />} />
+        <Route
+          path="/host/create-party/create-party-theme"
+          element={<HostCreatePartyThemePage />}
+        />
+        <Route
+          path="/host/create-party/create-party-theme/create-special-service"
+          element={<HostCreateSpecialServicePage />}
+        />
+        <Route
+          path="/host/create-party/create-party-theme/create-special-service/create-food-menu"
+          element={<CreateFoodMenuPage />}
+        />
+        <Route
+          path="/host/restaurant-booking-tracking"
+          element={<RestaurantBookingTracking />}
+        />
+        <Route
+          path="/host/restaurant-booking-tracking/restaurant-booking-success"
+          element={<RestaurantBookingSuccess />}
+        />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
