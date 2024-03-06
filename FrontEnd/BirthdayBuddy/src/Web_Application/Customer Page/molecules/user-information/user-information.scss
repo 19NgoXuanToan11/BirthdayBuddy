@@ -15,34 +15,44 @@ body {
     font-family: $font-family;
 }
 .user-body {
-    height: 800px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
     .user-body-container-left {
-        .user-title {
-            margin-left: 87px;
-            position: relative;
-            top: 20px;
-            font-size: 30px;
-            font-family: $font-family;
-            font-weight: 500;
-            line-height: 60px;
-        }
-        .userPic img {
-            width: 169px;
+        margin: 0 138px 226px -10px;
+        .user-thong-tin {
+            text-align: center;
+            .user-title {
+                font-size: 30px;
+                font-family: $font-family;
+                font-weight: 500;
+                line-height: 60px;
+            }
+
+            .userPic img {
+                width: 150px;
+                border-radius: 30px;
+                margin-top: 25px;
+            }
+            .userLogout {
+                margin: 43px 162px -59px 8px;
+            }
+            .userLogout img {
+                width: 20px;
+            }
         }
     }
 
     .user-body-container-right {
         width: 1000px;
-        margin-top: 25px;
-        margin-left: 450px;
+        margin-right: -238px;
 
         .user-table {
             border-radius: 15px;
             height: 640px;
             border: 1px solid black;
             width: 87%;
-            margin-left: 70px;
             .user-table-top {
                 border-radius: 15px 15px 0 0;
                 background-color: #cfa924;

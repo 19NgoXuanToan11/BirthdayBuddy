@@ -81,6 +81,10 @@ function App() {
         />
         <Route path="/customer/booking-list" element={<BookingListPage />} />
         <Route path="/customer/notification" element={<PartyNotification />} />
+        <Route
+          path="/customer/user-information"
+          element={<UserInformationPage />}
+        />
 
         {/* Host */}
         <Route path="/host/list-party" element={<HostPartyListPage />} />
