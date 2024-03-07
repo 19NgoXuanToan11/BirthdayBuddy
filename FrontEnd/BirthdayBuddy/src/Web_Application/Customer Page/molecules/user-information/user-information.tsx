@@ -10,7 +10,15 @@ export default function UserInformation() {
           <div className="user-thong-tin">
             <div className="user-title">TÀI KHOẢN CÁ NHÂN</div>
             <div className="userPic">
-              <img src="./Logo.png" alt=""></img>
+              <img src="/src/SWP_RESOURCE/pictures/pinata.jpg" alt=""></img>
+            </div>
+            <div className="userLogout">
+              <img src="/src/SWP_RESOURCE/icon/logout.png" alt=""></img>
+            </div>
+            <div className="logout">
+              <Link to={"/"}>
+                <button type="submit">Đăng xuất</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -54,9 +62,7 @@ export default function UserInformation() {
                 <div className="mua-hang">Thông tin đặt tiệc</div>
                 <div className="xem-button">
                   <Link to={"/customer/booking-success"}>
-                    <button type="submit">
-                      Click tại đây để xem thông tin đặt tiệc
-                    </button>
+                    <button type="submit">Xem thông tin đặt tiệc</button>
                   </Link>
                 </div>
               </div>
