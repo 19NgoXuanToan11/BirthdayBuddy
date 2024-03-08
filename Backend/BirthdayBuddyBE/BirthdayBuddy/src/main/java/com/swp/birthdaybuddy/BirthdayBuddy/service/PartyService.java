@@ -6,4 +6,5 @@ import org.springframework.stereotype.Service;
 public interface PartyService {
     PartyDTO createParty(PartyDTO partyDTO);
     void deleteParty(Long partyID);
+    PartyDTO getParty(Long partyID);
 }

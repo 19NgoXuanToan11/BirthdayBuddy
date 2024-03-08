@@ -29,4 +29,8 @@ public class PartyController {
         partyService.deleteParty(partyID);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/getParty")
+    public PartyDTO getParty(@RequestParam Long partyID){
+        return partyService.getParty(partyID);
+    }
 }

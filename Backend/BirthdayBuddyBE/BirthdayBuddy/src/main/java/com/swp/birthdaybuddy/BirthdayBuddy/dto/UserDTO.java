@@ -12,7 +12,6 @@ public class UserDTO {
     private String fullName;
     private String email;
     private String phone;
-    private String status;
     private Long roleId;
 
     public Long getId() {
@@ -61,14 +60,6 @@ public class UserDTO {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Long getRoleId() {
