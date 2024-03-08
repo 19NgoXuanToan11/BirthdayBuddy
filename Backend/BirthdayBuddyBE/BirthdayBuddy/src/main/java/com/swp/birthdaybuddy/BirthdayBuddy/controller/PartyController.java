@@ -7,8 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/parties")
+@RequestMapping("/api/parties")
 public class PartyController {
     private final PartyService partyService;
     private final PartyConverter partyConverter;
@@ -29,8 +31,13 @@ public class PartyController {
         partyService.deleteParty(partyID);
         return ResponseEntity.noContent().build();
     }
-    @GetMapping("/getParty")
-    public PartyDTO getParty(@RequestParam Long partyID){
+    @GetMapping("/{partyID}")
+    public PartyDTO getParty(@PathVariable Long partyID) {
         return partyService.getParty(partyID);
+    }
+
+    @GetMapping("/all")
+    public List<PartyDTO> getAllParties() {
+        return partyService.getAllParties();
     }
 }
