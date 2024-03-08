@@ -8,6 +8,6 @@ import java.util.List;
 public interface PartyService {
     PartyDTO createParty(PartyDTO partyDTO);
     void deleteParty(Long partyID);
-    PartyDTO getParty(Long partyId);
+    PartyDTO getParty(Long partyID);
     List<PartyDTO> getAllParties();
 }

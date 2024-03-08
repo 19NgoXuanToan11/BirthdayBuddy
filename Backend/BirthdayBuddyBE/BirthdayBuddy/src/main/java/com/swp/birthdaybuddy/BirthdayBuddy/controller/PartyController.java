@@ -31,9 +31,9 @@ public class PartyController {
         partyService.deleteParty(partyID);
         return ResponseEntity.noContent().build();
     }
-    @GetMapping("/{partyId}")
-    public PartyDTO getParty(@PathVariable Long partyId) {
-        return partyService.getParty(partyId);
+    @GetMapping("/{partyID}")
+    public PartyDTO getParty(@PathVariable Long partyID) {
+        return partyService.getParty(partyID);
     }
 
     @GetMapping("/all")
