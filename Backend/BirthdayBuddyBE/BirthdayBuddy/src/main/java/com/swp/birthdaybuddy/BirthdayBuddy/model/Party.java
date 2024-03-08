@@ -18,10 +18,6 @@ public class Party {
     @JoinColumn(name = "restaurantID")
     private Restaurant restaurant;
 
-    @ManyToOne
-    @JoinColumn(name = "districtID")
-    private District district;
-
     @Column(name = "partyTheme")
     private String partyTheme;
 
@@ -71,14 +67,6 @@ public class Party {
 
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
-    }
-
-    public District getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(District district) {
-        this.district = district;
     }
 
     public String getPartyTheme() {

@@ -17,6 +17,7 @@ public class Restaurant {
     @Column(name = "restaurantName", nullable = false)
     private String restaurantName;
 
+
     @Column(name = "address")
     private String address;
 
