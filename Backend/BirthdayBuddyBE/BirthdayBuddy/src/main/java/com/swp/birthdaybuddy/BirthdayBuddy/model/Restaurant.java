@@ -10,10 +10,6 @@ public class Restaurant {
     @Column(name = "restaurantID")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "districtID")
-    private District district;
-
     @Column(name = "restaurantName", nullable = false)
     private String restaurantName;
 
@@ -24,9 +20,8 @@ public class Restaurant {
     public Restaurant() {
     }
 
-    public Restaurant(Long id, District district, String restaurantName, String address) {
+    public Restaurant(Long id, String restaurantName, String address) {
         this.id = id;
-        this.district = district;
         this.restaurantName = restaurantName;
         this.address = address;
     }
@@ -37,14 +32,6 @@ public class Restaurant {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public District getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(District district) {
-        this.district = district;
     }
 
     public String getRestaurantName() {

@@ -29,9 +29,6 @@ public class User {
     @Column(name = "phone", length = 20)
     private String phone;
 
-    @Column(name = "status", length = 50)
-    private String status;
-
     public User() {
     }
 
@@ -43,7 +40,6 @@ public class User {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-        this.status = status;
     }
 
     public Long getId() {
@@ -102,11 +98,4 @@ public class User {
         this.phone = phone;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
