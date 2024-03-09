@@ -26,6 +26,11 @@ public class PartyServiceImpl implements PartyService {
     }
 
     @Override
+    public List<PartyDTO> getAllParty() {
+        return null;
+    }
+
+    @Override
     public PartyDTO createParty(PartyDTO partyDTO) {
         // Convert DTO to entity
         Party party = modelMapper.map(partyDTO, Party.class);

@@ -1,12 +1,34 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./login.scss";
+import { loginAPI } from "../../../../../../src/config/authAPI"; // Update the path accordingly
 
-export default function Login() {
+const Login: React.FC = () => {
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const togglePasswordVisibility = (): void => {
     setShowPassword(!showPassword);
+  };
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    try {
+      const res = await loginAPI({ username, password });
+      if (res) {
+        // Handle successful login, such as storing user data in sessionStorage
+        console.log("Login successful");
+        // Redirect or perform other actions after successful login
+      } else {
+        // Handle login failure, display error message to the user
+        toast.error("Invalid username or password");
+      }
+    } catch (error) {
+      console.error("Error occurred during login:", error);
+      toast.error("An error occurred during login. Please try again later.");
+    }
   };
 
   return (
@@ -15,14 +37,16 @@ export default function Login() {
         <div className="logoLogin">
           <img src="./Logo.png" alt="" />
         </div>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="group">
-            <input type="text" placeholder="Tên Đăng Nhập" />
+            <input type="text" placeholder="Tên Đăng Nhập" value={username} onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div className="group">
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Mật Khẩu"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button
               type="button"
@@ -39,9 +63,7 @@ export default function Login() {
           </div>
 
           <div className="signIn">
-            <Link to={"/customer"}>
-              <button type="submit">Login</button>
-            </Link>
+            <button type="submit">Login</button>
           </div>
           <div className="register-prompt">
             <div className="account-absent">
@@ -77,3 +99,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;
