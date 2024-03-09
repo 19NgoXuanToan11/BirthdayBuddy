@@ -23,7 +23,7 @@ public class PartyController {
     @PostMapping("/create")
     public ResponseEntity<PartyDTO> createParty(@RequestBody PartyDTO partyDTO) {
         PartyDTO createdPartyDTO = partyService.createParty(partyDTO);
-        return new ResponseEntity<>(createdPartyDTO, HttpStatus.CREATED);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdPartyDTO);
     }
 
     @DeleteMapping("/{partyID}")

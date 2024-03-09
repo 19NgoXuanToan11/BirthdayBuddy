@@ -27,8 +27,14 @@ public class PartyServiceImpl implements PartyService {
 
     @Override
     public PartyDTO createParty(PartyDTO partyDTO) {
+        // Convert DTO to entity
         Party party = modelMapper.map(partyDTO, Party.class);
-        return modelMapper.map(partyRepository.save(party), PartyDTO.class);
+
+        // Save party entity
+        Party savedParty = partyRepository.save(party);
+
+        // Convert the saved party entity back to DTO and return
+        return modelMapper.map(savedParty, PartyDTO.class);
     }
 
     @Override
