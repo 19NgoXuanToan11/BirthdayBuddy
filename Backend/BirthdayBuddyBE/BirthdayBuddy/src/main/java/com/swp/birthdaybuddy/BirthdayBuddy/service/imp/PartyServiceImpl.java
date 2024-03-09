@@ -8,6 +8,7 @@ import com.swp.birthdaybuddy.BirthdayBuddy.service.PartyService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -47,6 +48,27 @@ public class PartyServiceImpl implements PartyService {
         return parties.stream()
                 .map(partyConverter::toDTO)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public PartyDTO updateParty(Long partyID, PartyDTO partyDTO) {
+        // Check if the party exists
+        Party existingParty = partyRepository.findById(partyID).orElseThrow(() -> new RuntimeException("Party not found with id: " + partyID));
+
+        // Update the party details
+        existingParty.setPartyTheme(partyDTO.getPartyTheme());
+        existingParty.setNumberOfGuests(partyDTO.getNumberOfGuest());
+        existingParty.setPrice(BigDecimal.valueOf(partyDTO.getPrice()));
+        existingParty.setBookingDate(partyDTO.getBookingDate());
+        existingParty.setStartDate(partyDTO.getStartDate());
+        existingParty.setAvailableDate(partyDTO.getAvailableDate());
+        existingParty.setDescription(partyDTO.getDescription());
+
+        // Save the updated party
+        Party updatedParty = partyRepository.save(existingParty);
+
+        // Convert the updated party to DTO and return
+        return partyConverter.toDTO(updatedParty);
     }
 
 }
