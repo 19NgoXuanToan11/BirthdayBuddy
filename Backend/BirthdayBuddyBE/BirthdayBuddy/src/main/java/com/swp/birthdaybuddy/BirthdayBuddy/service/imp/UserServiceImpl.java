@@ -1,17 +1,12 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.service.imp;
 
-import com.swp.birthdaybuddy.BirthdayBuddy.Auth.LoginRequest;
-import com.swp.birthdaybuddy.BirthdayBuddy.Auth.RegisterRequest;
 import com.swp.birthdaybuddy.BirthdayBuddy.converter.UserConverter;
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.UserDTO;
 import com.swp.birthdaybuddy.BirthdayBuddy.model.User;
 import com.swp.birthdaybuddy.BirthdayBuddy.repository.UserRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.UserService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {

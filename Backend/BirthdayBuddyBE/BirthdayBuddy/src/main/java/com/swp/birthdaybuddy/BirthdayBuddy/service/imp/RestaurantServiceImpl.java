@@ -6,10 +6,11 @@ import com.swp.birthdaybuddy.BirthdayBuddy.model.Restaurant;
 import com.swp.birthdaybuddy.BirthdayBuddy.repository.RestaurantRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
 public class RestaurantServiceImpl implements RestaurantService {
     private final RestaurantRepository restaurantRepository;
     private final RestaurantConverter restaurantConverter;

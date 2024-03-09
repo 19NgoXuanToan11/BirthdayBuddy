@@ -17,7 +17,6 @@ public class UserConverter {
         userDTO.setFullName(user.getFullName());
         userDTO.setEmail(user.getEmail());
         userDTO.setPhone(user.getPhone());
-        userDTO.setStatus(user.getStatus());
         if (user.getRole() != null) {
             userDTO.setRoleId(user.getRole().getId());
         }
@@ -32,7 +31,6 @@ public class UserConverter {
         user.setFullName(userDTO.getFullName());
         user.setEmail(userDTO.getEmail());
         user.setPhone(userDTO.getPhone());
-        user.setStatus(userDTO.getStatus());
         // You may need to handle Role separately based on how it's managed in your application
         Role role = new Role();
         role.setId(userDTO.getRoleId());
