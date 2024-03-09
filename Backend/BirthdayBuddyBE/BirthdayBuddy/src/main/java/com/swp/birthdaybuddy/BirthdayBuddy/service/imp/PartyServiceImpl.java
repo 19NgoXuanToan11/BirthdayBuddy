@@ -25,6 +25,11 @@ public class PartyServiceImpl implements PartyService {
     }
 
     @Override
+    public List<PartyDTO> getAllParty() {
+        return null;
+    }
+
+    @Override
     public PartyDTO createParty(PartyDTO partyDTO) {
         Party party = modelMapper.map(partyDTO, Party.class);
         return modelMapper.map(partyRepository.save(party), PartyDTO.class);

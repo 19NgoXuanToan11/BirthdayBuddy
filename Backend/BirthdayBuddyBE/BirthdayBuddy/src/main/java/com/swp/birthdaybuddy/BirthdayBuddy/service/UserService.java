@@ -15,4 +15,8 @@ public interface UserService {
     List<UserDTO> getAllUsers();
 
     boolean login(String username, String password);
+
+    void deleteUser(Long userId);
+
+    UserDTO updateUser(Long userId, UserDTO updatedUserDTO);
 }

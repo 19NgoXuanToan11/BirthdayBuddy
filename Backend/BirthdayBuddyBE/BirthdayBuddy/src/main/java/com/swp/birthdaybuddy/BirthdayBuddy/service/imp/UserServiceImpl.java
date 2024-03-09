@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -16,10 +17,10 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    UserConverter userConverter;
+    private UserConverter userConverter;
 
     @Override
     public UserDTO createUser(UserDTO userDTO) {
@@ -31,11 +32,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUser(Long userId) {
         Optional<User> userOptional = userRepository.findById(userId);
-        if (userOptional.isPresent()) {
-            return userConverter.convertToDto(userOptional.get());
-        } else {
-            throw new RuntimeException("User not found");
-        }
+        return userOptional.map(userConverter::convertToDto)
+                .orElseThrow(() -> new NoSuchElementException("User not found"));
     }
 
     @Override
@@ -50,5 +48,25 @@ public class UserServiceImpl implements UserService {
     public boolean login(String username, String password) {
         User user = userRepository.findByUserName(username);
         return user != null && user.getPassword().equals(password);
+    }
+
+    @Override
+    public void deleteUser(Long userId) {
+        userRepository.deleteById(userId);
+    }
+
+    @Override
+    public UserDTO updateUser(Long userId, UserDTO updatedUserDTO) {
+        Optional<User> userOptional = userRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            User existingUser = userOptional.get();
+            existingUser.setUserName(updatedUserDTO.getUserName());
+            existingUser.setPassword(updatedUserDTO.getPassword());
+            // Set other properties accordingly
+            userRepository.save(existingUser);
+            return userConverter.convertToDto(existingUser);
+        } else {
+            throw new NoSuchElementException("User not found");
+        }
     }
 }
