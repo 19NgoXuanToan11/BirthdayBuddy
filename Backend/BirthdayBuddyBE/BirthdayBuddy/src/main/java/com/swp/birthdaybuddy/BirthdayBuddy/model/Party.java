@@ -35,13 +35,13 @@ public class Party {
     private String status;
 
     @Column(name = "bookingDate")
-    private LocalDate bookingDate;
+    private Date bookingDate;
 
     @Column(name = "startDate")
-    private LocalDate startDate;
+    private Date startDate;
 
     @Column(name = "availableDate")
-    private LocalDate availableDate;
+    private Date availableDate;
 
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
@@ -51,6 +51,21 @@ public class Party {
     private Slot slot;
 
     public Party() {
+    }
+
+    public Party(Long id, Restaurant restaurant, String partyTheme, Integer numberOfGuests, BigDecimal price, User host, String status, Date bookingDate, Date startDate, Date availableDate, String description, Slot slot) {
+        this.id = id;
+        this.restaurant = restaurant;
+        this.partyTheme = partyTheme;
+        this.numberOfGuests = numberOfGuests;
+        this.price = price;
+        this.host = host;
+        this.status = status;
+        this.bookingDate = bookingDate;
+        this.startDate = startDate;
+        this.availableDate = availableDate;
+        this.description = description;
+        this.slot = slot;
     }
 
     public Long getId() {
@@ -109,27 +124,27 @@ public class Party {
         this.status = status;
     }
 
-    public LocalDate getBookingDate() {
+    public Date getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(LocalDate bookingDate) {
+    public void setBookingDate(Date bookingDate) {
         this.bookingDate = bookingDate;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getAvailableDate() {
+    public Date getAvailableDate() {
         return availableDate;
     }
 
-    public void setAvailableDate(LocalDate availableDate) {
+    public void setAvailableDate(Date availableDate) {
         this.availableDate = availableDate;
     }
 
