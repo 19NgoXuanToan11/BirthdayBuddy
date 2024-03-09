@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./config/scrollToTop";
 import "./App.scss";
 import axios from "axios";
@@ -37,21 +37,30 @@ import RestaurantBookingSuccess from "./Web_Application/Party Host Page/componen
 
 //import Administator Pages
 
+// Assuming you have a function to check if the user is authenticated
+const isAuthenticated = () => {
+  const user = sessionStorage.getItem("loginedUser");
+  return user !== null; // Return true if the user is logged in, false otherwise
+};
+
 function App() {
-  const user = sessionStorage.getItem("loginedUser")
-    ? JSON.parse(sessionStorage.getItem("loginedUser"))
-    : null;
+  const user = JSON.parse(sessionStorage.getItem("loginedUser"));
+
   return (
     <Router>
       <ScrollToTop />
       <Routes>
         {/* Guest */}
-        <Route path="/" element={<GuestHomePage />} />
-        <Route path="/restaurant-list" element={<GuestRestaurantListPage />} />
-        <Route
-          path="/restaurant-details/:id"
-          element={<GuestRestaurantDetailsPage />}
-        />
+        {user && user.roleID === null && (
+          <>
+            <Route path="/" element={<GuestHomePage />} />
+            <Route path="/restaurant-list" element={<GuestRestaurantListPage />} />
+            <Route
+              path="/restaurant-details/:id"
+              element={<GuestRestaurantDetailsPage />}
+            />
+          </>
+        )}
 
         {/* Authorized */}
         <Route path="/login" element={<LoginPage />} />
@@ -60,55 +69,77 @@ function App() {
         <Route path="/signuphost" element={<SignUpHostPage />} />
 
         {/* Customer */}
-        <Route path="/customer" element={<CustomerHome />} />
-        <Route path="/customer/information" element={<UserInformationPage />} />
-        <Route
-          path="/customer/restaurant-list"
-          element={<CustomerRestaurantListPage />}
-        />
-        <Route
-          path="/customer/restaurant-details/:id"
-          element={<CustomerRestaurantDetailsPage />}
-        />
-        <Route path="/customer/check-out" element={<CustomerCheckoutPage />} />
-        <Route path="/customer/payment" element={<MomoPaymentPage />} />
-        <Route
-          path="/customer/booking-success"
-          element={<BookingSuccessPage />}
-        />
-        <Route
-          path="/customer/booking-information"
-          element={<BookingInformationPage />}
-        />
-        <Route path="/customer/booking-list" element={<BookingListPage />} />
-        <Route path="/customer/notification" element={<PartyNotification />} />
+        {user && user.roleID === 3 && (
+          <>
+            <Route path="/customer" element={<CustomerHome />} />
+            <Route
+              path="/customer/information"
+              element={<UserInformationPage />}
+            />
+            <Route
+              path="/customer/restaurant-list"
+              element={<CustomerRestaurantListPage />}
+            />
+            <Route
+              path="/customer/restaurant-details/:id"
+              element={<CustomerRestaurantDetailsPage />}
+            />
+            <Route path="/customer/check-out" element={<CustomerCheckoutPage />} />
+            <Route path="/customer/payment" element={<MomoPaymentPage />} />
+            <Route
+              path="/customer/booking-success"
+              element={<BookingSuccessPage />}
+            />
+            <Route
+              path="/customer/booking-information"
+              element={<BookingInformationPage />}
+            />
+            <Route path="/customer/booking-list" element={<BookingListPage />} />
+            <Route path="/customer/notification" element={<PartyNotification />} />
+          </>
+        )}
 
         {/* Host */}
-        <Route path="/host/list-party" element={<HostPartyListPage />} />
-        <Route path="/host/create-party" element={<HostCreatePartyPage />} />
-        <Route
-          path="/host/create-party/create-party-theme"
-          element={<HostCreatePartyThemePage />}
-        />
-        <Route
-          path="/host/create-party/create-party-theme/create-special-service"
-          element={<HostCreateSpecialServicePage />}
-        />
-        <Route
-          path="/host/create-party/create-party-theme/create-special-service/create-food-menu"
-          element={<CreateFoodMenuPage />}
-        />
-        <Route
-          path="/host/restaurant-booking-tracking"
-          element={<RestaurantBookingTracking />}
-        />
-        <Route
-          path="/host/restaurant-booking-tracking/restaurant-booking-success"
-          element={<RestaurantBookingSuccess />}
-        />
+        {user && user.roleID === 2 && (
+          <>
+            <Route path="/host/list-party" element={<HostPartyListPage />} />
+            <Route path="/host/create-party" element={<HostCreatePartyPage />} />
+            <Route
+              path="/host/create-party/create-party-theme"
+              element={<HostCreatePartyThemePage />}
+            />
+            <Route
+              path="/host/create-party/create-party-theme/create-special-service"
+              element={<HostCreateSpecialServicePage />}
+            />
+            <Route
+              path="/host/create-party/create-party-theme/create-special-service/create-food-menu"
+              element={<CreateFoodMenuPage />}
+            />
+            <Route
+              path="/host/restaurant-booking-tracking"
+              element={<RestaurantBookingTracking />}
+            />
+            <Route
+              path="/host/restaurant-booking-tracking/restaurant-booking-success"
+              element={<RestaurantBookingSuccess />}
+            />
+          </>
+        )}
+
+        {/* Administrator */}
+        {user && user.roleID === 1 && (
+          <>
+            {/* Add routes for administrator pages */}
+          </>
+        )}
+
+        {/* Redirect to login page if not authenticated */}
+        {!user && <Route path="*" element={<Navigate to="/login" />} />}
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
