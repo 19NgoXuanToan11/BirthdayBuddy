@@ -8,10 +8,8 @@ import com.swp.birthdaybuddy.BirthdayBuddy.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
     private final RestaurantRepository restaurantRepository;
@@ -25,8 +23,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public RestaurantDTO getRestaurant(Long restaurantId) {
-        Restaurant restaurant = restaurantRepository.findById(restaurantId)
-                .orElseThrow(() -> new EntityNotFoundException("Restaurant not found with id: " + restaurantId));
+        Restaurant restaurant = restaurantRepository.findById(restaurantId).orElse(null);
         return restaurantConverter.toDTO(restaurant);
     }
 
@@ -47,8 +44,9 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public RestaurantDTO updateRestaurant(Long id, RestaurantDTO restaurantDTO) {
+        // Check if the restaurant exists
         if (!restaurantRepository.existsById(id)) {
-            throw new EntityNotFoundException("Restaurant not found with id: " + id);
+            throw new RuntimeException("Restaurant not found with id: " + id);
         }
         restaurantDTO.setRestaurantID(id);
         Restaurant restaurant = restaurantConverter.toEntity(restaurantDTO);
@@ -58,8 +56,9 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public void deleteRestaurant(Long id) {
+        // Check if the restaurant exists
         if (!restaurantRepository.existsById(id)) {
-            throw new EntityNotFoundException("Restaurant not found with id: " + id);
+            throw new RuntimeException("Restaurant not found with id: " + id);
         }
         restaurantRepository.deleteById(id);
     }
