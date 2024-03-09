@@ -33,4 +33,32 @@ public class RestaurantServiceImpl implements RestaurantService {
                 .map(restaurantConverter::toDTO)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public RestaurantDTO createRestaurant(RestaurantDTO restaurantDTO) {
+        Restaurant restaurant = restaurantConverter.toEntity(restaurantDTO);
+        Restaurant savedRestaurant = restaurantRepository.save(restaurant);
+        return restaurantConverter.toDTO(savedRestaurant);
+    }
+
+    @Override
+    public RestaurantDTO updateRestaurant(Long id, RestaurantDTO restaurantDTO) {
+        // Check if the restaurant exists
+        if (!restaurantRepository.existsById(id)) {
+            throw new RuntimeException("Restaurant not found with id: " + id);
+        }
+        restaurantDTO.setRestaurantID(id);
+        Restaurant restaurant = restaurantConverter.toEntity(restaurantDTO);
+        Restaurant updatedRestaurant = restaurantRepository.save(restaurant);
+        return restaurantConverter.toDTO(updatedRestaurant);
+    }
+
+    @Override
+    public void deleteRestaurant(Long id) {
+        // Check if the restaurant exists
+        if (!restaurantRepository.existsById(id)) {
+            throw new RuntimeException("Restaurant not found with id: " + id);
+        }
+        restaurantRepository.deleteById(id);
+    }
 }

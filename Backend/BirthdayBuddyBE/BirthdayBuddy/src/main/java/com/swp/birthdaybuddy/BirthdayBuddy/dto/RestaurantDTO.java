@@ -1,25 +1,25 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
 public class RestaurantDTO {
-    private Long id;
+    private Long restaurantID;
     private String restaurantName;
     private String address;
 
     public RestaurantDTO() {
     }
 
-    public RestaurantDTO(Long id, String restaurantName, String address) {
-        this.id = id;
+    public RestaurantDTO(Long restaurantID, String restaurantName, String address) {
+        this.restaurantID = restaurantID;
         this.restaurantName = restaurantName;
         this.address = address;
     }
 
-    public Long getId() {
-        return id;
+    public Long getRestaurantID() {
+        return restaurantID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRestaurantID(Long restaurantID) {
+        this.restaurantID = restaurantID;
     }
 
     public String getRestaurantName() {

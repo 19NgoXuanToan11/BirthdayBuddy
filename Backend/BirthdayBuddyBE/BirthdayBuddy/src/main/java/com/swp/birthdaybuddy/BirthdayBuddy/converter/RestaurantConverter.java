@@ -16,4 +16,8 @@ public class RestaurantConverter {
     public RestaurantDTO toDTO(Restaurant restaurant) {
         return modelMapper.map(restaurant, RestaurantDTO.class);
     }
+
+    public Restaurant toEntity(RestaurantDTO restaurantDTO) {
+        return modelMapper.map(restaurantDTO, Restaurant.class);
+    }
 }
