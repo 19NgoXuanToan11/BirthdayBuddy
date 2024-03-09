@@ -40,4 +40,8 @@ public class PartyController {
     public List<PartyDTO> getAllParties() {
         return partyService.getAllParties();
     }
+    @GetMapping("/all")
+    public List<PartyDTO> getAllParty() {
+        return partyService.getAllParty();
+    }
 }
