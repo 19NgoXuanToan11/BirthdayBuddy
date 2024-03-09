@@ -5,7 +5,6 @@ import java.util.Date;
 public class PartyDTO {
     private Long partyID;
     private Long restaurantID;
-    private Long districtID;
     private String partyTheme;
     private int numberOfGuest;
     private double price;
@@ -34,14 +33,6 @@ public class PartyDTO {
 
     public void setRestaurantID(Long restaurantID) {
         this.restaurantID = restaurantID;
-    }
-
-    public Long getDistrictID() {
-        return districtID;
-    }
-
-    public void setDistrictID(Long districtID) {
-        this.districtID = districtID;
     }
 
     public String getPartyTheme() {

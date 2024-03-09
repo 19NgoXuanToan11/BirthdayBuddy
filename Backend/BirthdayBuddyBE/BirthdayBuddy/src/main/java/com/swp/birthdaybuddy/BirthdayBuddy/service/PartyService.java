@@ -12,4 +12,5 @@ public interface PartyService {
     void deleteParty(Long partyID);
     PartyDTO getParty(Long partyID);
     List<PartyDTO> getAllParties();
+    PartyDTO updateParty(Long partyID, PartyDTO partyDTO);
 }

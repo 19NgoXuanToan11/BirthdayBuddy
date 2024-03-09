@@ -18,4 +18,8 @@ public class PartyConverter {
     public PartyDTO toDTO(Party party) {
         return modelMapper.map(party, PartyDTO.class);
     }
+
+    public Party toEntity(PartyDTO partyDTO) {
+        return modelMapper.map(partyDTO, Party.class);
+    }
 }
