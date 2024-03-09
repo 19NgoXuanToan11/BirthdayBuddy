@@ -17,34 +17,46 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       const res = await loginAPI({ username, password });
-      if (res) {
-        // Handle successful login, such as storing user data in sessionStorage
+      if (res && res.success) {
         console.log("Login successful");
         // Redirect or perform other actions after successful login
       } else {
-        // Handle login failure, display error message to the user
         toast.error("Invalid username or password");
       }
     } catch (error) {
       console.error("Error occurred during login:", error);
-      toast.error("An error occurred during login. Please try again later.");
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error("Server responded with status:", error.response.status);
+        toast.error("Server Error. Please try again later.");
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error("No response received:", error.request);
+        toast.error("No response from server. Please try again later.");
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error("Error setting up request:", error.message);
+        toast.error("An unexpected error occurred. Please try again later.");
+      }
     }
   };
+  
 
   return (
     <div className="loginPage">
       <div className="login">
         <div className="logoLogin">
-          <img src="./Logo.png" alt="" />
+          <img src="./Logo.png" alt="Logo" />
         </div>
         <form onSubmit={handleLogin}>
           <div className="group">
-            <input type="text" placeholder="Tên Đăng Nhập" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div className="group">
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Mật Khẩu"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -65,14 +77,14 @@ const Login: React.FC = () => {
           <div className="signIn">
             <button type="submit">Login</button>
           </div>
-          <div className="register-prompt">
+          {/* <div className="register-prompt">
             <div className="account-absent">
               <div className="bn-cha-c" id="bnChaC">
                 <Link
                   style={{ color: "#595454", textDecoration: "none" }}
                   to={"/register"}
                 >
-                  Bạn chưa có tài khoản ?
+                  Don't have an account?
                 </Link>
               </div>
 
@@ -81,7 +93,7 @@ const Login: React.FC = () => {
                   style={{ color: "#595454", textDecoration: "none" }}
                   to={"/signuphost"}
                 >
-                  Bạn muốn đăng kí nhà hàng?
+                  Want to register as a restaurant?
                 </Link>
               </div>
             </div>
@@ -90,10 +102,10 @@ const Login: React.FC = () => {
               to={"/forgetpw"}
             >
               <div className="t-li-mt" id="tLiMt">
-                Đặt lại mật khẩu
+                Reset password
               </div>
             </Link>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
