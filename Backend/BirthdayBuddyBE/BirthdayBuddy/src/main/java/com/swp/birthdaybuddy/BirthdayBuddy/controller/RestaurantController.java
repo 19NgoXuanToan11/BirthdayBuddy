@@ -27,6 +27,7 @@ public class RestaurantController {
     public List<RestaurantDTO> getAllRestaurants() {
         return restaurantService.getAllRestaurants();
     }
+
     @PostMapping("/create")
     public RestaurantDTO createRestaurant(@RequestBody RestaurantDTO restaurantDTO) {
         return restaurantService.createRestaurant(restaurantDTO);
