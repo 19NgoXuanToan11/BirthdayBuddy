@@ -45,5 +45,7 @@ public class PartyController {
     @PutMapping("/{partyId}")
     public PartyDTO updateParty(@PathVariable Long partyId, @RequestBody PartyDTO partyDTO) {
         return partyService.updateParty(partyId, partyDTO);
+
+
     }
 }
