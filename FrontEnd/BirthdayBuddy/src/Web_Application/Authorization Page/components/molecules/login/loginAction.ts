@@ -6,8 +6,7 @@ export const loginAction = async ({ request }: { request: Request }) => {
         const username = formData.get("account");
         const password = formData.get("password");
         const result = await authAPI.loginApi({ username, password });
-
-        if (result && result.success) {
+        if (result) {
             console.log("Login successful");
             return { success: true }; 
         } else {

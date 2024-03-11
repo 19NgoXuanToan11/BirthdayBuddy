@@ -13,14 +13,20 @@ const Login: React.FC = () => {
   const togglePasswordVisibility = (): void => {
     setShowPassword(!showPassword);
   };
+
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!username || !password) {
+      toast.error("Please enter both username and password.");
+      return;
+    }
     try {
-      await authAPI.loginApi({
+      const res = await authAPI.loginApi({
         username: username,
         password: password,
       });
-      navigate("/customer");
+      console.log(res);
+      navigate('/customer');
     } catch (error) {
       console.error("Login failed:", error);
       toast.error("Login failed. Please check your credentials.");
