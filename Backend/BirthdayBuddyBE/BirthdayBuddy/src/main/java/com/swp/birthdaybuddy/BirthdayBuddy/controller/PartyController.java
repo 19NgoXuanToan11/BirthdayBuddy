@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/parties")
 public class PartyController {
     private final PartyService partyService;

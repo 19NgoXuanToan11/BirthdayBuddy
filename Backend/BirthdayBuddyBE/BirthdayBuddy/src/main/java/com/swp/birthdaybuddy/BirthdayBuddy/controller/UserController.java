@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/users")
 public class UserController {
     @Autowired
@@ -33,6 +34,10 @@ public class UserController {
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+    }
+    @PostMapping("/logout")
+    public void logOut(@RequestBody UserDTO userDTO) {
+        userService.logOut(userDTO);
     }
 
     @GetMapping("/{userId}")

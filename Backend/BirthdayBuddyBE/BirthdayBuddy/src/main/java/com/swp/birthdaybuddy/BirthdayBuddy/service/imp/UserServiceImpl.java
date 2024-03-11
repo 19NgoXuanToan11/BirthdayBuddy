@@ -33,6 +33,12 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUserName(username);
         return user != null && user.getPassword().equals(password);
     }
+    @Override
+    public void logOut(UserDTO userDTO) {
+        // Perform logout logic
+        // For example, you can invalidate user session or clear authentication token
+        System.out.println("User logged out: " + userDTO.getUserName());
+    }
 
     @Override
     public void deleteUser(Long userId) {
