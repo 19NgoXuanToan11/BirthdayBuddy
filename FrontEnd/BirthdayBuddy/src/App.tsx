@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./config/scrollToTop";
 import "./App.scss";
 import { loginAction } from "./Web_Application/Authorization Page/components/molecules/login/loginAction";
 
@@ -40,7 +39,6 @@ import RestaurantBookingSuccess from "./Web_Application/Party Host Page/componen
 function App() {
   return (
     <Router>
-      <ScrollToTop />
       <Routes>
         {/* Guest */}
         <Route path="/" element={<GuestHomePage />} />
