@@ -35,6 +35,10 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
+    @PostMapping("/logout")
+    public void logOut(@RequestBody UserDTO userDTO) {
+        userService.logOut(userDTO);
+    }
 
     @GetMapping("/{userId}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Long userId) {
