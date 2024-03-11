@@ -7,6 +7,7 @@ import java.util.List;
 public interface UserService {
     UserDTO createUser(UserDTO userDTO);
     boolean login(String username, String password);
+    void logOut(UserDTO userDTO);
 
     void deleteUser(Long userId);
 
