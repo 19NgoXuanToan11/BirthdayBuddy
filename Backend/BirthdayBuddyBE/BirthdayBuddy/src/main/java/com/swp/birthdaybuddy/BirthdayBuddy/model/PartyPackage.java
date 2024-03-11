@@ -1,7 +1,6 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.model;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
 @Entity
@@ -16,6 +15,10 @@ public class PartyPackage {
     @JoinColumn(name = "roleID")
     private Role role;
 
+    @ManyToOne
+    @JoinColumn(name = "partyID")
+    private Party party;
+
     @Column(name = "price")
     private BigDecimal price;
 
@@ -28,9 +31,10 @@ public class PartyPackage {
     public PartyPackage() {
     }
 
-    public PartyPackage(Long id, Role role, BigDecimal price, String status, String description) {
+    public PartyPackage(Long id, Role role, Party party, BigDecimal price, String status, String description) {
         this.id = id;
         this.role = role;
+        this.party = party;
         this.price = price;
         this.status = status;
         this.description = description;
@@ -50,6 +54,14 @@ public class PartyPackage {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Party getParty() {
+        return party;
+    }
+
+    public void setParty(Party party) {
+        this.party = party;
     }
 
     public BigDecimal getPrice() {
