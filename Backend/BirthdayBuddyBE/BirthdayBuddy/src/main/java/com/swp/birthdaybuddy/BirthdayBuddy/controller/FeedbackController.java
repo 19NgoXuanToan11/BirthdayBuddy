@@ -18,7 +18,7 @@ public class FeedbackController {
         this.feedbackService = feedbackService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public FeedbackDTO createFeedback(@RequestBody FeedbackDTO feedbackDTO) {
         return feedbackService.createFeedback(feedbackDTO);
     }
@@ -33,7 +33,7 @@ public class FeedbackController {
         return feedbackService.getFeedback(id);
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     public List<FeedbackDTO> getAllFeedbacks() {
         return feedbackService.getAllFeedbacks();
     }
