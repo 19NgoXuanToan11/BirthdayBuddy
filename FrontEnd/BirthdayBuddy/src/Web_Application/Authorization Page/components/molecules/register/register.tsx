@@ -85,7 +85,7 @@ function Register() {
               }}
               onClick={togglePasswordVisibility}
             >
-              {showPassword ? "Hide" : "Show"}
+              {showPassword ? "Ẩn" : "Hiện"}
             </button>
           </div>
           <div className="group">
@@ -106,7 +106,7 @@ function Register() {
               }}
               onClick={togglePasswordVisibility}
             >
-              {showPassword ? "Hide" : "Show"}
+              {showPassword ? "Ẩn" : "Hiện"}
             </button>
           </div>
           <div className="group">
@@ -144,8 +144,8 @@ function Register() {
               onChange={handleChange}
             >
               <option value={-1}>--Chọn vai trò--</option>
-              <option value={3}>Customer</option>
-              <option value={2}>Host</option>
+              <option value={3}>Khách hàng</option>
+              <option value={2}>Chủ nhà hàng</option>
             </select>
           </div>
           <button type="submit" style={{ fontSize: "20px", width: "300px" }}>
