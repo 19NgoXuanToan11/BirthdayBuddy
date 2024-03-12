@@ -17,21 +17,35 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!username || !password) {
-      toast.error("Please enter both username and password.");
-      return;
+        toast.error("Please enter both username and password.");
+        return;
     }
     try {
-      const res = await authAPI.loginApi({
-        username: username,
-        password: password,
-      });
-      console.log(res);
-      navigate('/customer');
+        const user = await authAPI.loginApi({
+            username: username,
+            password: password,
+        });
+        if (user && user.roleId) {
+            console.log("Login successful");
+            const roleId = user.roleId;
+            if (roleId === 2) {
+                navigate('/host/list-party');
+            } else if (roleId === 3) {
+                navigate('/customer');
+            } else {
+                toast.error("Unauthorized access.");
+            }
+        } else {
+            toast.error("Login failed. Please check your credentials.");
+        }
     } catch (error) {
-      console.error("Login failed:", error);
-      toast.error("Login failed. Please check your credentials.");
+        console.error("Login failed:", error);
+        toast.error("Login failed. Please check your credentials.");
     }
-  };
+};
+
+  
+  
   
   return (
     <div className="loginPage">

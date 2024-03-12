@@ -31,7 +31,7 @@ public class UserController {
         return new ResponseEntity<>(createdUserDTO, HttpStatus.CREATED);
     }
     //update return data
-    @PostMapping("/api/users/login")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestParam String username, @RequestParam String password) {
         User user = userRepository.findByUserName(username);
         if (user != null && user.getPassword().equals(password)) { // Validate password
