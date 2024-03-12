@@ -1,38 +1,93 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
+import com.swp.birthdaybuddy.BirthdayBuddy.model.Restaurant;
+
 import java.util.Date;
 
 public class PartyDTO {
-    private Long partyID;
-    private Long restaurantID;
+    private Long id;
+    private Long restaurantId;
+    private String parentName;
+    private String phone;
+    private String kidName;
+    private String gender;
     private String partyTheme;
-    private int numberOfGuest;
-    private double price;
-    private Long hostID;
-    private String status;
+    private String specialService;
+    private String menu;
+    private Integer numberOfGuests;
     private Date bookingDate;
     private Date startDate;
-    private Date availableDate;
     private String description;
-    private Long slotID;
+    private Integer totalPrice;
 
-    // Getters and setters
+    // Constructors, getters, and setters...
 
-
-    public Long getPartyID() {
-        return partyID;
+    public PartyDTO() {
     }
 
-    public void setPartyID(Long partyID) {
-        this.partyID = partyID;
+    public PartyDTO(Long id, Long restaurantId, String parentName, String phone, String kidName, String gender, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, Date startDate, String description, Integer totalPrice) {
+        this.id = id;
+        this.restaurantId = restaurantId;
+        this.parentName = parentName;
+        this.phone = phone;
+        this.kidName = kidName;
+        this.gender = gender;
+        this.partyTheme = partyTheme;
+        this.specialService = specialService;
+        this.menu = menu;
+        this.numberOfGuests = numberOfGuests;
+        this.bookingDate = bookingDate;
+        this.startDate = startDate;
+        this.description = description;
+        this.totalPrice = totalPrice;
     }
 
-    public Long getRestaurantID() {
-        return restaurantID;
+    public Long getId() {
+        return id;
     }
 
-    public void setRestaurantID(Long restaurantID) {
-        this.restaurantID = restaurantID;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(Long restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getKidName() {
+        return kidName;
+    }
+
+    public void setKidName(String kidName) {
+        this.kidName = kidName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getPartyTheme() {
@@ -43,36 +98,28 @@ public class PartyDTO {
         this.partyTheme = partyTheme;
     }
 
-    public int getNumberOfGuest() {
-        return numberOfGuest;
+    public String getSpecialService() {
+        return specialService;
     }
 
-    public void setNumberOfGuest(int numberOfGuest) {
-        this.numberOfGuest = numberOfGuest;
+    public void setSpecialService(String specialService) {
+        this.specialService = specialService;
     }
 
-    public double getPrice() {
-        return price;
+    public String getMenu() {
+        return menu;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setMenu(String menu) {
+        this.menu = menu;
     }
 
-    public Long getHostID() {
-        return hostID;
+    public Integer getNumberOfGuests() {
+        return numberOfGuests;
     }
 
-    public void setHostID(Long hostID) {
-        this.hostID = hostID;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setNumberOfGuests(Integer numberOfGuests) {
+        this.numberOfGuests = numberOfGuests;
     }
 
     public Date getBookingDate() {
@@ -91,14 +138,6 @@ public class PartyDTO {
         this.startDate = startDate;
     }
 
-    public Date getAvailableDate() {
-        return availableDate;
-    }
-
-    public void setAvailableDate(Date availableDate) {
-        this.availableDate = availableDate;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -107,11 +146,11 @@ public class PartyDTO {
         this.description = description;
     }
 
-    public Long getSlotID() {
-        return slotID;
+    public Integer getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setSlotID(Long slotID) {
-        this.slotID = slotID;
+    public void setTotalPrice(Integer totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
