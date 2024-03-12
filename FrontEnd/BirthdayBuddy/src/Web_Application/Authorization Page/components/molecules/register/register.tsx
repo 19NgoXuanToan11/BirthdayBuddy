@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 import { toast } from "react-toastify";
 import { authAPI } from "../../../../../../src/config/authAPI";
 
 function Register() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: "",
+    userName: "",
     password: "",
     confirmPassword: "",
     fullName: "",
@@ -34,13 +35,13 @@ function Register() {
       }
       const res = await authAPI.registerApi(formData);
       if (res && res.success) {
-        console.log(res);
         console.log("Register successful");
+        navigate('/login');
       } else {
-        toast.error("Registration failed");
+        toast.error("Registration failed. Please try again.");
       }
     } catch (error) {
-      console.error("Error occurred during registration:", error);
+      console.error("Error occurred during registration:", error.response.data);
       toast.error("An unexpected error occurred. Please try again later.");
     }
   };
@@ -53,21 +54,12 @@ function Register() {
           <img src="./Logo.png" alt=""></img>
         </div>
         <form onSubmit={handleSubmit}>
-        <div className="group">
-            <input
-              type="text"
-              name="username"
-              placeholder="Tên đăng nhập"
-              value={formData.username} 
-              onChange={handleChange}
-            />
-          </div>
           <div className="group">
             <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
+              type="text"
+              name="userName"
+              placeholder="Tên đăng nhập"
+              value={formData.userName}
               onChange={handleChange}
             />
           </div>
@@ -104,6 +96,24 @@ function Register() {
           <div className="group">
             <input
               type="text"
+              name="fullName"
+              placeholder="Họ và Tên"
+              value={formData.fullName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="group">
+            <input
+              type="text"
               name="phone"
               placeholder="Số điện thoại"
               value={formData.phone}
@@ -116,9 +126,9 @@ function Register() {
               value={formData.roleId}
               onChange={handleChange}
             >
-              <option value="">--Chọn vai trò--</option>
-              <option value="1">Customer</option>
-              <option value="2">Host</option>
+              <option value={-1}>--Chọn vai trò--</option>
+              <option value={3}>Customer</option>
+              <option value={2}>Host</option>
             </select>
           </div>
           <button type="submit" style={{ fontSize: "20px", width: "300px" }}>

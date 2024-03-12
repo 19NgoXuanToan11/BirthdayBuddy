@@ -23,7 +23,7 @@ const getAllRestaurants = async () => {
     return res?.data;
 };
 
-const getUserById = async (userId: bigint) => {
+const getUserById = async (userId: number) => {
     const res = await axios.get(
         `http://localhost:8080/api/users/${userId}`
     );
