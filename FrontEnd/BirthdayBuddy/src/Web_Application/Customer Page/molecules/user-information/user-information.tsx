@@ -1,8 +1,34 @@
 import "./user-information.scss";
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { API } from "../../../../../src/config/API";
+import { toast } from "react-toastify";
 
 export default function UserInformation() {
+  const [loggedInUser, setLoggedInUser] = useState<any>([]);
+
+  // console.log(loggedInUser);
+
+  useEffect(() => {
+    const fetchLoggedInUser = async () => {
+      try {
+        const user = localStorage.getItem("loggedInUser");
+        if (user) {
+          const userData = JSON.parse(user);
+          const userById = await API.getUserById(userData.id);
+          setLoggedInUser(userById);
+        } else {
+          toast.error("User information not found. Please login again.");
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        toast.error("Error fetching user information.");
+      }
+    };
+
+    fetchLoggedInUser();
+  }, []);
+
   return (
     <>
       <div className="user-body">
@@ -38,10 +64,13 @@ export default function UserInformation() {
                     <span>Ngày sinh</span>
                     <span>Số CMND</span>
                     <div className="user-info">
-                      <span>Nguyễn Văn A</span>
-                      <span>Nam</span>
-                      <span>11/03/2003</span>
-                      <span>027203001</span>
+                      <span>{loggedInUser.userName}</span>
+                      <span>NULL</span>
+                      {/* <span>{loggedInUser.gender === "1" ? "Nam" : "Nữ"}</span> */}
+                      <span>NULL</span>
+                      {/* <span>{loggedInUser.dob}</span> */}
+                      <span>NULL</span>
+                      {/* <span>{loggedInUser.idCard}</span> */}
                     </div>
                   </div>
                 </div>
@@ -50,9 +79,9 @@ export default function UserInformation() {
                   <span>Email</span>
                   <span>Địa chỉ</span>
                   <div className="info">
-                    <span>0987654321</span>
-                    <span>nguyenvana@gmail.com</span>
-                    <span>Quận 5, TPHCM</span>
+                    <span>{loggedInUser.phone}</span>
+                    <span>{loggedInUser.email}</span>
+                    <span>NULL</span>
                   </div>
                 </div>
               </div>

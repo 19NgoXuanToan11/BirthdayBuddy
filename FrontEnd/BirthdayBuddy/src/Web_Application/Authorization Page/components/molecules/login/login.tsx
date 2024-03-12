@@ -27,7 +27,7 @@ const Login: React.FC = () => {
       });
       if (user && user.roleId) {
         console.log("Đăng nhập thành công ");
-        sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+        localStorage.setItem("loggedInUser", JSON.stringify(user));
         console.log(user);
         const roleId = user.roleId;
         if (roleId === 2) {

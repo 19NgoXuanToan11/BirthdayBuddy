@@ -41,6 +41,7 @@ function Register() {
       if (res) {
         console.log("Register successful");
         navigate("/login");
+        alert("Đăng ký thành công");
       } else {
         toast.error("Registration failed. Please try again.");
       }
