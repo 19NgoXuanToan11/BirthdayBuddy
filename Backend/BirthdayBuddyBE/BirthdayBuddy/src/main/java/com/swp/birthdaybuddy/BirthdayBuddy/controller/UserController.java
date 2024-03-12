@@ -27,14 +27,18 @@ public class UserController {
         return new ResponseEntity<>(createdUserDTO, HttpStatus.CREATED);
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<Void> login(@RequestParam String username, @RequestParam String password) {
+    @PostMapping("/api/users/login")
+    public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
         if (userService.login(username, password)) {
-            return ResponseEntity.ok().build();
+            String responseData = "Login Successfully!"; // You can set any data you want here
+            return ResponseEntity.ok()
+                    .body(responseData);
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Login failed. Incorrect username or password.");
         }
     }
+
     @PostMapping("/logout")
     public void logOut(@RequestBody UserDTO userDTO) {
         userService.logOut(userDTO);
