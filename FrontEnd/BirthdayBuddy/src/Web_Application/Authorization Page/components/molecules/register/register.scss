@@ -26,7 +26,7 @@ a {
 .register {
   background-color: rgba(234, 220, 220, 0.77);
   width: 500px;
-  height: 580px;
+  height: 750px;
   text-align: center;
   border-radius: 30px;
   padding: 0px 30px;
@@ -96,4 +96,16 @@ a {
   color: white;
   transition: 0.5s;
   cursor: pointer;
+}
+
+.register .group2 {
+  border: none;
+  color: rgb(89, 84, 84);
+  background-color: transparent;
+  width: 95%;
+  height: 100%;
+}
+.group2:focus {
+  outline: none; /* Loại bỏ viền xung quanh khi select box được chọn */
+  box-shadow: none; /* Loại bỏ bóng xung quanh khi select box được chọn */
 }

@@ -52,10 +52,9 @@ function App() {
         <Route path="/login" element={<LoginPage />} action={loginAction} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgetpw" element={<ForgetPassword />} />
-        <Route path="/signuphost" element={<SignUpHostPage />} />
 
         {/* Customer */}
-        <Route path="/customer" element={<CustomerHome />} />
+        <Route path="/customer/:userId" element={<CustomerHome />} />
         <Route path="/customer/information" element={<UserInformationPage />} />
         <Route
           path="/customer/restaurant-list"
@@ -79,6 +78,7 @@ function App() {
         <Route path="/customer/notification" element={<PartyNotification />} />
 
         {/* Host */}
+        <Route path="/host/:userId" element={<SignUpHostPage />} />
         <Route path="/host/list-party" element={<HostPartyListPage />} />
         <Route path="/host/create-party" element={<HostCreatePartyPage />} />
         <Route
