@@ -1,5 +1,8 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,9 +10,12 @@ public class UserDTO {
     private Long id;
     private String userName;
     private String password;
+    @NotEmpty(message = "Confirm password is required")
     private String confirmPassword; // Include confirmPassword field
     private String fullName;
+    @Email(message = "Email should be valid")
     private String email;
+    @Pattern(regexp="[0-9]+", message = "Phone should only contain digits")
     private String phone;
     private Long roleId;
 
