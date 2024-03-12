@@ -34,7 +34,7 @@ function SignUpHost() {
                 backgroundColor: "transparent",
                 color: "red",
                 border: "none",
-                marginRight: "17px",
+                margin: "5px",
               }}
               onClick={togglePasswordVisibility}
             >
@@ -52,7 +52,7 @@ function SignUpHost() {
                 backgroundColor: "transparent",
                 color: "red",
                 border: "none",
-                marginRight: "17px",
+                margin: "5px",
               }}
               onClick={togglePasswordVisibility}
             >

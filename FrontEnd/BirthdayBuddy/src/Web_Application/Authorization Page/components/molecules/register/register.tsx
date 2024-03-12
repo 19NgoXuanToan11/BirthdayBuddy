@@ -16,7 +16,9 @@ function Register() {
     roleId: -1,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ): void => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -25,7 +27,9 @@ function Register() {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
     try {
       if (formData.password !== formData.confirmPassword) {
@@ -48,17 +52,17 @@ function Register() {
   return (
     <div className="regisPage">
       <div className="overlay"></div>
-      <div className="register" style={{ height: "550px" }}>
+      <div className="register">
         <div className="logoLogin">
           <img src="./Logo.png" alt=""></img>
         </div>
         <form onSubmit={handleSubmit}>
-        <div className="group">
+          <div className="group">
             <input
               type="text"
               name="username"
               placeholder="Tên đăng nhập"
-              value={formData.username} 
+              value={formData.username}
               onChange={handleChange}
             />
           </div>
@@ -81,6 +85,12 @@ function Register() {
             />
             <button
               type="button"
+              style={{
+                backgroundColor: "transparent",
+                color: "red",
+                marginRight: "5px",
+                marginTop: "0px",
+              }}
               onClick={togglePasswordVisibility}
             >
               {showPassword ? "Hide" : "Show"}
@@ -96,6 +106,12 @@ function Register() {
             />
             <button
               type="button"
+              style={{
+                backgroundColor: "transparent",
+                color: "red",
+                marginRight: "5px",
+                marginTop: "0px",
+              }}
               onClick={togglePasswordVisibility}
             >
               {showPassword ? "Hide" : "Show"}
@@ -112,6 +128,7 @@ function Register() {
           </div>
           <div className="group">
             <select
+              className="group2"
               name="roleId"
               value={formData.roleId}
               onChange={handleChange}
@@ -125,7 +142,10 @@ function Register() {
             Đăng ký
           </button>
         </form>
-        <Link to={"/login"} style={{ color: "#595454", textDecoration: "none" }}>
+        <Link
+          to={"/login"}
+          style={{ color: "#595454", textDecoration: "none" }}
+        >
           <div className="title">Bạn đã có tài khoản?</div>
         </Link>
       </div>

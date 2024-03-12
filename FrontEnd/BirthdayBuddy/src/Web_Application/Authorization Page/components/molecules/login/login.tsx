@@ -26,13 +26,13 @@ const Login: React.FC = () => {
         password: password,
       });
       console.log(res);
-      navigate('/customer');
+      navigate("/customer");
     } catch (error) {
       console.error("Login failed:", error);
       toast.error("Login failed. Please check your credentials.");
     }
   };
-  
+
   return (
     <div className="loginPage">
       <div className="login">
@@ -92,6 +92,14 @@ const Login: React.FC = () => {
               </div>
             </Link>
           </div>
+          <Link
+            style={{ color: "#595454", textDecoration: "none" }}
+            to={"/signuphost"}
+          >
+            <div className="t-li-mt" id="tLiMt">
+              Register restaurant
+            </div>
+          </Link>
         </form>
       </div>
     </div>

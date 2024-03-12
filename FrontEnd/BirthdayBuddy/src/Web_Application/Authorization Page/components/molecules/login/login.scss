@@ -92,12 +92,16 @@ a {
 .login .register-prompt {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
     gap: 2px;
     font-size: 20px;
     color: #595454;
+    height: 65px;
 }
 .login .account-absent {
     text-align: left;
+}
+.login .t-li-mt {
+    font-size: 20px;
 }
