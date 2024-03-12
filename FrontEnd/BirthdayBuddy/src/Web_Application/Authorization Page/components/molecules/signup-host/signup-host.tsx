@@ -18,48 +18,6 @@ function SignUpHost() {
             <img src="./Logo.png" alt=""></img>
           </div>
           <div className="group">
-            <input type="text" placeholder="Tên đăng nhập" />
-          </div>
-          <div className="group">
-            <input type="text" placeholder="Email" />
-          </div>
-          <div className="group">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Mật khẩu"
-            />
-            <button
-              type="button"
-              style={{
-                backgroundColor: "transparent",
-                color: "red",
-                border: "none",
-                margin: "5px",
-              }}
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? "Hide" : "Show"}
-            </button>
-          </div>
-          <div className="group">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Xác nhận lại mật khẩu"
-            />
-            <button
-              type="button"
-              style={{
-                backgroundColor: "transparent",
-                color: "red",
-                border: "none",
-                margin: "5px",
-              }}
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? "Hide" : "Show"}
-            </button>
-          </div>
-          <div className="group">
             <input type="text" placeholder="Tên nhà hàng" />
           </div>
           <div className="group">
@@ -100,19 +58,7 @@ function SignUpHost() {
             <input type="text" placeholder="Dịch vụ đặc biệt" />
           </div>
           <div className="group">
-            <input type="text" placeholder="Thành phố Hồ Chí Minh" />
-          </div>
-          <div className="group">
-            <select className="group1">
-              <option disabled selected>
-                Quận
-              </option>
-              <option>Quận 1</option>
-              <option>Quận 2</option>
-              <option>Quận 3</option>
-              <option>Quận 4</option>
-              <option>Quận 5</option>
-            </select>
+            <input type="text" placeholder="Địa chỉ nhà hàng" />
           </div>
           {/* <div className="signUpHost"> */}
           <Link to={"/restaurant-list"} type="submit">
