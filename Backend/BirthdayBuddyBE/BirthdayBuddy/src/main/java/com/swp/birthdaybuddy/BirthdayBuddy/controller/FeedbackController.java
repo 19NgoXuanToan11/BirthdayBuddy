@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/feedbacks")
+@CrossOrigin
+@RequestMapping("/api/feedbacks")
 public class FeedbackController {
 
     private final FeedbackService feedbackService;

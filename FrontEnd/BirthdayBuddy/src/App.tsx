@@ -55,7 +55,7 @@ function App() {
         <Route path="/signuphost" element={<SignUpHostPage />} />
 
         {/* Customer */}
-        <Route path="/customer" element={<CustomerHome />} />
+        <Route path="/customer/:userId" element={<CustomerHome />} />
         <Route path="/customer/information" element={<UserInformationPage />} />
         <Route
           path="/customer/restaurant-list"

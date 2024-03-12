@@ -5,7 +5,7 @@ interface LoginCredentials {
     password: string;
 }
 
-const loginApi = async ({ username, password }: LoginCredentials): Promise<boolean> => {
+const loginApi = async ({ username, password }: LoginCredentials) => {
     try {
         const res = await axios.post('http://localhost:8080/api/users/login', null, {
             params: {
@@ -13,24 +13,16 @@ const loginApi = async ({ username, password }: LoginCredentials): Promise<boole
                 password
             }
         });
-
-        console.log(res);
-        if (res.status === 200) {
-            console.log('Login successful');
-            return true;
-        } else {
-            console.log('Login failed');
-            return false;
-        }
+        return res.data; // Assuming the response data contains the user information
     } catch (error) {
         console.error('Login failed:', error);
-        return false;
+        throw error; // Re-throw the error to handle it in the component
     }
 };
 
 
 interface RegistrationData {
-    username: string;
+    userName: string;
     password: string;
     fullName: string;
     email: string;
@@ -42,10 +34,10 @@ const registerApi = async (data: RegistrationData): Promise<any> => {
     try {
         const res = await axios.post('http://localhost:8080/api/users/register', data);
         console.log(res);
-        return res.data; // Return the data from the response
+        return res.data;
     } catch (error) {
-        console.error('Registration failed:', error.message);
-        throw error; // Throw the error for handling in the caller function
+        console.error('Registration failed:', error.response.data);
+        throw error;
     }
 };
 export const authAPI = { loginApi, registerApi };
