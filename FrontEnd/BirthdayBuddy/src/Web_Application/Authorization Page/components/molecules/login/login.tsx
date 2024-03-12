@@ -105,6 +105,14 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
               </div>
             </Link>
           </div>
+          <Link
+            style={{ color: "#595454", textDecoration: "none" }}
+            to={"/signuphost"}
+          >
+            <div className="t-li-mt" id="tLiMt">
+              Register restaurant
+            </div>
+          </Link>
         </form>
       </div>
     </div>
