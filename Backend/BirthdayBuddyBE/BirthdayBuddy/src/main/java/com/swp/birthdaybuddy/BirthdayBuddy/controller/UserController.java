@@ -7,12 +7,14 @@ import com.swp.birthdaybuddy.BirthdayBuddy.repository.UserRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin
@@ -30,17 +32,21 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO userDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().body("Validation errors: " + bindingResult.getAllErrors());
-        }
-
-        // Proceed with user creation logic
-        UserDTO createdUserDTO = userService.createUser(userDTO);
-        if (createdUserDTO != null) {
-            return ResponseEntity.status(HttpStatus.CREATED)
-                    .body("User created successfully: " + createdUserDTO.getUserName());
+            // If there are validation errors, return the error messages
+            List<String> errors = bindingResult.getAllErrors().stream()
+                    .map(DefaultMessageSourceResolvable::getDefaultMessage)
+                    .collect(Collectors.toList());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(errors);
         } else {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Failed to create user. Please try again.");
+            UserDTO createdUserDTO = userService.createUser(userDTO);
+            if (createdUserDTO != null) {
+                return ResponseEntity.status(HttpStatus.CREATED)
+                        .body("User created successfully: " + createdUserDTO.getUserName());
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("Failed to create user. Please try again.");
+            }
         }
     }
     //update return data
