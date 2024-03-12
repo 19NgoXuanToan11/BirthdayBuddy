@@ -26,22 +26,22 @@ const Login: React.FC = () => {
         password: password,
       });
       if (user && user.roleId) {
-        console.log("Login successful");
+        console.log("Đăng nhập thành công ");
         sessionStorage.setItem("loggedInUser", JSON.stringify(user));
         console.log(user);
         const roleId = user.roleId;
         if (roleId === 2) {
-          navigate("/host/list-party");
+          navigate(`/host/${user.id}`);
         } else if (roleId === 3) {
           navigate(`/customer/${user.id}`);
         } else {
-          toast.error("Unauthorized access.");
+          toast.error("Login failed. Please check your credentials.");
         }
       } else {
-        toast.error("Login failed. Please check your credentials.");
+        toast.error("Đăng nhập thất bại");
       }
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("Đăng nhập thất bại:", error);
       toast.error("Login failed. Please check your credentials.");
     }
   };
@@ -78,12 +78,12 @@ const Login: React.FC = () => {
               }}
               onClick={togglePasswordVisibility}
             >
-              {showPassword ? "Hide" : "Show"}
+              {showPassword ? "Ẩn" : "Hiện"}
             </button>
           </div>
 
           <div className="signIn">
-            <button type="submit">Login</button>
+            <button type="submit">Đăng nhập</button>
           </div>
           <div className="register-prompt">
             <div className="account-absent">
@@ -92,7 +92,7 @@ const Login: React.FC = () => {
                   style={{ color: "#595454", textDecoration: "none" }}
                   to={"/register"}
                 >
-                  Don't have an account?
+                  Bạn chưa có tài khoản?
                 </Link>
               </div>
             </div>
@@ -101,18 +101,10 @@ const Login: React.FC = () => {
               to={"/forgetpw"}
             >
               <div className="t-li-mt" id="tLiMt">
-                Reset password
+                Đặt lại mật khẩu
               </div>
             </Link>
           </div>
-          <Link
-            style={{ color: "#595454", textDecoration: "none" }}
-            to={"/signuphost"}
-          >
-            <div className="t-li-mt" id="tLiMt">
-              Register restaurant
-            </div>
-          </Link>
         </form>
       </div>
     </div>
