@@ -22,7 +22,7 @@ public class PartyPackageController {
         this.partyPackageService = partyPackageService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<PartyPackageDTO> createPartyPackage(@RequestBody PartyPackageDTO partyPackageDTO) {
         PartyPackageDTO createdPartyPackage = partyPackageService.createPartyPackage(partyPackageDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPartyPackage);
@@ -36,7 +36,7 @@ public class PartyPackageController {
                 ResponseEntity.notFound().build();
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     public ResponseEntity<List<PartyPackageDTO>> getAllPartyPackages() {
         List<PartyPackageDTO> partyPackages = partyPackageService.getAllPartyPackages();
         return ResponseEntity.ok(partyPackages);

@@ -26,11 +26,11 @@ public class UserController {
         UserDTO createdUserDTO = userService.createUser(userDTO);
         return new ResponseEntity<>(createdUserDTO, HttpStatus.CREATED);
     }
-
-    @PostMapping("/api/users/login")
+    //update return data
+    @PostMapping("/login")
     public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
         if (userService.login(username, password)) {
-            String responseData = "Login Successfully!"; // You can set any data you want here
+            String responseData = "Login Successfully!";
             return ResponseEntity.ok()
                     .body(responseData);
         } else {
