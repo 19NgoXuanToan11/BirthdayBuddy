@@ -14,39 +14,38 @@ const Login: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!username || !password) {
-        toast.error("Please enter both username and password.");
-        return;
+const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  if (!username || !password) {
+    toast.error("Please enter both username and password.");
+    return;
+  }
+  try {
+    const user = await authAPI.loginApi({
+      username: username,
+      password: password,
+    });
+    if (user && user.roleId) {
+      console.log("Login successful");
+      sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+      console.log(user);
+      const roleId = user.roleId;
+      if (roleId === 2) {
+        navigate('/host/list-party');
+      } else if (roleId === 3) {
+        navigate(`/customer/${user.id}`);
+      } else {
+        toast.error("Unauthorized access.");
+      }
+    } else {
+      toast.error("Login failed. Please check your credentials.");
     }
-    try {
-        const user = await authAPI.loginApi({
-            username: username,
-            password: password,
-        });
-        if (user && user.roleId) {
-            console.log("Login successful");
-            const roleId = user.roleId;
-            if (roleId === 2) {
-                navigate('/host/list-party');
-            } else if (roleId === 3) {
-                navigate('/customer');
-            } else {
-                toast.error("Unauthorized access.");
-            }
-        } else {
-            toast.error("Login failed. Please check your credentials.");
-        }
-    } catch (error) {
-        console.error("Login failed:", error);
-        toast.error("Login failed. Please check your credentials.");
-    }
+  } catch (error) {
+    console.error("Login failed:", error);
+    toast.error("Login failed. Please check your credentials.");
+  }
 };
 
-  
-  
-  
   return (
     <div className="loginPage">
       <div className="login">

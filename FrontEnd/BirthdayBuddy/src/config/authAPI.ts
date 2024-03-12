@@ -22,7 +22,7 @@ const loginApi = async ({ username, password }: LoginCredentials) => {
 
 
 interface RegistrationData {
-    username: string;
+    userName: string;
     password: string;
     fullName: string;
     email: string;
@@ -36,7 +36,7 @@ const registerApi = async (data: RegistrationData): Promise<any> => {
         console.log(res);
         return res.data;
     } catch (error) {
-        console.error('Registration failed:', error.message);
+        console.error('Registration failed:', error.response.data);
         throw error;
     }
 };
