@@ -2,6 +2,7 @@ package com.swp.birthdaybuddy.BirthdayBuddy.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -17,9 +18,9 @@ public class Restaurant {
     @Column
     private String phone;
     @Column
-    private Date startDate;
+    private LocalDate startDate;
     @Column
-    private Date endDate;
+    private LocalDate endDate;
     @ManyToOne
     @JoinColumn(name = "typeID")
     private RestaurantType restaurantType;
@@ -40,7 +41,7 @@ public class Restaurant {
     public Restaurant() {
     }
 
-    public Restaurant(Long id, String restaurantName, String phone, Date startDate, Date endDate, RestaurantType restaurantType, String partyTheme, String specialService, String address, User user, RestaurantDetails restaurantDetails) {
+    public Restaurant(Long id, String restaurantName, String phone, LocalDate startDate, LocalDate endDate, RestaurantType restaurantType, String partyTheme, String specialService, String address, User user, RestaurantDetails restaurantDetails) {
         this.id = id;
         this.restaurantName = restaurantName;
         this.phone = phone;
@@ -78,19 +79,19 @@ public class Restaurant {
         this.phone = phone;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

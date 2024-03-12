@@ -1,26 +1,16 @@
-package com.swp.birthdaybuddy.BirthdayBuddy.model;
+package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "restaurant_types")
-public class RestaurantType {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "typeID")
+public class RestaurantTypeDTO {
     private Long typeId;
-
-    @Column(name = "typeName", nullable = false)
     private String typeName;
-    @Column
     private String description;
 
     // Constructors, getters, and setters
 
-    public RestaurantType() {
+    public RestaurantTypeDTO() {
     }
 
-    public RestaurantType(Long typeId, String typeName, String description) {
+    public RestaurantTypeDTO(Long typeId, String typeName, String description) {
         this.typeId = typeId;
         this.typeName = typeName;
         this.description = description;
@@ -50,4 +40,3 @@ public class RestaurantType {
         this.description = description;
     }
 }
-
