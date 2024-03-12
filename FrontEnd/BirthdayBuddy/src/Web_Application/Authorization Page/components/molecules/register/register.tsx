@@ -40,7 +40,8 @@ function Register() {
       const res = await authAPI.registerApi(formData);
       if (res) {
         console.log("Register successful");
-        navigate('/login');
+        navigate("/login");
+        alert("Đăng ký thành công");
       } else {
         toast.error("Registration failed. Please try again.");
       }

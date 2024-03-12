@@ -2,15 +2,16 @@ import "./header.scss";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { API } from "../../../../../src/config/API"; // Update with your actual API file path
+import { API } from "../../../../../src/config/API"; // Update with your actual API file path\
 
+// import { Link } from "react-scroll";
 function CustomerHeader() {
-  const [loggedInUser, setLoggedInUser] = useState<any>(null);
+  const [loggedInUser, setLoggedInUser] = useState<any>([]);
 
   useEffect(() => {
     const fetchLoggedInUser = async () => {
       try {
-        const user = sessionStorage.getItem("loggedInUser");
+        const user = localStorage.getItem("loggedInUser");
         if (user) {
           const userData = JSON.parse(user);
           const userById = await API.getUserById(userData.id);
@@ -31,7 +32,7 @@ function CustomerHeader() {
     <header className="guest-header">
       <div className="middle-header">
         <div className="logo">
-          <Link to="/">
+          <Link to={`/customer/${loggedInUser.id}`}>
             <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
           </Link>
         </div>
@@ -52,7 +53,10 @@ function CustomerHeader() {
           )}
           <Link to="/customer/notification">
             <i className="fa fa-shopping-cart">
-              <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" alt="Notification Bell" />
+              <img
+                src="/src/SWP_RESOURCE/icon/notification-bell.gif"
+                alt="Notification Bell"
+              />
             </i>
           </Link>
         </div>
