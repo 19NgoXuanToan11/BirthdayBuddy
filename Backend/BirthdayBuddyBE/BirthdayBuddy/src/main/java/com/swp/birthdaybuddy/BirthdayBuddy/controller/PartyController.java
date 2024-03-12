@@ -5,6 +5,8 @@ import com.swp.birthdaybuddy.BirthdayBuddy.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/parties")
@@ -35,5 +37,9 @@ public class PartyController {
     @DeleteMapping("/{id}")
     public void deleteParty(@PathVariable Long id) {
         partyService.deleteParty(id);
+    }
+    @GetMapping("/all")
+    public List<PartyDTO> getAllParties() {
+        return partyService.getAllParties();
     }
 }
