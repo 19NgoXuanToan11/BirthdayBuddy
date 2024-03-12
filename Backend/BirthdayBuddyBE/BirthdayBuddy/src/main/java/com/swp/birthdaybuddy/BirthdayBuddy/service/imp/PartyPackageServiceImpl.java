@@ -1,4 +1,3 @@
-// com.swp.birthdaybuddy.BirthdayBuddy.service.impl.PartyPackageServiceImpl
 package com.swp.birthdaybuddy.BirthdayBuddy.service.imp;
 
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.PartyPackageDTO;
@@ -15,48 +14,49 @@ import java.util.stream.Collectors;
 @Service
 public class PartyPackageServiceImpl implements PartyPackageService {
 
-    @Autowired
-    private PartyPackageRepository partyPackageRepository;
+    private final PartyPackageRepository partyPackageRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    private ModelMapper modelMapper; // Assuming you have configured ModelMapper
+    public PartyPackageServiceImpl(PartyPackageRepository partyPackageRepository, ModelMapper modelMapper) {
+        this.partyPackageRepository = partyPackageRepository;
+        this.modelMapper = modelMapper;
+    }
 
     @Override
-    public PartyPackageDTO createParty(PartyPackageDTO partyPackageDTO) {
+    public PartyPackageDTO createPartyPackage(PartyPackageDTO partyPackageDTO) {
         PartyPackage partyPackage = modelMapper.map(partyPackageDTO, PartyPackage.class);
         PartyPackage savedPartyPackage = partyPackageRepository.save(partyPackage);
         return modelMapper.map(savedPartyPackage, PartyPackageDTO.class);
     }
 
     @Override
-    public void deleteParty(Long partyPackageId) {
-        partyPackageRepository.deleteById(partyPackageId);
+    public PartyPackageDTO getPartyPackage(Long id) {
+        PartyPackage partyPackage = partyPackageRepository.findById(id).orElse(null);
+        return partyPackage != null ? modelMapper.map(partyPackage, PartyPackageDTO.class) : null;
     }
 
     @Override
-    public PartyPackageDTO updateParty(Long partyPackageId, PartyPackageDTO updatedPartyPackageDTO) {
-        PartyPackage partyPackage = partyPackageRepository.findById(partyPackageId)
-                .orElseThrow(() -> new RuntimeException("Party Package not found with id: " + partyPackageId));
-
-        // Update partyPackage properties based on updatedPartyPackageDTO
-
-        PartyPackage updatedPartyPackage = partyPackageRepository.save(partyPackage);
-        return modelMapper.map(updatedPartyPackage, PartyPackageDTO.class);
-    }
-
-    @Override
-    public PartyPackageDTO getParty(Long partyPackageId) {
-        PartyPackage partyPackage = partyPackageRepository.findById(partyPackageId)
-                .orElseThrow(() -> new RuntimeException("Party Package not found with id: " + partyPackageId));
-
-        return modelMapper.map(partyPackage, PartyPackageDTO.class);
-    }
-
-    @Override
-    public List<PartyPackageDTO> getAllParties() {
+    public List<PartyPackageDTO> getAllPartyPackages() {
         List<PartyPackage> partyPackages = partyPackageRepository.findAll();
         return partyPackages.stream()
                 .map(partyPackage -> modelMapper.map(partyPackage, PartyPackageDTO.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public PartyPackageDTO updatePartyPackage(Long id, PartyPackageDTO partyPackageDTO) {
+        PartyPackage partyPackageToUpdate = partyPackageRepository.findById(id).orElse(null);
+        if (partyPackageToUpdate != null) {
+            modelMapper.map(partyPackageDTO, partyPackageToUpdate);
+            PartyPackage updatedPartyPackage = partyPackageRepository.save(partyPackageToUpdate);
+            return modelMapper.map(updatedPartyPackage, PartyPackageDTO.class);
+        }
+        return null;
+    }
+
+    @Override
+    public void deletePartyPackage(Long id) {
+        partyPackageRepository.deleteById(id);
     }
 }

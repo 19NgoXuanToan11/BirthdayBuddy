@@ -4,23 +4,12 @@ import java.math.BigDecimal;
 
 public class PartyPackageDTO {
     private Long id;
-    private Long roleId; // Assuming you want to transfer roleId instead of the entire Role object
+    private Long userId;
     private BigDecimal price;
     private String status;
     private String description;
 
-    public PartyPackageDTO() {
-    }
-
-    public PartyPackageDTO(Long id, Long roleId, BigDecimal price, String status, String description) {
-        this.id = id;
-        this.roleId = roleId;
-        this.price = price;
-        this.status = status;
-        this.description = description;
-    }
-
-    // Getters and Setters
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -30,12 +19,12 @@ public class PartyPackageDTO {
         this.id = id;
     }
 
-    public Long getRoleId() {
-        return roleId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public BigDecimal getPrice() {

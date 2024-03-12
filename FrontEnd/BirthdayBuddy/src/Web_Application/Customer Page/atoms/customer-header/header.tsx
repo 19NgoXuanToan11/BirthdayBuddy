@@ -1,7 +1,32 @@
 import "./header.scss";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { API } from "../../../../../src/config/API"; // Update with your actual API file path
 
 function CustomerHeader() {
+  const [loggedInUser, setLoggedInUser] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchLoggedInUser = async () => {
+      try {
+        const user = sessionStorage.getItem("loggedInUser");
+        if (user) {
+          const userData = JSON.parse(user);
+          const userById = await API.getUserById(userData.id);
+          setLoggedInUser(userById);
+        } else {
+          toast.error("User information not found. Please login again.");
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        toast.error("Error fetching user information.");
+      }
+    };
+
+    fetchLoggedInUser();
+  }, []);
+
   return (
     <header className="guest-header">
       <div className="middle-header">
@@ -15,17 +40,19 @@ function CustomerHeader() {
           <input type="text" placeholder="Tìm kiếm..." />
         </div>
         <div className="cus-cart">
-          <Link to={"/customer/information"}>
-            <div className="user-icon">
-              <i className="fa fa-user">
-                <img src="/src/SWP_RESOURCE/icon/alone.gif" />
-              </i>
-            </div>
-            <div className="user-name">Nguyễn Văn A</div>
-          </Link>
+          {loggedInUser && (
+            <Link to={"/customer/information"}>
+              <div className="user-icon">
+                <i className="fa fa-user">
+                  <img src="/src/SWP_RESOURCE/icon/alone.gif" alt="User Icon" />
+                </i>
+              </div>
+              <div className="user-name">{loggedInUser.userName}</div>
+            </Link>
+          )}
           <Link to="/customer/notification">
             <i className="fa fa-shopping-cart">
-              <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" />
+              <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" alt="Notification Bell" />
             </i>
           </Link>
         </div>
