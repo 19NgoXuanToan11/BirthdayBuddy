@@ -33,6 +33,7 @@ import HostCreatePartyThemePage from "./Web_Application/Party Host Page/componen
 import HostCreateSpecialServicePage from "./Web_Application/Party Host Page/components/pages/host-create-special-service-page/host-create-special-service-page";
 import RestaurantBookingTracking from "./Web_Application/Party Host Page/components/molecules/restaurant-booking-tracking/restaurant-booking-tracking";
 import RestaurantBookingSuccess from "./Web_Application/Party Host Page/components/molecules/restaurant-booking-success/restaurant-booking-success";
+import HostHomePage from "./Web_Application/Party Host Page/components/pages/host-home-page/host-home-page";
 
 //import Administator Pages
 
@@ -78,7 +79,7 @@ function App() {
         <Route path="/customer/notification" element={<PartyNotification />} />
 
         {/* Host */}
-        <Route path="/host/:userId" element={<SignUpHostPage />} />
+        <Route path="/host/:userId" element={<HostHomePage />} />
         <Route path="/host/list-party" element={<HostPartyListPage />} />
         <Route path="/host/create-party" element={<HostCreatePartyPage />} />
         <Route
