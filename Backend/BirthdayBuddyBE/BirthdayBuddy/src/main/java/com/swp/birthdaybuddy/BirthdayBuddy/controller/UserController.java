@@ -2,6 +2,8 @@ package com.swp.birthdaybuddy.BirthdayBuddy.controller;
 
 import com.swp.birthdaybuddy.BirthdayBuddy.converter.UserConverter;
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.UserDTO;
+import com.swp.birthdaybuddy.BirthdayBuddy.model.User;
+import com.swp.birthdaybuddy.BirthdayBuddy.repository.UserRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private UserConverter userConverter;
@@ -27,12 +31,12 @@ public class UserController {
         return new ResponseEntity<>(createdUserDTO, HttpStatus.CREATED);
     }
     //update return data
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
-        if (userService.login(username, password)) {
-            String responseData = "Login Successfully!";
-            return ResponseEntity.ok()
-                    .body(responseData);
+    @PostMapping("/api/users/login")
+    public ResponseEntity<?> login(@RequestParam String username, @RequestParam String password) {
+        User user = userRepository.findByUserName(username);
+        if (user != null && user.getPassword().equals(password)) { // Validate password
+            UserDTO userDTO = userConverter.toDTO(user);
+            return ResponseEntity.ok(userDTO);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body("Login failed. Incorrect username or password.");
