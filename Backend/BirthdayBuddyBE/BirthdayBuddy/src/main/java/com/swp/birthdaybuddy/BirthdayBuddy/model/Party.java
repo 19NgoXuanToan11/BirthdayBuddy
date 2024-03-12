@@ -18,21 +18,26 @@ public class Party {
     @JoinColumn(name = "restaurantID")
     private Restaurant restaurant;
 
+    @Column
+    private String parentName;
+    @Column
+    private String phone;
+    @Column
+    private String kidName;
+    @Column
+    private String gender;
+
     @Column(name = "partyTheme")
     private String partyTheme;
 
+    @Column
+    private String specialService;
+
+    @Column
+    private String menu;
+
     @Column(name = "numberOfGuests")
     private Integer numberOfGuests;
-
-    @Column(name = "price")
-    private BigDecimal price;
-
-    @ManyToOne
-    @JoinColumn(name = "hostID")
-    private User host;
-
-    @Column(name = "status", length = 50)
-    private String status;
 
     @Column(name = "bookingDate")
     private Date bookingDate;
@@ -40,32 +45,32 @@ public class Party {
     @Column(name = "startDate")
     private Date startDate;
 
-    @Column(name = "availableDate")
-    private Date availableDate;
-
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
-
-    @ManyToOne
-    @JoinColumn(name = "slotID")
-    private Slot slot;
+    @Column
+    private Integer totalPrice;
+    @Column
+    private String status;
 
     public Party() {
     }
 
-    public Party(Long id, Restaurant restaurant, String partyTheme, Integer numberOfGuests, BigDecimal price, User host, String status, Date bookingDate, Date startDate, Date availableDate, String description, Slot slot) {
+    public Party(Long id, Restaurant restaurant, String parentName, String phone, String kidName, String gender, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, Date startDate, String description, Integer totalPrice, String status) {
         this.id = id;
         this.restaurant = restaurant;
+        this.parentName = parentName;
+        this.phone = phone;
+        this.kidName = kidName;
+        this.gender = gender;
         this.partyTheme = partyTheme;
+        this.specialService = specialService;
+        this.menu = menu;
         this.numberOfGuests = numberOfGuests;
-        this.price = price;
-        this.host = host;
-        this.status = status;
         this.bookingDate = bookingDate;
         this.startDate = startDate;
-        this.availableDate = availableDate;
         this.description = description;
-        this.slot = slot;
+        this.totalPrice = totalPrice;
+        this.status = status;
     }
 
     public Long getId() {
@@ -84,6 +89,38 @@ public class Party {
         this.restaurant = restaurant;
     }
 
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getKidName() {
+        return kidName;
+    }
+
+    public void setKidName(String kidName) {
+        this.kidName = kidName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getPartyTheme() {
         return partyTheme;
     }
@@ -92,36 +129,28 @@ public class Party {
         this.partyTheme = partyTheme;
     }
 
+    public String getSpecialService() {
+        return specialService;
+    }
+
+    public void setSpecialService(String specialService) {
+        this.specialService = specialService;
+    }
+
+    public String getMenu() {
+        return menu;
+    }
+
+    public void setMenu(String menu) {
+        this.menu = menu;
+    }
+
     public Integer getNumberOfGuests() {
         return numberOfGuests;
     }
 
     public void setNumberOfGuests(Integer numberOfGuests) {
         this.numberOfGuests = numberOfGuests;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public User getHost() {
-        return host;
-    }
-
-    public void setHost(User host) {
-        this.host = host;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Date getBookingDate() {
@@ -140,14 +169,6 @@ public class Party {
         this.startDate = startDate;
     }
 
-    public Date getAvailableDate() {
-        return availableDate;
-    }
-
-    public void setAvailableDate(Date availableDate) {
-        this.availableDate = availableDate;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -156,12 +177,20 @@ public class Party {
         this.description = description;
     }
 
-    public Slot getSlot() {
-        return slot;
+    public Integer getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setSlot(Slot slot) {
-        this.slot = slot;
+    public void setTotalPrice(Integer totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
 
