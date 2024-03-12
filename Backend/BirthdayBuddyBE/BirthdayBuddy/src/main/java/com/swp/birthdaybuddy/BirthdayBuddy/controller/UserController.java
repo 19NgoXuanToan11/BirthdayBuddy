@@ -26,12 +26,18 @@ public class UserController {
 
     // Đăng ký user
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) {
         UserDTO createdUserDTO = userService.createUser(userDTO);
-        return new ResponseEntity<>(createdUserDTO, HttpStatus.CREATED);
+        if (createdUserDTO != null) {
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body("User created successfully: " + createdUserDTO.getUserName());
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to create user. Please try again.");
+        }
     }
     //update return data
-    @PostMapping("/api/users/login")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestParam String username, @RequestParam String password) {
         User user = userRepository.findByUserName(username);
         if (user != null && user.getPassword().equals(password)) { // Validate password
