@@ -38,7 +38,7 @@ function Register() {
         return;
       }
       const res = await authAPI.registerApi(formData);
-      if (res && res.success) {
+      if (res) {
         console.log("Register successful");
         navigate("/login");
       } else {
@@ -144,8 +144,8 @@ function Register() {
               onChange={handleChange}
             >
               <option value={-1}>--Chọn vai trò--</option>
-              <option value={3}>Khách hàng</option>
-              <option value={2}>Chủ nhà hàng</option>
+              <option value={2}>Khách hàng</option>
+              <option value={3}>Chủ nhà hàng</option>
             </select>
           </div>
           <button type="submit" style={{ fontSize: "20px", width: "300px" }}>
