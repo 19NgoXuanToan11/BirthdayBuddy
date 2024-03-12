@@ -31,7 +31,7 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
       console.log(user);
       const roleId = user.roleId;
       if (roleId === 2) {
-        navigate('/host/list-party');
+        navigate(`/host/${user.id}`);
       } else if (roleId === 3) {
         navigate(`/customer/${user.id}`);
       } else {
