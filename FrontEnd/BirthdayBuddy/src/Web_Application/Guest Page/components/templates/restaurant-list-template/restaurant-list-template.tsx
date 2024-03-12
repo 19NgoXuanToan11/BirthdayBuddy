@@ -5,14 +5,9 @@ function RestaurantListTemplate() {
   return (
     <>
       <h1>DANH SÁCH NHÀ HÀNG</h1>
-      <div className="restaurant-search-container">
-        <div className="search-filter">
-          <SearchFilter />
-        </div>
-        <div className="resstaurant">
+        <div className="restaurant">
           <RestaurantList />
         </div>
-      </div>
     </>
   )
 }
