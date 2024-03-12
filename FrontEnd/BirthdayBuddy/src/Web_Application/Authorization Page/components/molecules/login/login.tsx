@@ -17,7 +17,7 @@ const Login: React.FC = () => {
 const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   if (!username || !password) {
-    toast.error("Please enter both username and password.");
+    toast.error("Hãy nhập cả tên đăng nhập và mật khẩu");
     return;
   }
   try {
@@ -30,9 +30,9 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
       sessionStorage.setItem("loggedInUser", JSON.stringify(user));
       console.log(user);
       const roleId = user.roleId;
-      if (roleId === 2) {
+      if (roleId === 3) {
         navigate(`/host/${user.id}`);
-      } else if (roleId === 3) {
+      } else if (roleId === 2) {
         navigate(`/customer/${user.id}`);
       } else {
         toast.error("Unauthorized access.");
