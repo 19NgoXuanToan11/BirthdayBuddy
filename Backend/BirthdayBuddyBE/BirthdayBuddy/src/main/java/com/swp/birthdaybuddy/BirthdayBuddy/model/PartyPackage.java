@@ -1,3 +1,4 @@
+// PartyPackage.java
 package com.swp.birthdaybuddy.BirthdayBuddy.model;
 
 import jakarta.persistence.*;
@@ -13,8 +14,8 @@ public class PartyPackage {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "roleID")
-    private Role role;
+    @JoinColumn(name = "userID") // Change to userID
+    private User user; // Change to User
 
     @Column(name = "price")
     private BigDecimal price;
@@ -28,13 +29,15 @@ public class PartyPackage {
     public PartyPackage() {
     }
 
-    public PartyPackage(Long id, Role role, BigDecimal price, String status, String description) {
+    public PartyPackage(Long id, User user, BigDecimal price, String status, String description) {
         this.id = id;
-        this.role = role;
+        this.user = user;
         this.price = price;
         this.status = status;
         this.description = description;
     }
+
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -44,12 +47,12 @@ public class PartyPackage {
         this.id = id;
     }
 
-    public Role getRole() {
-        return role;
+    public User getUser() {
+        return user;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public BigDecimal getPrice() {
