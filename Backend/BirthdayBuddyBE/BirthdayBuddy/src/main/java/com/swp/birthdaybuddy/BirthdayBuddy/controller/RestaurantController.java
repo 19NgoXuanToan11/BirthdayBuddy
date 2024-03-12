@@ -19,9 +19,9 @@ public class RestaurantController {
         this.restaurantService = restaurantService;
     }
 
-    @GetMapping("/{restaurantId}")
-    public RestaurantDTO getRestaurant(@PathVariable Long restaurantId) {
-        return restaurantService.getRestaurant(restaurantId);
+    @GetMapping("/{id}")
+    public RestaurantDTO getRestaurant(@PathVariable("id") Long id) {
+        return restaurantService.getRestaurant(id);
     }
 
     @GetMapping("/all")
@@ -35,12 +35,12 @@ public class RestaurantController {
     }
 
     @PutMapping("/update/{id}")
-    public RestaurantDTO updateRestaurant(@PathVariable Long id, @RequestBody RestaurantDTO restaurantDTO) {
+    public RestaurantDTO updateRestaurant(@PathVariable("id") Long id, @RequestBody RestaurantDTO restaurantDTO) {
         return restaurantService.updateRestaurant(id, restaurantDTO);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteRestaurant(@PathVariable Long id) {
+    public void deleteRestaurant(@PathVariable("id") Long id) {
         restaurantService.deleteRestaurant(id);
     }
 }

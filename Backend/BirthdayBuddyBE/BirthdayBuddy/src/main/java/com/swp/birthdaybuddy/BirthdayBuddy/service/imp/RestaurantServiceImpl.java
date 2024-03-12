@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
     private final RestaurantRepository restaurantRepository;
@@ -48,9 +49,9 @@ public class RestaurantServiceImpl implements RestaurantService {
         if (!restaurantRepository.existsById(id)) {
             throw new RuntimeException("Restaurant not found with id: " + id);
         }
-        restaurantDTO.setRestaurantID(id);
-        Restaurant restaurant = restaurantConverter.toEntity(restaurantDTO);
-        Restaurant updatedRestaurant = restaurantRepository.save(restaurant);
+        restaurantDTO.setId(id);
+        Restaurant restaurantToUpdate = restaurantConverter.toEntity(restaurantDTO);
+        Restaurant updatedRestaurant = restaurantRepository.save(restaurantToUpdate);
         return restaurantConverter.toDTO(updatedRestaurant);
     }
 

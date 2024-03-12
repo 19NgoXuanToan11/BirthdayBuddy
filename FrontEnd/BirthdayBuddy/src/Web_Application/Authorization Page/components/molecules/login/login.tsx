@@ -56,7 +56,7 @@ const Login: React.FC = () => {
           <div className="group">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Tên đăng nhập"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -64,7 +64,7 @@ const Login: React.FC = () => {
           <div className="group">
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Password"
+              placeholder="Mật khẩu"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
