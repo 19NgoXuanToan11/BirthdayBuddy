@@ -3,6 +3,8 @@ package com.swp.birthdaybuddy.BirthdayBuddy.controller;
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.PartyDTO;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +22,9 @@ public class PartyController {
     }
 
     @PostMapping("/create")
-    public PartyDTO createParty(@RequestBody PartyDTO partyDTO) {
-        return partyService.createParty(partyDTO);
+    public ResponseEntity<PartyDTO> createParty(@RequestBody PartyDTO partyDTO) {
+        PartyDTO createdParty = partyService.createParty(partyDTO);
+        return new ResponseEntity<>(createdParty, HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
