@@ -1,14 +1,15 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.LocalTime;
+
 
 public class RestaurantDTO {
     private Long id;
     private String restaurantName;
     private String phone;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private LocalTime startDate;
+    private LocalTime endDate;
     private Long typeId; // Assuming you want to transfer the type ID only
     private String partyTheme;
     private String specialService;
@@ -17,7 +18,7 @@ public class RestaurantDTO {
     public RestaurantDTO() {
     }
 
-    public RestaurantDTO(Long id, String restaurantName, String phone, LocalDate startDate, LocalDate endDate, Long typeId, String partyTheme, String specialService, String address) {
+    public RestaurantDTO(Long id, String restaurantName, String phone, LocalTime startDate, LocalTime endDate, Long typeId, String partyTheme, String specialService, String address) {
         this.id = id;
         this.restaurantName = restaurantName;
         this.phone = phone;
@@ -53,19 +54,19 @@ public class RestaurantDTO {
         this.phone = phone;
     }
 
-    public LocalDate getStartDate() {
+    public LocalTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public LocalTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalTime endDate) {
         this.endDate = endDate;
     }
 
