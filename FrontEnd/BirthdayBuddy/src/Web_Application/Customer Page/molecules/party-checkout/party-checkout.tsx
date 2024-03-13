@@ -7,11 +7,28 @@ interface PartyCheckoutProps {
     restaurantId: number;
 }
 
+interface PartyData {
+    restaurantId: number;
+    parentName: string;
+    phone: string;
+    kidName: string;
+    gender: string; // Ensure this is properly typed
+    kidAge: string;
+    partyTheme: string;
+    specialService: string;
+    menu: string;
+    numberOfGuests: string;
+    bookingDate: string;
+    time: string;
+    note: string;
+    totalPrice: string;
+}
+
 const PartyCheckout: React.FC<PartyCheckoutProps> = ({ restaurantId }) => {
     const [parentName, setParentName] = useState("");
     const [phone, setPhone] = useState("");
     const [kidName, setKidName] = useState("");
-    const [gender, setGender] = useState("");
+    const [gender, setGender] = useState(""); // Ensure proper typing here
     const [kidAge, setKidAge] = useState("");
     const [partyTheme, setPartyTheme] = useState("");
     const [specialService, setSpecialService] = useState("");
@@ -23,12 +40,13 @@ const PartyCheckout: React.FC<PartyCheckoutProps> = ({ restaurantId }) => {
     const [totalPrice, setTotalPrice] = useState("");
 
     const handleBookNow = async () => {
-        const partyData = {
-            restaurantId : 2,
+        const partyData: PartyData = {
+            restaurantId : 1,
             parentName,
             phone,
             kidName,
             gender,
+            kidAge,
             partyTheme,
             specialService,
             menu,

@@ -14,7 +14,11 @@ function HostHeader() {
                 if (user) {
                     const userData = JSON.parse(user);
                     const userById = await API.getUserById(userData.id);
-                    setLoggedInUser(userById);
+                    if (userById && userById.userName) {
+                        setLoggedInUser(userById);
+                    } else {
+                        toast.error("User information not found. Please login again.");
+                    }
                 } else {
                     toast.error("User information not found. Please login again.");
                 }
@@ -43,6 +47,9 @@ function HostHeader() {
                     <Link to={"/host/list-party"}>
                         <div className="user-icon">
                             <i className="fa fa-user">
+                                {loggedInUser && loggedInUser.userName && (
+                                    <span>{loggedInUser.userName}</span>
+                                )}
                                 <img src="/src/SWP_RESOURCE/icon/alone.gif" />
                             </i>
                         </div>
