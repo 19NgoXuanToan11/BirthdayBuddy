@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,20 +25,20 @@ public class PartyPackageServiceImpl implements PartyPackageService {
     }
 
     @Override
-    public PartyPackageDTO createPartyPackage(PartyPackageDTO partyPackageDTO) {
+    public PartyPackageDTO createParty(PartyPackageDTO partyPackageDTO) {
         PartyPackage partyPackage = modelMapper.map(partyPackageDTO, PartyPackage.class);
         PartyPackage savedPartyPackage = partyPackageRepository.save(partyPackage);
         return modelMapper.map(savedPartyPackage, PartyPackageDTO.class);
     }
 
     @Override
-    public PartyPackageDTO getPartyPackage(Long id) {
-        PartyPackage partyPackage = partyPackageRepository.findById(id).orElse(null);
-        return partyPackage != null ? modelMapper.map(partyPackage, PartyPackageDTO.class) : null;
+    public PartyPackageDTO getParty(Long id) {
+        Optional<PartyPackage> partyPackageOptional = partyPackageRepository.findById(id);
+        return partyPackageOptional.map(partyPackage -> modelMapper.map(partyPackage, PartyPackageDTO.class)).orElse(null);
     }
 
     @Override
-    public List<PartyPackageDTO> getAllPartyPackages() {
+    public List<PartyPackageDTO> getAllParties() {
         List<PartyPackage> partyPackages = partyPackageRepository.findAll();
         return partyPackages.stream()
                 .map(partyPackage -> modelMapper.map(partyPackage, PartyPackageDTO.class))
@@ -45,9 +46,10 @@ public class PartyPackageServiceImpl implements PartyPackageService {
     }
 
     @Override
-    public PartyPackageDTO updatePartyPackage(Long id, PartyPackageDTO partyPackageDTO) {
-        PartyPackage partyPackageToUpdate = partyPackageRepository.findById(id).orElse(null);
-        if (partyPackageToUpdate != null) {
+    public PartyPackageDTO updateParty(Long id, PartyPackageDTO partyPackageDTO) {
+        Optional<PartyPackage> partyPackageOptional = partyPackageRepository.findById(id);
+        if (partyPackageOptional.isPresent()) {
+            PartyPackage partyPackageToUpdate = partyPackageOptional.get();
             modelMapper.map(partyPackageDTO, partyPackageToUpdate);
             PartyPackage updatedPartyPackage = partyPackageRepository.save(partyPackageToUpdate);
             return modelMapper.map(updatedPartyPackage, PartyPackageDTO.class);
@@ -56,7 +58,7 @@ public class PartyPackageServiceImpl implements PartyPackageService {
     }
 
     @Override
-    public void deletePartyPackage(Long id) {
+    public void deleteParty(Long id) {
         partyPackageRepository.deleteById(id);
     }
 }
