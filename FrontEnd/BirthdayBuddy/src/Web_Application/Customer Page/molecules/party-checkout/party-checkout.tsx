@@ -4,7 +4,7 @@ import { API } from "../../../../../src/config/API";
 import "./party-checkout.scss";
 
 interface PartyCheckoutProps {
-    restaurantId: number; // Change the type according to your actual ID type
+    restaurantId: number;
 }
 
 const PartyCheckout: React.FC<PartyCheckoutProps> = ({ restaurantId }) => {
@@ -27,9 +27,16 @@ const PartyCheckout: React.FC<PartyCheckoutProps> = ({ restaurantId }) => {
             restaurantId,
             parentName,
             phone,
+            kidName,
+            gender,
             partyTheme,
             specialService,
-            address: "", // Address can be empty for now, but you can add a field for it in your UI
+            menu,
+            numberOfGuests,
+            bookingDate,
+            time,
+            note,
+            totalPrice,
         };
 
         try {

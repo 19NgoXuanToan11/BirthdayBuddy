@@ -8,8 +8,8 @@ public class RestaurantDTO {
     private Long id;
     private String restaurantName;
     private String phone;
-    private LocalTime startDate;
-    private LocalTime endDate;
+    private String startDate;
+    private String endDate;
     private Long typeId; // Assuming you want to transfer the type ID only
     private String partyTheme;
     private String specialService;
@@ -18,7 +18,7 @@ public class RestaurantDTO {
     public RestaurantDTO() {
     }
 
-    public RestaurantDTO(Long id, String restaurantName, String phone, LocalTime startDate, LocalTime endDate, Long typeId, String partyTheme, String specialService, String address) {
+    public RestaurantDTO(Long id, String restaurantName, String phone, String startDate, String endDate, Long typeId, String partyTheme, String specialService, String address) {
         this.id = id;
         this.restaurantName = restaurantName;
         this.phone = phone;
@@ -54,19 +54,19 @@ public class RestaurantDTO {
         this.phone = phone;
     }
 
-    public LocalTime getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalTime startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public LocalTime getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalTime endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
