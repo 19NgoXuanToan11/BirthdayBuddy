@@ -18,32 +18,32 @@ public class PartyPackageController {
 
     @PostMapping("/create")
     public ResponseEntity<PartyPackageDTO> createParty(@RequestBody PartyPackageDTO partyPackageDTO) {
-        PartyPackageDTO createdPartyPackageDTO = partyPackageService.createParty(partyPackageDTO);
+        PartyPackageDTO createdPartyPackageDTO = partyPackageService.createPartyPackage(partyPackageDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPartyPackageDTO);
     }
 
     @DeleteMapping("/delete/{partyPackageId}")
     public ResponseEntity<Void> deleteParty(@PathVariable Long partyPackageId) {
-        partyPackageService.deleteParty(partyPackageId);
+        partyPackageService.deletePartyPackage(partyPackageId);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/update/{partyPackageId}")
     public ResponseEntity<PartyPackageDTO> updateParty(
             @PathVariable Long partyPackageId, @RequestBody PartyPackageDTO updatedPartyPackageDTO) {
-        PartyPackageDTO updatedPartyPackage = partyPackageService.updateParty(partyPackageId, updatedPartyPackageDTO);
+        PartyPackageDTO updatedPartyPackage = partyPackageService.updatePartyPackage(partyPackageId, updatedPartyPackageDTO);
         return ResponseEntity.ok(updatedPartyPackage);
     }
 
     @GetMapping("/{partyPackageId}")
     public ResponseEntity<PartyPackageDTO> getParty(@PathVariable Long partyPackageId) {
-        PartyPackageDTO partyPackageDTO = partyPackageService.getParty(partyPackageId);
+        PartyPackageDTO partyPackageDTO = partyPackageService.getPartyPackage(partyPackageId);
         return ResponseEntity.ok(partyPackageDTO);
     }
 
     @GetMapping("/all")
     public ResponseEntity<List<PartyPackageDTO>> getAllParties() {
-        List<PartyPackageDTO> partyPackages = partyPackageService.getAllParties();
+        List<PartyPackageDTO> partyPackages = partyPackageService.getAllPartyPackages();
         return ResponseEntity.ok(partyPackages);
     }
 }
