@@ -1,9 +1,12 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -26,6 +29,8 @@ public class Party {
     private String kidName;
     @Column
     private String gender;
+    @Column
+    private Integer age;
 
     @Column(name = "partyTheme")
     private String partyTheme;
@@ -43,7 +48,7 @@ public class Party {
     private Date bookingDate;
 
     @Column(name = "startDate")
-    private Date startDate;
+    private String startTime;
 
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
@@ -51,26 +56,32 @@ public class Party {
     private Integer totalPrice;
     @Column
     private String status;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_date", updatable = false)
+    private Date createdDate;
 
     public Party() {
     }
 
-    public Party(Long id, Restaurant restaurant, String parentName, String phone, String kidName, String gender, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, Date startDate, String description, Integer totalPrice, String status) {
+    public Party(Long id, Restaurant restaurant, String parentName, String phone, String kidName, String gender, Integer age, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
         this.id = id;
         this.restaurant = restaurant;
         this.parentName = parentName;
         this.phone = phone;
         this.kidName = kidName;
         this.gender = gender;
+        this.age = age;
         this.partyTheme = partyTheme;
         this.specialService = specialService;
         this.menu = menu;
         this.numberOfGuests = numberOfGuests;
         this.bookingDate = bookingDate;
-        this.startDate = startDate;
+        this.startTime = startTime;
         this.description = description;
         this.totalPrice = totalPrice;
         this.status = status;
+        this.createdDate = createdDate;
     }
 
     public Long getId() {
@@ -121,6 +132,14 @@ public class Party {
         this.gender = gender;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     public String getPartyTheme() {
         return partyTheme;
     }
@@ -161,12 +180,12 @@ public class Party {
         this.bookingDate = bookingDate;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     public String getDescription() {
@@ -191,6 +210,14 @@ public class Party {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 }
 

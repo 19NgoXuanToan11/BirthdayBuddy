@@ -2,6 +2,7 @@ package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
 import com.swp.birthdaybuddy.BirthdayBuddy.model.Restaurant;
 
+import java.time.LocalTime;
 import java.util.Date;
 
 public class PartyDTO {
@@ -11,12 +12,13 @@ public class PartyDTO {
     private String phone;
     private String kidName;
     private String gender;
+    private Integer age;
     private String partyTheme;
     private String specialService;
     private String menu;
     private Integer numberOfGuests;
     private Date bookingDate;
-    private Date startDate;
+    private String startTime;
     private String description;
     private Integer totalPrice;
 
@@ -25,19 +27,20 @@ public class PartyDTO {
     public PartyDTO() {
     }
 
-    public PartyDTO(Long id, Long restaurantId, String parentName, String phone, String kidName, String gender, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, Date startDate, String description, Integer totalPrice) {
+    public PartyDTO(Long id, Long restaurantId, String parentName, String phone, String kidName, String gender, Integer age, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice) {
         this.id = id;
         this.restaurantId = restaurantId;
         this.parentName = parentName;
         this.phone = phone;
         this.kidName = kidName;
         this.gender = gender;
+        this.age = age;
         this.partyTheme = partyTheme;
         this.specialService = specialService;
         this.menu = menu;
         this.numberOfGuests = numberOfGuests;
         this.bookingDate = bookingDate;
-        this.startDate = startDate;
+        this.startTime = startTime;
         this.description = description;
         this.totalPrice = totalPrice;
     }
@@ -90,6 +93,14 @@ public class PartyDTO {
         this.gender = gender;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     public String getPartyTheme() {
         return partyTheme;
     }
@@ -130,12 +141,12 @@ public class PartyDTO {
         this.bookingDate = bookingDate;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     public String getDescription() {
