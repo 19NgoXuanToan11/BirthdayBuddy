@@ -1,48 +1,51 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
-import com.swp.birthdaybuddy.BirthdayBuddy.model.Restaurant;
-
-import java.time.LocalTime;
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class PartyDTO {
     private Long id;
     private Long restaurantId;
+    private Long partyPackageId;
     private String parentName;
     private String phone;
     private String kidName;
     private String gender;
     private Integer age;
-    private String partyTheme;
-    private String specialService;
-    private String menu;
+    private List<String> specialServices;
+    private List<String> partyThemes;
+    private List<String> menus;
     private Integer numberOfGuests;
     private Date bookingDate;
     private String startTime;
     private String description;
     private Integer totalPrice;
-
-    // Constructors, getters, and setters...
+    private String status;
+    private Date createdDate;
 
     public PartyDTO() {
     }
 
-    public PartyDTO(Long id, Long restaurantId, String parentName, String phone, String kidName, String gender, Integer age, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice) {
+    public PartyDTO(Long id, Long restaurantId, Long partyPackageId, String parentName, String phone, String kidName, String gender, Integer age, List<String> specialServices, List<String> partyThemes, List<String> menus, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
         this.id = id;
         this.restaurantId = restaurantId;
+        this.partyPackageId = partyPackageId;
         this.parentName = parentName;
         this.phone = phone;
         this.kidName = kidName;
         this.gender = gender;
         this.age = age;
-        this.partyTheme = partyTheme;
-        this.specialService = specialService;
-        this.menu = menu;
+        this.specialServices = specialServices;
+        this.partyThemes = partyThemes;
+        this.menus = menus;
         this.numberOfGuests = numberOfGuests;
         this.bookingDate = bookingDate;
         this.startTime = startTime;
         this.description = description;
         this.totalPrice = totalPrice;
+        this.status = status;
+        this.createdDate = createdDate;
     }
 
     public Long getId() {
@@ -59,6 +62,14 @@ public class PartyDTO {
 
     public void setRestaurantId(Long restaurantId) {
         this.restaurantId = restaurantId;
+    }
+
+    public Long getPartyPackageId() {
+        return partyPackageId;
+    }
+
+    public void setPartyPackageId(Long partyPackageId) {
+        this.partyPackageId = partyPackageId;
     }
 
     public String getParentName() {
@@ -101,28 +112,28 @@ public class PartyDTO {
         this.age = age;
     }
 
-    public String getPartyTheme() {
-        return partyTheme;
+    public List<String> getSpecialServices() {
+        return specialServices;
     }
 
-    public void setPartyTheme(String partyTheme) {
-        this.partyTheme = partyTheme;
+    public void setSpecialServices(List<String> specialServices) {
+        this.specialServices = specialServices;
     }
 
-    public String getSpecialService() {
-        return specialService;
+    public List<String> getPartyThemes() {
+        return partyThemes;
     }
 
-    public void setSpecialService(String specialService) {
-        this.specialService = specialService;
+    public void setPartyThemes(List<String> partyThemes) {
+        this.partyThemes = partyThemes;
     }
 
-    public String getMenu() {
-        return menu;
+    public List<String> getMenus() {
+        return menus;
     }
 
-    public void setMenu(String menu) {
-        this.menu = menu;
+    public void setMenus(List<String> menus) {
+        this.menus = menus;
     }
 
     public Integer getNumberOfGuests() {
@@ -163,5 +174,21 @@ public class PartyDTO {
 
     public void setTotalPrice(Integer totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 }

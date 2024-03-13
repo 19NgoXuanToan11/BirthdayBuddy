@@ -8,6 +8,7 @@ import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Parties")
@@ -16,11 +17,12 @@ public class Party {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "partyID")
     private Long id;
-
     @ManyToOne
     @JoinColumn(name = "restaurantID")
     private Restaurant restaurant;
-
+    @ManyToOne
+    @JoinColumn(name = "partyPackageID")
+    private PartyPackage partyPackage;
     @Column
     private String parentName;
     @Column
@@ -31,25 +33,20 @@ public class Party {
     private String gender;
     @Column
     private Integer age;
+    @OneToMany(mappedBy = "party")
+    private List<SpecialService> specialServices;
 
-    @Column(name = "partyTheme")
-    private String partyTheme;
+    @OneToMany(mappedBy = "party")
+    private List<PartyTheme> partyThemes;
 
-    @Column
-    private String specialService;
-
-    @Column
-    private String menu;
-
+    @OneToMany(mappedBy = "party")
+    private List<Menu> menus;
     @Column(name = "numberOfGuests")
     private Integer numberOfGuests;
-
     @Column(name = "bookingDate")
     private Date bookingDate;
-
     @Column(name = "startDate")
     private String startTime;
-
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
     @Column
@@ -64,17 +61,18 @@ public class Party {
     public Party() {
     }
 
-    public Party(Long id, Restaurant restaurant, String parentName, String phone, String kidName, String gender, Integer age, String partyTheme, String specialService, String menu, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
+    public Party(Long id, Restaurant restaurant, PartyPackage partyPackage, String parentName, String phone, String kidName, String gender, Integer age, List<SpecialService> specialServices, List<PartyTheme> partyThemes, List<Menu> menus, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
         this.id = id;
         this.restaurant = restaurant;
+        this.partyPackage = partyPackage;
         this.parentName = parentName;
         this.phone = phone;
         this.kidName = kidName;
         this.gender = gender;
         this.age = age;
-        this.partyTheme = partyTheme;
-        this.specialService = specialService;
-        this.menu = menu;
+        this.specialServices = specialServices;
+        this.partyThemes = partyThemes;
+        this.menus = menus;
         this.numberOfGuests = numberOfGuests;
         this.bookingDate = bookingDate;
         this.startTime = startTime;
@@ -98,6 +96,14 @@ public class Party {
 
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public PartyPackage getPartyPackage() {
+        return partyPackage;
+    }
+
+    public void setPartyPackage(PartyPackage partyPackage) {
+        this.partyPackage = partyPackage;
     }
 
     public String getParentName() {
@@ -140,28 +146,28 @@ public class Party {
         this.age = age;
     }
 
-    public String getPartyTheme() {
-        return partyTheme;
+    public List<SpecialService> getSpecialServices() {
+        return specialServices;
     }
 
-    public void setPartyTheme(String partyTheme) {
-        this.partyTheme = partyTheme;
+    public void setSpecialServices(List<SpecialService> specialServices) {
+        this.specialServices = specialServices;
     }
 
-    public String getSpecialService() {
-        return specialService;
+    public List<PartyTheme> getPartyThemes() {
+        return partyThemes;
     }
 
-    public void setSpecialService(String specialService) {
-        this.specialService = specialService;
+    public void setPartyThemes(List<PartyTheme> partyThemes) {
+        this.partyThemes = partyThemes;
     }
 
-    public String getMenu() {
-        return menu;
+    public List<Menu> getMenus() {
+        return menus;
     }
 
-    public void setMenu(String menu) {
-        this.menu = menu;
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
     }
 
     public Integer getNumberOfGuests() {
