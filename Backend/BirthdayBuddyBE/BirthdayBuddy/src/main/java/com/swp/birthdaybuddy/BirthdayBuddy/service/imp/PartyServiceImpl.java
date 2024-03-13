@@ -3,7 +3,9 @@ package com.swp.birthdaybuddy.BirthdayBuddy.service.imp;
 import com.swp.birthdaybuddy.BirthdayBuddy.converter.PartyConverter;
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.PartyDTO;
 import com.swp.birthdaybuddy.BirthdayBuddy.model.Party;
+import com.swp.birthdaybuddy.BirthdayBuddy.model.PartyPackage;
 import com.swp.birthdaybuddy.BirthdayBuddy.model.Restaurant;
+import com.swp.birthdaybuddy.BirthdayBuddy.repository.PartyPackageRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.repository.PartyRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.repository.RestaurantRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.PartyService;
@@ -17,13 +19,13 @@ import java.util.stream.Collectors;
 public class PartyServiceImpl implements PartyService {
 
     private final PartyRepository partyRepository;
-    private final RestaurantRepository restaurantRepository;
+    private final PartyPackageRepository partyPackageRepository;
     private final PartyConverter partyConverter;
 
     @Autowired
-    public PartyServiceImpl(PartyRepository partyRepository, RestaurantRepository restaurantRepository, PartyConverter partyConverter) {
+    public PartyServiceImpl(PartyRepository partyRepository, PartyPackageRepository partyPackageRepository, PartyConverter partyConverter) {
         this.partyRepository = partyRepository;
-        this.restaurantRepository = restaurantRepository;
+        this.partyPackageRepository = partyPackageRepository;
         this.partyConverter = partyConverter;
     }
 
@@ -36,14 +38,13 @@ public class PartyServiceImpl implements PartyService {
 
     @Override
     public PartyDTO createParty(PartyDTO partyDTO) {
-        // Retrieve restaurant details from database using restaurantId in partyDTO
-        Restaurant restaurant = restaurantRepository.findById(partyDTO.getRestaurantId())
-                .orElseThrow(() -> new RuntimeException("Restaurant not found"));
+        PartyPackage partyPackage = partyPackageRepository.findById(partyDTO.getPartyPackageId())
+                .orElseThrow(() -> new RuntimeException("PartyPackage not found"));
 
-        // Create a new Party entity and set partyTheme and specialService from the restaurant
         Party party = partyConverter.toEntity(partyDTO);
-        party.setPartyTheme(restaurant.getPartyTheme());
-        party.setSpecialService(restaurant.getSpecialService());
+        party.setPartyThemes(partyPackage.getPartyThemes());
+        party.setSpecialServices(partyPackage.getSpecialServices());
+        party.setMenus(partyPackage.getMenus());
 
         // Save the party entity
         Party savedParty = partyRepository.save(party);

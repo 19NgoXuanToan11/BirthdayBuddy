@@ -4,40 +4,37 @@ package com.swp.birthdaybuddy.BirthdayBuddy.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "PartyPackages")
 public class PartyPackage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "packageID")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "userID") // Change to userID
-    private User user; // Change to User
+    @OneToMany(mappedBy = "partyPackage")
+    private List<SpecialService> specialServices;
 
-    @Column(name = "price")
+    @OneToMany(mappedBy = "partyPackage")
+    private List<PartyTheme> partyThemes;
+
+    @OneToMany(mappedBy = "partyPackage")
+    private List<Menu> menus;
+
     private BigDecimal price;
 
-    @Column(name = "status", length = 50)
-    private String status;
-
-    @Column(name = "description", columnDefinition = "TEXT")
-    private String description;
 
     public PartyPackage() {
     }
 
-    public PartyPackage(Long id, User user, BigDecimal price, String status, String description) {
+    public PartyPackage(Long id, List<SpecialService> specialServices, List<PartyTheme> partyThemes, List<Menu> menus, BigDecimal price) {
         this.id = id;
-        this.user = user;
+        this.specialServices = specialServices;
+        this.partyThemes = partyThemes;
+        this.menus = menus;
         this.price = price;
-        this.status = status;
-        this.description = description;
     }
-
-    // Getters and setters
 
     public Long getId() {
         return id;
@@ -47,12 +44,28 @@ public class PartyPackage {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public List<SpecialService> getSpecialServices() {
+        return specialServices;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setSpecialServices(List<SpecialService> specialServices) {
+        this.specialServices = specialServices;
+    }
+
+    public List<PartyTheme> getPartyThemes() {
+        return partyThemes;
+    }
+
+    public void setPartyThemes(List<PartyTheme> partyThemes) {
+        this.partyThemes = partyThemes;
+    }
+
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
     }
 
     public BigDecimal getPrice() {
@@ -61,21 +74,5 @@ public class PartyPackage {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

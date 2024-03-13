@@ -1,15 +1,14 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.dto;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class PartyPackageDTO {
     private Long id;
-    private Long userId;
+    private List<String> specialServices;
+    private List<String> partyThemes;
+    private List<String> menus;
     private BigDecimal price;
-    private String status;
-    private String description;
-
-    // Getters and setters
 
     public Long getId() {
         return id;
@@ -19,12 +18,28 @@ public class PartyPackageDTO {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public List<String> getSpecialServices() {
+        return specialServices;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setSpecialServices(List<String> specialServices) {
+        this.specialServices = specialServices;
+    }
+
+    public List<String> getPartyThemes() {
+        return partyThemes;
+    }
+
+    public void setPartyThemes(List<String> partyThemes) {
+        this.partyThemes = partyThemes;
+    }
+
+    public List<String> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<String> menus) {
+        this.menus = menus;
     }
 
     public BigDecimal getPrice() {
@@ -33,21 +48,5 @@ public class PartyPackageDTO {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

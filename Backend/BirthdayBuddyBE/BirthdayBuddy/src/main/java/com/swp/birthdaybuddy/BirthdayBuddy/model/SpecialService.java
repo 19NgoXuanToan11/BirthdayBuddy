@@ -3,7 +3,7 @@ package com.swp.birthdaybuddy.BirthdayBuddy.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Menu {
+public class SpecialService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

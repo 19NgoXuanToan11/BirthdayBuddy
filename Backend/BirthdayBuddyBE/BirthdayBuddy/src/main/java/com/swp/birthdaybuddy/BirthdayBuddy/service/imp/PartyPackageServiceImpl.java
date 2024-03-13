@@ -1,64 +1,73 @@
 package com.swp.birthdaybuddy.BirthdayBuddy.service.imp;
 
+import com.swp.birthdaybuddy.BirthdayBuddy.converter.PartyPackageConverter;
 import com.swp.birthdaybuddy.BirthdayBuddy.dto.PartyPackageDTO;
 import com.swp.birthdaybuddy.BirthdayBuddy.model.PartyPackage;
 import com.swp.birthdaybuddy.BirthdayBuddy.repository.PartyPackageRepository;
 import com.swp.birthdaybuddy.BirthdayBuddy.service.PartyPackageService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class PartyPackageServiceImpl implements PartyPackageService {
 
     private final PartyPackageRepository partyPackageRepository;
-    private final ModelMapper modelMapper;
+    private final PartyPackageConverter partyPackageConverter;
 
     @Autowired
-    public PartyPackageServiceImpl(PartyPackageRepository partyPackageRepository, ModelMapper modelMapper) {
+    public PartyPackageServiceImpl(PartyPackageRepository partyPackageRepository, PartyPackageConverter partyPackageConverter) {
         this.partyPackageRepository = partyPackageRepository;
-        this.modelMapper = modelMapper;
+        this.partyPackageConverter = partyPackageConverter;
     }
 
     @Override
-    public PartyPackageDTO createParty(PartyPackageDTO partyPackageDTO) {
-        PartyPackage partyPackage = modelMapper.map(partyPackageDTO, PartyPackage.class);
+    public PartyPackageDTO createPartyPackage(PartyPackageDTO partyPackageDTO) {
+        PartyPackage partyPackage = partyPackageConverter.convertToEntity(partyPackageDTO);
         PartyPackage savedPartyPackage = partyPackageRepository.save(partyPackage);
-        return modelMapper.map(savedPartyPackage, PartyPackageDTO.class);
+        return partyPackageConverter.convertToDTO(savedPartyPackage);
     }
 
     @Override
-    public PartyPackageDTO getParty(Long id) {
-        Optional<PartyPackage> partyPackageOptional = partyPackageRepository.findById(id);
-        return partyPackageOptional.map(partyPackage -> modelMapper.map(partyPackage, PartyPackageDTO.class)).orElse(null);
+    public PartyPackageDTO getPartyPackage(Long id) {
+        PartyPackage partyPackage = partyPackageRepository.findById(id).orElse(null);
+        return partyPackage != null ? partyPackageConverter.convertToDTO(partyPackage) : null;
     }
 
     @Override
-    public List<PartyPackageDTO> getAllParties() {
+    public List<PartyPackageDTO> getAllPartyPackages() {
         List<PartyPackage> partyPackages = partyPackageRepository.findAll();
         return partyPackages.stream()
-                .map(partyPackage -> modelMapper.map(partyPackage, PartyPackageDTO.class))
+                .map(partyPackageConverter::convertToDTO)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public PartyPackageDTO updateParty(Long id, PartyPackageDTO partyPackageDTO) {
-        Optional<PartyPackage> partyPackageOptional = partyPackageRepository.findById(id);
-        if (partyPackageOptional.isPresent()) {
-            PartyPackage partyPackageToUpdate = partyPackageOptional.get();
-            modelMapper.map(partyPackageDTO, partyPackageToUpdate);
-            PartyPackage updatedPartyPackage = partyPackageRepository.save(partyPackageToUpdate);
-            return modelMapper.map(updatedPartyPackage, PartyPackageDTO.class);
-        }
+    public PartyPackageDTO updatePartyPackage(Long id, PartyPackageDTO partyPackageDTO) {
         return null;
     }
 
+//    @Override
+//    public PartyPackageDTO updatePartyPackage(Long id, PartyPackageDTO partyPackageDTO) {
+//        PartyPackage partyPackageToUpdate = partyPackageRepository.findById(id).orElse(null);
+//        if (partyPackageToUpdate != null) {
+//            // Update fields manually
+//            partyPackageToUpdate.setSpecialServices(partyPackageDTO.getSpecialServices());
+//            partyPackageToUpdate.setPartyThemes(partyPackageDTO.getPartyThemes());
+//            partyPackageToUpdate.setMenus(partyPackageDTO.getMenus());
+//            partyPackageToUpdate.setPrice(partyPackageDTO.getPrice());
+//
+//            PartyPackage updatedPartyPackage = partyPackageRepository.save(partyPackageToUpdate);
+//            return partyPackageConverter.convertToDTO(updatedPartyPackage);
+//        }
+//        return null;
+//    }
+
+
     @Override
-    public void deleteParty(Long id) {
+    public void deletePartyPackage(Long id) {
         partyPackageRepository.deleteById(id);
     }
 }
