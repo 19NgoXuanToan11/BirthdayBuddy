@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { API } from '../../../../../src/config/API';
-import "./party-checkout.scss"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { API } from "../../../../../src/config/API";
+import "./party-checkout.scss";
 
 interface PartyCheckoutProps {
     restaurantId: number;
@@ -90,27 +90,32 @@ const PartyCheckout: React.FC<PartyCheckoutProps> = ({ restaurantId }) => {
                             value={kidName}
                             onChange={(e) => setKidName(e.target.value)}
                         />
-                        <div className="baby-gender">
+                    </div>
+                    <div className="gender-selection">
+                        <div className="radio-buttons">
                             <label>
                                 <input
                                     type="radio"
-                                    name="radio-6"
-                                    className="radio radio-warning"
-                                    checked={gender === 'Nam'}
-                                    onChange={() => setGender('Nam')}
-                                /> Nam
+                                    name="gender"
+                                    value="Nam"
+                                    checked={gender === "Nam"}
+                                    onChange={(e) => setGender(e.target.value)}
+                                />
+                                Nam
                             </label>
                             <label>
                                 <input
                                     type="radio"
-                                    name="radio-6"
-                                    className="radio radio-warning"
-                                    checked={gender === 'Nữ'}
-                                    onChange={() => setGender('Nữ')}
-                                /> Nữ
+                                    name="gender"
+                                    value="Nữ"
+                                    checked={gender === "Nữ"}
+                                    onChange={(e) => setGender(e.target.value)}
+                                />
+                                Nữ
                             </label>
                         </div>
                     </div>
+
                     <input
                         type="text"
                         placeholder="Tuổi"
@@ -173,11 +178,12 @@ const PartyCheckout: React.FC<PartyCheckoutProps> = ({ restaurantId }) => {
                         value={totalPrice}
                         onChange={(e) => setTotalPrice(e.target.value)}
                     />
-
                 </div>
             </div>
             <div className="checkout-button">
-                <button onClick={handleBookNow} className="button-checkout-now">Đặt tiệc ngay</button>
+                <button onClick={handleBookNow} className="button-checkout-now">
+                    Đặt tiệc ngay
+                </button>
                 <button className="button-cancel">Hủy</button>
             </div>
         </>

@@ -16,7 +16,7 @@ a {
 .login {
     background-color: rgba(234, 220, 220, 0.77);
     width: 500px;
-    height: 55%;
+    height: 50%;
     text-align: center;
     border: none;
     border-radius: 30px;
@@ -54,6 +54,7 @@ a {
     padding: 20px;
     font-size: 17px;
 }
+
 .login .signIn button {
     font-size: 20px;
     background-color: #cfa924;
@@ -66,9 +67,11 @@ a {
     transition: 0.5s;
     cursor: pointer;
 }
+
 .login .signUp {
     margin-top: 10px;
 }
+
 .login .signUp button {
     font-size: 15px;
     background-color: #fa6a69;
@@ -82,6 +85,7 @@ a {
     transition: 0.5s;
     cursor: pointer;
 }
+
 .login .group button {
     color: #bbb0b0;
     margin-right: 10px;
@@ -89,6 +93,7 @@ a {
     border: none;
     transition: 0.5s;
 }
+
 .login .register-prompt {
     display: flex;
     flex-direction: row;
@@ -99,9 +104,11 @@ a {
     color: #595454;
     height: 65px;
 }
+
 .login .account-absent {
     text-align: left;
 }
+
 .login .t-li-mt {
     font-size: 20px;
 }
