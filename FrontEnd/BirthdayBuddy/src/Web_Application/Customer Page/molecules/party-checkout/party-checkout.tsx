@@ -24,7 +24,7 @@ const PartyCheckout: React.FC<PartyCheckoutProps> = ({ restaurantId }) => {
 
     const handleBookNow = async () => {
         const partyData = {
-            restaurantId,
+            restaurantId : 2,
             parentName,
             phone,
             kidName,
