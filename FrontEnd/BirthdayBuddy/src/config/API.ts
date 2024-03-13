@@ -38,11 +38,12 @@ const updateUserInformation = async (userId: any, data: any) => {
 
 const addParty = async (data: any) => {
     const res: any = await axios
-        .post(`http://localhost:8088/public/course/addCourse`, data)
+        .post(`http://localhost:8080/api/parties/create`, data)
         .catch((err) => console.log(err));
     console.log(res);
     return res?.data;
 };
+
 
 const editParty = async (id: string, data: any) => {
     const res: any = await axios
@@ -57,4 +58,5 @@ export const API = {
     getAllParties,
     getAllRestaurants,
     getUserById,
+    addParty,
 };

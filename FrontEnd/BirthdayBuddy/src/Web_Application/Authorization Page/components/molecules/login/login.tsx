@@ -30,9 +30,9 @@ const Login: React.FC = () => {
         localStorage.setItem("loggedInUser", JSON.stringify(user));
         console.log(user);
         const roleId = user.roleId;
-        if (roleId === 2) {
+        if (roleId === 3) {
           navigate(`/host/${user.id}`);
-        } else if (roleId === 3) {
+        } else if (roleId === 2) {
           navigate(`/customer/${user.id}`);
         } else {
           toast.error("Login failed. Please check your credentials.");
