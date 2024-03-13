@@ -60,14 +60,11 @@ function SignUpHost() {
           <div className="group">
             <input type="text" placeholder="Địa chỉ nhà hàng" />
           </div>
-          {/* <div className="signUpHost"> */}
           <Link to={"/restaurant-list"} type="submit">
             <button style={{ width: "250px", marginRight: "70px" }}>
               Đăng ký
             </button>
           </Link>
-          {/* </div> */}
-
           <Link to={"/login"} type="submit">
             <button style={{ width: "250px" }}>Hủy</button>
           </Link>

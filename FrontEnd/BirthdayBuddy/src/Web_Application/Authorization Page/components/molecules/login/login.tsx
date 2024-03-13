@@ -14,37 +14,37 @@ const Login: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  if (!username || !password) {
-    toast.error("Please enter both username and password.");
-    return;
-  }
-  try {
-    const user = await authAPI.loginApi({
-      username: username,
-      password: password,
-    });
-    if (user && user.roleId) {
-      console.log("Đăng nhập thành công ");
-      sessionStorage.setItem("loggedInUser", JSON.stringify(user));
-      console.log(user);
-      const roleId = user.roleId;
-      if (roleId === 2) {
-        navigate(`/host/${user.id}`);
-      } else if (roleId === 3) {
-        navigate(`/customer/${user.id}`);
-      } else {
-        toast.error("Unauthorized access.");
-      }
-    } else {
-      toast.error("Đăng nhập thất bại");
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!username || !password) {
+      toast.error("Please enter both username and password.");
+      return;
     }
-  } catch (error) {
-    console.error("Đăng nhập thất bại:", error);
-    toast.error("Login failed. Please check your credentials.");
-  }
-};
+    try {
+      const user = await authAPI.loginApi({
+        username: username,
+        password: password,
+      });
+      if (user && user.roleId) {
+        console.log("Đăng nhập thành công ");
+        sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+        console.log(user);
+        const roleId = user.roleId;
+        if (roleId === 3) {
+          navigate(`/host/${user.id}`);
+        } else if (roleId === 2) {
+          navigate(`/customer/${user.id}`);
+        } else {
+          toast.error("Login failed. Please check your credentials.");
+        }
+      } else {
+        toast.error("Đăng nhập thất bại");
+      }
+    } catch (error) {
+      console.error("Đăng nhập thất bại:", error);
+      toast.error("Login failed. Please check your credentials.");
+    }
+  };
 
   return (
     <div className="loginPage">

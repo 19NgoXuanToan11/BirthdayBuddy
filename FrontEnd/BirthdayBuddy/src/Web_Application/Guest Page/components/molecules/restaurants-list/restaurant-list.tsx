@@ -1,69 +1,65 @@
-import { useState } from 'react';
-import { listRestaurant } from "../data/ListOfRestaurant.js";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./restaurant-list.scss";
+import { API } from "../../../../../../src/config/API";
+import { toast } from "react-toastify";
 
 function RestaurantList() {
-    const [currentPage, setCurrentPage] = useState(1);
-    const restaurantsPerPage = 4;
+    const [restaurants, setRestaurants] = useState([]);  
 
-    const indexOfLastRestaurant = currentPage * restaurantsPerPage;
-    const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantsPerPage;
-    const currentRestaurants = listRestaurant.slice(indexOfFirstRestaurant, indexOfLastRestaurant);
+  
 
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    useEffect(() => {
+        const fetchRestaurants = async () => {
+            try {
+                const response = await axios.get(
+                    "http://localhost:8080/api/restaurants/all"
+                );
+                setRestaurants(response.data);
+            } catch (error) {
+                console.error("Error fetching restaurants:", error);
+            }
+        };
+
+        fetchRestaurants();
+    }, []);
 
     return (
         <div className="restaurant-list-container">
             <div className="restaurant-box">
                 <div className="restaurant-list">
-                    {currentRestaurants.map((restaurant) => (
-                        <div key={restaurant.id} className="restaurant-section-wrapper">
-                            <Link to={`/restaurant-details/${restaurant.id}`} className="link-style">
+                    {restaurants.map((restaurant) => (
+                        <div
+                            key={restaurant.id}
+                            className="restaurant-section-wrapper"
+                        >
+                            <Link
+                                to={`/restaurant-details/${restaurant.id}`}
+                                className="link-style"
+                            >
                                 <div className="restaurant-section">
-                                    <img src={restaurant.imgUrl} alt={restaurant.name} />
-                                    <div className="restaurant-contents">
-                                        <h2>{restaurant.name}</h2>
-                                        {restaurant.description.map((desc, index) => (
-                                            <li key={index}>{desc}</li>
-                                        ))}
+                                    <img src="https://i.pinimg.com/564x/38/24/d5/3824d5200274d015fb5b4b6ba83ef574.jpg"></img>
+                                    <h2>{restaurant.restaurantName}</h2>
+                                    <div className="content">
+                                        <p>Số điện thoại: {restaurant.phone}</p>
+                                        <p>Địa chỉ: {restaurant.address}</p>
+                                        <p>
+                                            Chủ đề bữa tiệc: {restaurant.partyTheme}
+                                        </p>
+                                        <p>
+                                            Dịch vụ đặc biệt:{" "}
+                                            {restaurant.specialService}
+                                        </p>
                                     </div>
                                 </div>
                             </Link>
                         </div>
                     ))}
                 </div>
-                <Pagination
-                    restaurantsPerPage={restaurantsPerPage}
-                    totalRestaurants={listRestaurant.length}
-                    paginate={paginate}
-                />
             </div>
         </div>
     );
 }
-
-// Pagination component
-const Pagination = ({ restaurantsPerPage, totalRestaurants, paginate }) => {
-    const pageNumbers = [];
-
-    for (let i = 1; i <= Math.ceil(totalRestaurants / restaurantsPerPage); i++) {
-        pageNumbers.push(i);
-    }
-
-    return (
-        <nav>
-            <ul className="pagination">
-                {pageNumbers.map(number => (
-                    <li key={number} className="page-item">
-                        <button onClick={() => paginate(number)} className="page-link">
-                            {number}
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </nav>
-    );
-};
 
 export default RestaurantList;

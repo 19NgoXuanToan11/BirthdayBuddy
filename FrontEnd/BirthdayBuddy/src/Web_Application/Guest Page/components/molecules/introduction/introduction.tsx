@@ -54,10 +54,10 @@ function Introduction() {
                     </div>
                 ))}
             </Slider>
-            <h1>Lưu giữ cột mốc tuổi thơ</h1>
-            <h2>
-                Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui
-            </h2>
+            <div className="luu-giu">
+                <h1>Lưu giữ cột mốc tuổi thơ</h1>
+            </div>
+            <h2>Hãy để chúng tôi lo và con bạn chỉ việc tận hưởng niềm vui</h2>
             <Link to="/login">
                 <button
                     className="action-button"
