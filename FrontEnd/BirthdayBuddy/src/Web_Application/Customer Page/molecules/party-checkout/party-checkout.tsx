@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { API } from '../../../../../src/config/API';
+import "./party-checkout.scss"
 
 interface PartyCheckoutProps {
     restaurantId: number; // Change the type according to your actual ID type
