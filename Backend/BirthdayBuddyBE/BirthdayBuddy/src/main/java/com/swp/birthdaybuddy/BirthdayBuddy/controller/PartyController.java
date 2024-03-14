@@ -45,4 +45,9 @@ public class PartyController {
     public List<PartyDTO> getAllParties() {
         return partyService.getAllParties();
     }
+    @PutMapping("/cancel/{partyId}")
+    public ResponseEntity<PartyDTO> cancelParty(@PathVariable Long id) {
+        PartyDTO cancelledParty = partyService.cancelParty(id);
+        return new ResponseEntity<>(cancelledParty, HttpStatus.OK);
+    }
 }
