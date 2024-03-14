@@ -4,16 +4,18 @@ public class RestaurantTypeDTO {
     private Long typeId;
     private String typeName;
     private String description;
+    private String imgLink;
 
     // Constructors, getters, and setters
 
     public RestaurantTypeDTO() {
     }
 
-    public RestaurantTypeDTO(Long typeId, String typeName, String description) {
+    public RestaurantTypeDTO(Long typeId, String typeName, String description, String imgLink) {
         this.typeId = typeId;
         this.typeName = typeName;
         this.description = description;
+        this.imgLink = imgLink;
     }
 
     public Long getTypeId() {
@@ -38,5 +40,13 @@ public class RestaurantTypeDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImgLink() {
+        return imgLink;
+    }
+
+    public void setImgLink(String imgLink) {
+        this.imgLink = imgLink;
     }
 }
