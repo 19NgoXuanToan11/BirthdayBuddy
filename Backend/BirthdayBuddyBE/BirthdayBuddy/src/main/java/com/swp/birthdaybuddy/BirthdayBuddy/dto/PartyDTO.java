@@ -7,7 +7,9 @@ import java.util.List;
 public class PartyDTO {
     private Long id;
     private Long restaurantId;
+    private Long userId;
     private Long partyPackageId;
+
     private String parentName;
     private String phone;
     private String kidName;
@@ -27,9 +29,10 @@ public class PartyDTO {
     public PartyDTO() {
     }
 
-    public PartyDTO(Long id, Long restaurantId, Long partyPackageId, String parentName, String phone, String kidName, String gender, Integer age, List<String> specialServices, List<String> partyThemes, List<String> menus, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
+    public PartyDTO(Long id, Long restaurantId, Long userId, Long partyPackageId, String parentName, String phone, String kidName, String gender, Integer age, List<String> specialServices, List<String> partyThemes, List<String> menus, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
         this.id = id;
         this.restaurantId = restaurantId;
+        this.userId = userId;
         this.partyPackageId = partyPackageId;
         this.parentName = parentName;
         this.phone = phone;
@@ -62,6 +65,14 @@ public class PartyDTO {
 
     public void setRestaurantId(Long restaurantId) {
         this.restaurantId = restaurantId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getPartyPackageId() {
