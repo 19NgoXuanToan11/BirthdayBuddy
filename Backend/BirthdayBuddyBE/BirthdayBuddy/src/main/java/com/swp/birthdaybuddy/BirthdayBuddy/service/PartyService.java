@@ -11,4 +11,5 @@ public interface PartyService {
     PartyDTO updateParty(Long id, PartyDTO partyDTO);
     void deleteParty(Long id);
     List<PartyDTO> getAllParties();
+    PartyDTO cancelParty(Long id);
 }
