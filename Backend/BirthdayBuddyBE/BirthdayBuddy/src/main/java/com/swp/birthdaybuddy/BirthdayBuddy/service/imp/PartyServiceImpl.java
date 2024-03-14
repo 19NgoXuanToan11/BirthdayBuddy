@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -80,5 +81,17 @@ public class PartyServiceImpl implements PartyService {
         return parties.stream()
                 .map(partyConverter::toDTO)
                 .collect(Collectors.toList());
+    }
+    @Override
+    public PartyDTO cancelParty(Long id) {
+        Optional<Party> optionalParty = partyRepository.findById(id);
+        if (optionalParty.isPresent()) {
+            Party party = optionalParty.get();
+            party.setStatus("Cancelled");
+            partyRepository.save(party);
+            return partyConverter.toDTO(party);
+        } else {
+            throw new RuntimeException("Party not found with ID: " + id);
+        }
     }
 }

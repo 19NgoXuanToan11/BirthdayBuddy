@@ -21,6 +21,9 @@ public class Party {
     @JoinColumn(name = "restaurantID")
     private Restaurant restaurant;
     @ManyToOne
+    @JoinColumn(name = "userID")
+    private User user;
+    @ManyToOne
     @JoinColumn(name = "partyPackageID")
     private PartyPackage partyPackage;
     @Column
@@ -61,9 +64,10 @@ public class Party {
     public Party() {
     }
 
-    public Party(Long id, Restaurant restaurant, PartyPackage partyPackage, String parentName, String phone, String kidName, String gender, Integer age, List<SpecialService> specialServices, List<PartyTheme> partyThemes, List<Menu> menus, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
+    public Party(Long id, Restaurant restaurant, User user, PartyPackage partyPackage, String parentName, String phone, String kidName, String gender, Integer age, List<SpecialService> specialServices, List<PartyTheme> partyThemes, List<Menu> menus, Integer numberOfGuests, Date bookingDate, String startTime, String description, Integer totalPrice, String status, Date createdDate) {
         this.id = id;
         this.restaurant = restaurant;
+        this.user = user;
         this.partyPackage = partyPackage;
         this.parentName = parentName;
         this.phone = phone;
@@ -96,6 +100,14 @@ public class Party {
 
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public PartyPackage getPartyPackage() {

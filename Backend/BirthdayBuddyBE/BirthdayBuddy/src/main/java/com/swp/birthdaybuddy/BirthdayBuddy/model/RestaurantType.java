@@ -12,18 +12,21 @@ public class RestaurantType {
 
     @Column(name = "typeName", nullable = false)
     private String typeName;
-    @Column(name = "description", length = 10000)
+    @Column(name ="description", length = 10000)
     private String description;
+    @Column
+    private String imgLink;
 
     // Constructors, getters, and setters
 
     public RestaurantType() {
     }
 
-    public RestaurantType(Long typeId, String typeName, String description) {
+    public RestaurantType(Long typeId, String typeName, String description, String imgLink) {
         this.typeId = typeId;
         this.typeName = typeName;
         this.description = description;
+        this.imgLink = imgLink;
     }
 
     public Long getTypeId() {
@@ -48,6 +51,14 @@ public class RestaurantType {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImgLink() {
+        return imgLink;
+    }
+
+    public void setImgLink(String imgLink) {
+        this.imgLink = imgLink;
     }
 }
 
