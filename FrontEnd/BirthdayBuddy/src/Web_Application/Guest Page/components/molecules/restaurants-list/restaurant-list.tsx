@@ -6,9 +6,7 @@ import { API } from "../../../../../../src/config/API";
 import { toast } from "react-toastify";
 
 function RestaurantList() {
-    const [restaurants, setRestaurants] = useState([]);  
-
-  
+    const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {
         const fetchRestaurants = async () => {
@@ -45,7 +43,8 @@ function RestaurantList() {
                                         <p>Số điện thoại: {restaurant.phone}</p>
                                         <p>Địa chỉ: {restaurant.address}</p>
                                         <p>
-                                            Chủ đề bữa tiệc: {restaurant.partyTheme}
+                                            Chủ đề bữa tiệc:{" "}
+                                            {restaurant.partyTheme}
                                         </p>
                                         <p>
                                             Dịch vụ đặc biệt:{" "}
