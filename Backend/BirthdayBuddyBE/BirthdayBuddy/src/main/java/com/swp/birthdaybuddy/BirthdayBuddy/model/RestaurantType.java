@@ -12,7 +12,7 @@ public class RestaurantType {
 
     @Column(name = "typeName", nullable = false)
     private String typeName;
-    @Column
+    @Column(name = "description", length = 10000)
     private String description;
 
     // Constructors, getters, and setters
