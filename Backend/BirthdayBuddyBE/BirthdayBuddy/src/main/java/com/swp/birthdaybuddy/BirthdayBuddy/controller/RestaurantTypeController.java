@@ -5,9 +5,11 @@ import com.swp.birthdaybuddy.BirthdayBuddy.service.RestaurantTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
-@RequestMapping("/restaurantTypes")
+@RequestMapping("/api/restaurantTypes")
 public class RestaurantTypeController {
 
     private final RestaurantTypeService restaurantTypeService;
@@ -20,5 +22,9 @@ public class RestaurantTypeController {
     @GetMapping("/{id}")
     public RestaurantTypeDTO getRestaurantTypeById(@PathVariable Long id) {
         return restaurantTypeService.getRestaurantTypeById(id);
+    }
+    @GetMapping("/all")
+    public List<RestaurantTypeDTO> getAllRestaurantTypes() {
+        return restaurantTypeService.getAllRestaurantType();
     }
 }
