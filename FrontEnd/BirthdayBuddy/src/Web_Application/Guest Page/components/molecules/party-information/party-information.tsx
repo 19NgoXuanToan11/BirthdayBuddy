@@ -1,14 +1,14 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import "./party-information.scss";
 
 function PartyInformation() {
     const [partyData, setPartyData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/restaurantTypes/all')
-            .then(response => response.json())
-            .then(data => setPartyData(data))
+        axios.get('http://localhost:8080/api/restaurantTypes/all')
+            .then(response => setPartyData(response.data))
             .catch(error => console.error('Error fetching party data:', error));
     }, []);
 
