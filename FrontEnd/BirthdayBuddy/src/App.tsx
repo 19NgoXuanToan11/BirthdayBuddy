@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import "./App.scss";
-import ScrollToTop from './config/scrollToTop';
 import { Bounce, ToastContainer } from 'react-toastify';
 
 
@@ -45,44 +44,43 @@ function App() {
   console.log(user);
   return (
     <>
-      <ScrollToTop />
-      <ToastContainer
-        position="top-right"
-        autoClose={1500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover={false}
-        theme="light"
-        className='toast-content'
-        transition={Bounce} />
-      {
-        <Routes>
-          <Route path='/'>
-            {
-              user === null ? (
-                <>
-                  <Route index element={<GuestHomePage />} />
-                  <Route path="restaurant-list/:id" element={<GuestRestaurantListPage />} />
-                  <Route path="restaurant-details/:id" element={<GuestRestaurantDetailsPage />} />
-                  <Route path="register" element={<RegisterPage />} />
-                  <Route path="forgetpw" element={<ForgetPassword />} />
-                </>
-              ) : (
-                <>
-                  <Route path='login' element={<LoginPage />} />
-                  {user.roleId === 1 && (
-                    <>
-                      {/* Admin Page */}
-                    </>
-                  )}
-                  {user.roleId === 2 && (
-                    <>
-                      <Route element={<CustomerHome />} />
-                      {/* <Route path="information" element={<UserInformationPage />} />
+        <ToastContainer
+          position="top-right"
+          autoClose={1500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+          theme="light"
+          className='toast-content'
+          transition={Bounce} />
+        {
+          <Routes>
+            <Route path='/'>
+              {
+                user === null ? (
+                  <>
+                    <Route index element={<GuestHomePage />} />
+                    <Route path="restaurant-list/:id" element={<GuestRestaurantListPage />} />
+                    <Route path="restaurant-details/:id" element={<GuestRestaurantDetailsPage />} />
+                    <Route path="register" element={<RegisterPage />} />
+                    <Route path="forgetpw" element={<ForgetPassword />} />
+                  </>
+                ) : (
+                  <>
+                    <Route path='login' element={<LoginPage />} />
+                    {user.roleId === 1 && (
+                      <>
+                        {/* Admin Page */}
+                      </>
+                    )}
+                    {user.roleId === 2 && (
+                      <>
+                        <Route element={<CustomerHome />} />
+                        {/* <Route path="information" element={<UserInformationPage />} />
                     <Route path="restaurant-list" element={<CustomerRestaurantListPage />} />
                     <Route path="restaurant-details/:id" element={<CustomerRestaurantDetailsPage />} />
                     <Route path="check-out" element={<CustomerCheckoutPage />} />
@@ -90,15 +88,15 @@ function App() {
                     <Route path="booking-information" element={<BookingInformationPage />} />
                     <Route path="booking-list" element={<BookingListPage />} />
                     <Route path="notification" element={<PartyNotification />} /> */}
-                    </>
-                  )}
+                      </>
+                    )}
 
-                </>
-              )
-            }
-          </Route>
-        </Routes>
-      }
+                  </>
+                )
+              }
+            </Route>
+          </Routes>
+        }
     </>
 
   );
