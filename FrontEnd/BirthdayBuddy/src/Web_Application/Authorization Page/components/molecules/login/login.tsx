@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./login.scss";
-import { authAPI } from "../../../../../../src/config/authAPI";
+import api from "../../../../../../src/config/axios";
 
 const Login: React.FC = () => {
+  const user = sessionStorage.getItem('loginedUser') ? JSON.parse(sessionStorage.getItem('loginedUser')) : null;
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -17,34 +18,41 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!username || !password) {
-      toast.error("Please enter both username and password.");
+      toast.error("Vui lòng nhập đầy đủ thông tin đăng nhập.");
       return;
     }
+
     try {
-      const user = await authAPI.loginApi({
-        username: username,
-        password: password,
-      });
-      if (user && user.roleId) {
-        console.log("Đăng nhập thành công ");
-        sessionStorage.setItem("loggedInUser", JSON.stringify(user));
-        console.log(user);
-        const roleId = user.roleId;
-        if (roleId === 3) {
-          navigate(`/host/${user.id}`);
-        } else if (roleId === 2) {
-          navigate(`/customer/${user.id}`);
+      const response = await api.post("login?username=" + username + "&password=" + password);
+      if (response.status === 200) {
+        const data = response.data;
+        if (data.errorMessage === "User is not exist") {
+          toast.error("Tên đăng nhập không có trong hệ thống. Vui lòng kiểm tra lại!");
         } else {
-          toast.error("Login failed. Please check your credentials.");
+          if (data.errorMessage !== "Password is not correct") {
+            sessionStorage.setItem('loginedUser', JSON.stringify(data.payload));
+            localStorage.setItem('loginSuccessNotify', 'Đăng nhập thành công!');
+            location.reload();
+          } else {
+            toast.error("Mật khẩu không đúng. Vui lòng nhập lại!");
+          }
         }
       } else {
-        toast.error("Đăng nhập thất bại");
+        console.log("Xảy ra lỗi khi nhận dữ liệu");
       }
     } catch (error) {
-      console.error("Đăng nhập thất bại:", error);
-      toast.error("Login failed. Please check your credentials.");
+      console.log(error);
     }
   };
+
+  useEffect(() => {
+    const user = sessionStorage.getItem("loginedUser") ? JSON.parse(sessionStorage.getItem("loginedUser")) : null;
+    if (user !== null) {
+      navigate('/');
+    }
+    console.log(window.location.href);
+  }, [user]);
+
 
   return (
     <div className="loginPage">

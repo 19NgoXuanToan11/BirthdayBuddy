@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { API } from '../../../../config/API.js';
 import { toast } from 'react-toastify';
+import api from '../../../../config/axios';
 
 function RestaurantList() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -13,7 +12,7 @@ function RestaurantList() {
     useEffect(() => {
         const fetchRestaurants = async () => {
             try {
-                const response = await axios.get(
+                const response = await api.get(
                     "http://localhost:8080/api/restaurants/all"
                 );
                 setRestaurants(response.data);
@@ -32,7 +31,7 @@ function RestaurantList() {
                 const user = localStorage.getItem("loggedInUser");
                 if (user) {
                     const userData = JSON.parse(user);
-                    const userById = await API.getUserById(userData.id);
+                    const userById = await api.get(userData.id);
                     setLoggedInUser(userById);
                 } else {
                     toast.error("User information not found. Please login again.");

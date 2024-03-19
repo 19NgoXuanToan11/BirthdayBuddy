@@ -1,52 +1,39 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./party-information.scss";
 
 function PartyInformation() {
-    const [partyTypes, setPartyTypes] = useState([]);
-    const [expandedIndex, setExpandedIndex] = useState(null);
+    const [partyData, setPartyData] = useState([]);
 
     useEffect(() => {
-        const fetchPartyTypes = async () => {
-            try {
-                const response = await axios.get(
-                    "http://localhost:8080/api/restaurantTypes/all"
-                );
-                setPartyTypes(response.data);
-            } catch (error) {
-                console.error("Error fetching party types:", error);
-            }
-        };
-
-        fetchPartyTypes();
+        axios.get('http://localhost:8080/api/restaurantTypes/all')
+            .then(response => setPartyData(response.data))
+            .catch(error => console.error('Error fetching party data:', error));
     }, []);
-
-    const handleShowMore = (index) => {
-        setExpandedIndex(index === expandedIndex ? null : index);
-    };
 
     return (
         <div className="party-information-container">
-            <h2 className="party-heading">Các gói tiệc</h2>
-            <ul className="party-list">
-                {partyTypes.map((partyType, index) => (
-                    <li key={partyType.typeName} className="party-section">
-                        <img
-                            src="/src/SWP_RESOURCE/pictures/birthday-restaurant-inside.jpg"
-                            alt="Party Type"
-                        ></img>
-                        <h3 className="party-title">{partyType.typeName}</h3>
-                        <div className="party-description">
-                            {partyType.description}
+            <h2>Các gói tiệc</h2>
+            <div className="party-list">
+                {partyData.map((party) => (
+                    <div className="party-section" key={party.typeId}>
+                        <img src={party.imgLink} alt={party.typeName} />
+                        <div className="upper-box">{party.typeName}</div>
+                        <div className="party-contents">
+                            <p>{party.description}</p>
                         </div>
                         <div className="under-box">
-                            <Link to={`/restaurant-list`} className="view-more">
+                            <Link
+                                to={`/restaurant-list/${party.typeId}`}
+                                className="view-more"
+                            >
                                 Xem thêm
                             </Link>
                         </div>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

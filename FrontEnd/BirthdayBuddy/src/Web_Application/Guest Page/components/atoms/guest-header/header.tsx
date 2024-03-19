@@ -1,26 +1,26 @@
 import "./header.scss";
-import { Link } from "react-scroll";
-import { Link as Forward } from "react-router-dom"
+import { Link as Scroll } from "react-scroll";
+import { Link } from "react-router-dom"
 
 function GuestHeader() {
     return (
         <header className="guest-header">
             <div className="middle-header">
                 <div className="logo">
-                    <Link to="/">
+                    <Scroll to="/">
                         <img src="/src/SWP_RESOURCE/Logo.png" alt="Logo" />
-                    </Link>
+                    </Scroll>
                 </div>
 
                 <div className="search-bar">
                     <input type="text" placeholder="Tìm kiếm..." />
                 </div>
                 <div className="user-cart">
-                    <Forward to="/login">
+                    <Link to='login'>
                         <i className="fa fa-user">
                             <img src="/src/SWP_RESOURCE/icon/alone.gif" />
                         </i>
-                    </Forward>
+                    </Link>
                     <a href="#">
                         <i className="fa fa-shopping-cart">
                             <img src="/src/SWP_RESOURCE/icon/notification-bell.gif" />
@@ -30,21 +30,21 @@ function GuestHeader() {
             </div>
             <nav className="lower-header">
                 <ul>
-                    <Link to="carousel-container">
+                    <Scroll to="carousel-container">
                         <li>
                             <a href="">Trang chủ</a>
                         </li>
-                    </Link>
-                    <Link to="party-information-container">
+                    </Scroll>
+                    <Scroll to="party-information-container">
                         <li>
                             <a href="">Các gói tiệc</a>
                         </li>
-                    </Link>
-                    <Forward to="login">
+                    </Scroll>
+                    <Link to="login">
                         <li>
                             <a href="">Đặt tiệc sinh nhật</a>
                         </li>
-                    </Forward>
+                    </Link>
                     <li>
                         <a href="#">Về BirthdayBuddy</a>
                     </li>
