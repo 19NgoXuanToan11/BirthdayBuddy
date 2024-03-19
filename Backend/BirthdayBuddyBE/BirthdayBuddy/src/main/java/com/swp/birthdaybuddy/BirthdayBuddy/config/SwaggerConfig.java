@@ -1,33 +1,35 @@
-//package com.swp.birthdaybuddy.BirthdayBuddy.config;
-//
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
-//import springfox.documentation.builders.ApiInfoBuilder;
-//import springfox.documentation.builders.PathSelectors;
-//import springfox.documentation.builders.RequestHandlerSelectors;
-//import springfox.documentation.service.ApiInfo;
-//import springfox.documentation.spi.DocumentationType;
-//import springfox.documentation.spring.web.plugins.Docket;
-//import springfox.documentation.swagger2.annotations.EnableSwagger2;
-//
-//@Configuration
-//@EnableSwagger2
-//public class SwaggerConfig {
-//    @Bean
-//    public Docket api() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.swp.birthdaybuddy.BirthdayBuddy.controller")) // Replace com.example.controller with your controller package
-//                .paths(PathSelectors.any())
-//                .build()
-//                .apiInfo(apiInfo());
-//    }
-//
-//    private ApiInfo apiInfo() {
-//        return new ApiInfoBuilder()
-//                .title("Your API Title")
-//                .description("Your API Description")
-//                .version("1.0")
-//                .build();
-//    }
-//}
+    package com.swp.birthdaybuddy.BirthdayBuddy.config;
+
+
+    import io.swagger.v3.oas.models.ExternalDocumentation;
+    import io.swagger.v3.oas.models.OpenAPI;
+    import io.swagger.v3.oas.models.info.Info;
+    import io.swagger.v3.oas.models.info.License;
+    import org.springdoc.core.models.GroupedOpenApi;
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.context.annotation.Configuration;
+
+
+    @Configuration
+    public class SwaggerConfig {
+        @Bean
+        public GroupedOpenApi publicApi() {
+            return GroupedOpenApi.builder()
+                    .group("BirthdayBuddy-public")
+                    .packagesToScan("com.swp.birthdaybuddy.BirthdayBuddy.controller")
+                    .pathsToMatch("/api/**")
+                    .build();
+        }
+
+        @Bean
+        public OpenAPI birthdayBuddyOpenAPI() {
+            return new OpenAPI()
+                    .info(new Info().title("BirthdayBuddy API")
+                            .description("BirthdayBuddy application")
+                            .version("v0.0.1")
+                            .license(new License().name("Apache 2.0").url("http://springdoc.org")))
+                    .externalDocs(new ExternalDocumentation()
+                            .description("BirthdayBuddy Documentation")
+                            .url("https://troll.vn"));
+        }
+    }
