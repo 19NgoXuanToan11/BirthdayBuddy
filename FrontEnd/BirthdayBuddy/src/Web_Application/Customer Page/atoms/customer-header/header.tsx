@@ -2,19 +2,18 @@ import "./header.scss";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { API } from "../../../../../src/config/API"; // Update with your actual API file path\
+import api from "../../../../../src/config/axios";
 
-// import { Link } from "react-scroll";
 function CustomerHeader() {
   const [loggedInUser, setLoggedInUser] = useState<any>([]);
 
   useEffect(() => {
     const fetchLoggedInUser = async () => {
       try {
-        const user = localStorage.getItem("loggedInUser");
+        const user = sessionStorage.getItem("loggedInUser");
         if (user) {
           const userData = JSON.parse(user);
-          const userById = await API.getUserById(userData.id);
+          const userById = await api.get(userData.id);
           setLoggedInUser(userById);
         } else {
           toast.error("User information not found. Please login again.");
