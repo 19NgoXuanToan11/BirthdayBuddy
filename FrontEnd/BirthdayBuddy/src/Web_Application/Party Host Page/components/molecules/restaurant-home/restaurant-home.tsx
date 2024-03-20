@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function HostRestaurantHome() {
-  return (
-    <>
-    This is restaurant home page 
-    </>
-  )
+    return <>This is restaurant home page</>;
 }
 
-export default HostRestaurantHome
+export default HostRestaurantHome;

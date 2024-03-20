@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./introduction.scss"; // Import SCSS file
-import { Link } from "react-scroll"
+import { Link } from "react-scroll";
 function Introduction() {
     const images = [
         "/src/SWP_RESOURCE/pictures/carousel_1.png",

@@ -30,7 +30,11 @@ export default function PartyDetail() {
         <>
             <h1 className="restaurant-title">THÔNG TIN NHÀ HÀNG</h1>
             <div className="restaurant-detail">
-                <img className="restaurant-image" src={thisParty.imgUrl} alt={thisParty.name} />
+                <img
+                    className="restaurant-image"
+                    src={thisParty.imgUrl}
+                    alt={thisParty.name}
+                />
                 <div className="information-container">
                     <h2 className="restaurant-name">{thisParty.detailName}</h2>
                     <ul className="restaurant-description">
@@ -51,38 +55,102 @@ export default function PartyDetail() {
                     <div className="review-details">
                         <div className="review">
                             <h5 className="reviewer-name">Nguyễn Văn A</h5>
-                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
-                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ, tôi không tìm đc lí do để chê dịch vụ ở đây</h5>
+                            <h5 className="reviewer-rating">
+                                5{" "}
+                                <img
+                                    src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png"
+                                    alt=""
+                                />
+                            </h5>
+                            <h5 className="review-text">
+                                Con tôi đã rất vui, nhà hàng chu đáo, tận tình
+                                hỗ trợ, tôi không tìm đc lí do để chê dịch vụ ở
+                                đây
+                            </h5>
                         </div>
                         <div className="review">
                             <h5 className="reviewer-name">Nguyễn Văn B</h5>
-                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
-                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                            <h5 className="reviewer-rating">
+                                5{" "}
+                                <img
+                                    src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png"
+                                    alt=""
+                                />
+                            </h5>
+                            <h5 className="review-text">
+                                Con tôi đã rất vui, nhà hàng chu đáo, tận tình
+                                hỗ trợ
+                            </h5>
                         </div>
                         <div className="review">
                             <h5 className="reviewer-name">Nguyễn Văn C</h5>
-                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
-                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                            <h5 className="reviewer-rating">
+                                5{" "}
+                                <img
+                                    src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png"
+                                    alt=""
+                                />
+                            </h5>
+                            <h5 className="review-text">
+                                Con tôi đã rất vui, nhà hàng chu đáo, tận tình
+                                hỗ trợ
+                            </h5>
                         </div>
                         <div className="review">
                             <h5 className="reviewer-name">Nguyễn Văn D</h5>
-                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
-                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                            <h5 className="reviewer-rating">
+                                5{" "}
+                                <img
+                                    src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png"
+                                    alt=""
+                                />
+                            </h5>
+                            <h5 className="review-text">
+                                Con tôi đã rất vui, nhà hàng chu đáo, tận tình
+                                hỗ trợ
+                            </h5>
                         </div>
                         <div className="review">
                             <h5 className="reviewer-name">Nguyễn Văn E</h5>
-                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
-                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                            <h5 className="reviewer-rating">
+                                5{" "}
+                                <img
+                                    src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png"
+                                    alt=""
+                                />
+                            </h5>
+                            <h5 className="review-text">
+                                Con tôi đã rất vui, nhà hàng chu đáo, tận tình
+                                hỗ trợ
+                            </h5>
                         </div>
                         <div className="review">
                             <h5 className="reviewer-name">Nguyễn Văn F</h5>
-                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
-                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                            <h5 className="reviewer-rating">
+                                5{" "}
+                                <img
+                                    src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png"
+                                    alt=""
+                                />
+                            </h5>
+                            <h5 className="review-text">
+                                Con tôi đã rất vui, nhà hàng chu đáo, tận tình
+                                hỗ trợ
+                            </h5>
                         </div>
                         <div className="review">
                             <h5 className="reviewer-name">Nguyễn Văn G</h5>
-                            <h5 className="reviewer-rating">5 <img src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png" alt="" /></h5>
-                            <h5 className="review-text">Con tôi đã rất vui, nhà hàng chu đáo, tận tình hỗ trợ</h5>
+                            <h5 className="reviewer-rating">
+                                5{" "}
+                                <img
+                                    src="../../../../../../src/SWP_RESOURCE/icon/star-icon.png"
+                                    alt=""
+                                />
+                            </h5>
+                            <h5 className="review-text">
+                                Con tôi đã rất vui, nhà hàng chu đáo, tận tình
+                                hỗ trợ
+                            </h5>
                         </div>
                     </div>
                     <a href="">Xem thêm đánh giá</a>
@@ -93,7 +161,9 @@ export default function PartyDetail() {
                 <table className="booking-container-table">
                     <tr className="booking-header">
                         <th className="party-packages-title">Gói tiệc</th>
-                        <th className="party-details-title">Thông tin chi tiết</th>
+                        <th className="party-details-title">
+                            Thông tin chi tiết
+                        </th>
                         <th className="party-cost-title">Giá tiền</th>
                     </tr>
                     <tr>
@@ -106,7 +176,7 @@ export default function PartyDetail() {
                             </ul>
                         </td>
                         <td>
-                             <ul className="booking-details">
+                            <ul className="booking-details">
                                 <li>
                                     <select>
                                         <option value="">Bãi biển</option>
@@ -118,12 +188,18 @@ export default function PartyDetail() {
                                 </li>
                                 <li>
                                     <select>
-                                        <option value="">Quà dự tiệc cho bé</option>
+                                        <option value="">
+                                            Quà dự tiệc cho bé
+                                        </option>
                                         <option value="">Đập kẹo Pinata</option>
                                         <option value="">Karaoke</option>
                                         <option value="">MC tiếng anh</option>
-                                        <option value="">Ảo thuật diệu kì</option>
-                                        <option value="">Vẽ mặt nghệ thuật</option>
+                                        <option value="">
+                                            Ảo thuật diệu kì
+                                        </option>
+                                        <option value="">
+                                            Vẽ mặt nghệ thuật
+                                        </option>
                                     </select>
                                 </li>
                                 <li>
@@ -134,7 +210,7 @@ export default function PartyDetail() {
                                     </select>
                                 </li>
                                 <li>--</li>
-                                </ul>
+                            </ul>
                         </td>
                         <td>
                             <div className="cost-container">
@@ -150,10 +226,14 @@ export default function PartyDetail() {
                 </table>
                 <div className="booking-actions">
                     <Link to="/login">
-                        <button className="button-book-now">Đặt tiệc ngay</button>
+                        <button className="button-book-now">
+                            Đặt tiệc ngay
+                        </button>
                     </Link>
                     <Link to="/restaurant-list">
-                        <button className="button-view-more">Xem nhà hàng khác</button>
+                        <button className="button-view-more">
+                            Xem nhà hàng khác
+                        </button>
                     </Link>
                 </div>
             </div>

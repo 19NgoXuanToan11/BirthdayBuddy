@@ -1,6 +1,6 @@
 import "./guest-header-restaurantlist.scss";
 import { Link } from "react-scroll";
-import { Link as Forward } from "react-router-dom"
+import { Link as Forward } from "react-router-dom";
 
 function GuestHeaderRestaurantList() {
     return (

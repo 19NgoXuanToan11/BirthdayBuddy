@@ -1,6 +1,6 @@
-import HostHeaderHome from '../../organisms/host-header/host-header-home'
-import CreateFoodMenuTemplate from '../../templates/create-food-menu-template/create-food-menu-template'
-import HostFooterHome from '../../organisms/host-footer/host-footer-home'
+import HostHeaderHome from "../../organisms/host-header/host-header-home";
+import CreateFoodMenuTemplate from "../../templates/create-food-menu-template/create-food-menu-template";
+import HostFooterHome from "../../organisms/host-footer/host-footer-home";
 
 function CreateFoodMenuPage() {
     return (
@@ -15,7 +15,7 @@ function CreateFoodMenuPage() {
                 <HostFooterHome />
             </footer>
         </>
-    )
+    );
 }
 
-export default CreateFoodMenuPage
+export default CreateFoodMenuPage;

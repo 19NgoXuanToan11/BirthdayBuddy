@@ -2,7 +2,7 @@ import "./party-list.scss";
 
 export default function PartyList() {
     return (
-        <> 
+        <>
             <div className="main-content">
                 <h1>DANH SÁCH BỮA TIỆC</h1>
                 <div className="list-party">

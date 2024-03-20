@@ -1,8 +1,6 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-import { Bounce, ToastContainer } from 'react-toastify';
-
-
+import { Bounce, ToastContainer } from "react-toastify";
 
 // Import Guest Pages
 import GuestHomePage from "./Web_Application/Guest Page/components/pages/home-page/guest-home-page";
@@ -40,47 +38,57 @@ import HostHomePage from "./Web_Application/Party Host Page/components/pages/hos
 //import Administator Pages
 
 function App() {
-  const user = sessionStorage.getItem('loginedUser') ? JSON.parse(sessionStorage.getItem('loginedUser')) : null;
-  console.log(user);
-  return (
-    <>
-        <ToastContainer
-          position="top-right"
-          autoClose={1500}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable
-          pauseOnHover={false}
-          theme="light"
-          className='toast-content'
-          transition={Bounce} />
-        {
-          <Routes>
-            <Route path='/'>
-              {
-                user === null ? (
-                  <>
-                    <Route index element={<GuestHomePage />} />
-                    <Route path="restaurant-list/:id" element={<GuestRestaurantListPage />} />
-                    <Route path="restaurant-details/:id" element={<GuestRestaurantDetailsPage />} />
-                    <Route path="register" element={<RegisterPage />} />
-                    <Route path="forgetpw" element={<ForgetPassword />} />
-                  </>
-                ) : (
-                  <>
-                    <Route path='login' element={<LoginPage />} />
-                    {user.roleId === 1 && (
-                      <>
-                        {/* Admin Page */}
-                      </>
-                    )}
-                    {user.roleId === 2 && (
-                      <>
-                        <Route element={<CustomerHome />} />
-                        {/* <Route path="information" element={<UserInformationPage />} />
+    const user = sessionStorage.getItem("loginedUser")
+        ? JSON.parse(sessionStorage.getItem("loginedUser"))
+        : null;
+    console.log(user);
+    return (
+        <>
+            <ToastContainer
+                position="top-right"
+                autoClose={1500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover={false}
+                theme="light"
+                className="toast-content"
+                transition={Bounce}
+            />
+            {
+                <Routes>
+                    <Route path="/">
+                        {user === null ? (
+                            <>
+                                <Route index element={<GuestHomePage />} />
+                                <Route
+                                    path="restaurant-list/:id"
+                                    element={<GuestRestaurantListPage />}
+                                />
+                                <Route
+                                    path="restaurant-details/:id"
+                                    element={<GuestRestaurantDetailsPage />}
+                                />
+                                <Route
+                                    path="register"
+                                    element={<RegisterPage />}
+                                />
+                                <Route
+                                    path="forgetpw"
+                                    element={<ForgetPassword />}
+                                />
+                            </>
+                        ) : (
+                            <>
+                                <Route path="login" element={<LoginPage />} />
+                                {user.roleId === 1 && <>{/* Admin Page */}</>}
+                                {user.roleId === 2 && (
+                                    <>
+                                        <Route element={<CustomerHome />} />
+                                        {/* <Route path="information" element={<UserInformationPage />} />
                     <Route path="restaurant-list" element={<CustomerRestaurantListPage />} />
                     <Route path="restaurant-details/:id" element={<CustomerRestaurantDetailsPage />} />
                     <Route path="check-out" element={<CustomerCheckoutPage />} />
@@ -88,18 +96,15 @@ function App() {
                     <Route path="booking-information" element={<BookingInformationPage />} />
                     <Route path="booking-list" element={<BookingListPage />} />
                     <Route path="notification" element={<PartyNotification />} /> */}
-                      </>
-                    )}
-
-                  </>
-                )
-              }
-            </Route>
-          </Routes>
-        }
-    </>
-
-  );
+                                    </>
+                                )}
+                            </>
+                        )}
+                    </Route>
+                </Routes>
+            }
+        </>
+    );
 }
 
 export default App;
