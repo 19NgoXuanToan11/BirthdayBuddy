@@ -29,7 +29,6 @@ export default function CreateFoodMenu() {
                     </Link>
                 </div>
             </div>
-        
         </>
     );
 }

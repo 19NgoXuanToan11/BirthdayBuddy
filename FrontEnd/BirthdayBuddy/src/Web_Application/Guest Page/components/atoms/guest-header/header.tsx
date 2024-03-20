@@ -1,6 +1,6 @@
 import "./header.scss";
 import { Link as Scroll } from "react-scroll";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function GuestHeader() {
     return (
@@ -16,7 +16,7 @@ function GuestHeader() {
                     <input type="text" placeholder="Tìm kiếm..." />
                 </div>
                 <div className="user-cart">
-                    <Link to='login'>
+                    <Link to="login">
                         <i className="fa fa-user">
                             <img src="/src/SWP_RESOURCE/icon/alone.gif" />
                         </i>

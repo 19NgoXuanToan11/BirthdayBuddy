@@ -1,12 +1,12 @@
-import React from 'react'
-import CreatePartyTheme from '../../molecules/create-party-theme/create-party-theme'
+import React from "react";
+import CreatePartyTheme from "../../molecules/create-party-theme/create-party-theme";
 
 function CreatePartyThemeTemplate() {
-  return (
-    <>
-    <CreatePartyTheme />
-    </>
-  )
+    return (
+        <>
+            <CreatePartyTheme />
+        </>
+    );
 }
 
-export default CreatePartyThemeTemplate
+export default CreatePartyThemeTemplate;

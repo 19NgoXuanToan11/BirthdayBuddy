@@ -1,6 +1,6 @@
-import GuestRestaurantListHeader from "../../atoms/guest-restaurant-list-header/guest-restaurant-list-header"
-import GuestFooterHome from "../../organisms/guest-footer-home/guest-footer-home"
-import RestaurantListTemplate from "../../templates/restaurant-list-template/restaurant-list-template"
+import GuestRestaurantListHeader from "../../atoms/guest-restaurant-list-header/guest-restaurant-list-header";
+import GuestFooterHome from "../../organisms/guest-footer-home/guest-footer-home";
+import RestaurantListTemplate from "../../templates/restaurant-list-template/restaurant-list-template";
 
 function GuestRestaurantListPage() {
     return (
@@ -15,8 +15,7 @@ function GuestRestaurantListPage() {
                 <GuestFooterHome />
             </footer>
         </>
-
-    )
+    );
 }
 
-export default GuestRestaurantListPage
+export default GuestRestaurantListPage;

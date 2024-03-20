@@ -1,11 +1,11 @@
-import GuestHeaderRestaurantList from '../../atoms/guest-header-restaurantlist/guest-header-restaurantlist'
+import GuestHeaderRestaurantList from "../../atoms/guest-header-restaurantlist/guest-header-restaurantlist";
 
 function GuestHeaderRestaurantListTemplate() {
-  return (
-    <>
-    <GuestHeaderRestaurantList />
-    </>
-  )
+    return (
+        <>
+            <GuestHeaderRestaurantList />
+        </>
+    );
 }
 
-export default GuestHeaderRestaurantListTemplate
+export default GuestHeaderRestaurantListTemplate;

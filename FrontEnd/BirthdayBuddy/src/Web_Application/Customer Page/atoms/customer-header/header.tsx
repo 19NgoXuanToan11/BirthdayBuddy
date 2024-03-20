@@ -7,22 +7,24 @@ import api from "../../../../../src/config/axios";
 function CustomerHeader() {
     const [loggedInUser, setLoggedInUser] = useState<any>([]);
 
-  useEffect(() => {
-    const fetchLoggedInUser = async () => {
-      try {
-        const user = sessionStorage.getItem("loggedInUser");
-        if (user) {
-          const userData = JSON.parse(user);
-          const userById = await api.get(userData.id);
-          setLoggedInUser(userById);
-        } else {
-          toast.error("User information not found. Please login again.");
-        }
-      } catch (error) {
-        console.error("Error fetching user:", error);
-        toast.error("Error fetching user information.");
-      }
-    };
+    useEffect(() => {
+        const fetchLoggedInUser = async () => {
+            try {
+                const user = sessionStorage.getItem("loggedInUser");
+                if (user) {
+                    const userData = JSON.parse(user);
+                    const userById = await api.get(userData.id);
+                    setLoggedInUser(userById);
+                } else {
+                    toast.error(
+                        "User information not found. Please login again."
+                    );
+                }
+            } catch (error) {
+                console.error("Error fetching user:", error);
+                toast.error("Error fetching user information.");
+            }
+        };
 
         fetchLoggedInUser();
     }, []);

@@ -1,7 +1,7 @@
 import React from "react";
 import CustomerHeaderHome from "../../organisms/customer-header-home/customer-header-home";
 import CustomerFooterHome from "../../organisms/customer-footer-home/customer-footer-home";
-import "./party-notification.scss"
+import "./party-notification.scss";
 
 export default function PartyNotification() {
     return (
