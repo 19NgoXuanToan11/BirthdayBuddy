@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 import { Bounce, ToastContainer } from "react-toastify";
@@ -38,10 +39,6 @@ import HostHomePage from "./Web_Application/Party Host Page/components/pages/hos
 //import Administator Pages
 
 function App() {
-    const user = sessionStorage.getItem("loginedUser")
-        ? JSON.parse(sessionStorage.getItem("loginedUser"))
-        : null;
-    console.log(user);
     return (
         <>
             <ToastContainer
@@ -58,51 +55,69 @@ function App() {
                 className="toast-content"
                 transition={Bounce}
             />
-            {
-                <Routes>
-                    <Route path="/">
-                        {user === null ? (
-                            <>
-                                <Route index element={<GuestHomePage />} />
-                                <Route
-                                    path="restaurant-list/:id"
-                                    element={<GuestRestaurantListPage />}
-                                />
-                                <Route
-                                    path="restaurant-details/:id"
-                                    element={<GuestRestaurantDetailsPage />}
-                                />
-                                <Route
-                                    path="register"
-                                    element={<RegisterPage />}
-                                />
-                                <Route
-                                    path="forgetpw"
-                                    element={<ForgetPassword />}
-                                />
-                            </>
-                        ) : (
-                            <>
-                                <Route path="login" element={<LoginPage />} />
-                                {user.roleId === 1 && <>{/* Admin Page */}</>}
-                                {user.roleId === 2 && (
-                                    <>
-                                        <Route element={<CustomerHome />} />
-                                        {/* <Route path="information" element={<UserInformationPage />} />
-                    <Route path="restaurant-list" element={<CustomerRestaurantListPage />} />
-                    <Route path="restaurant-details/:id" element={<CustomerRestaurantDetailsPage />} />
-                    <Route path="check-out" element={<CustomerCheckoutPage />} />
-                    <Route path="booking-success" element={<BookingSuccessPage />} />
-                    <Route path="booking-information" element={<BookingInformationPage />} />
-                    <Route path="booking-list" element={<BookingListPage />} />
-                    <Route path="notification" element={<PartyNotification />} /> */}
-                                    </>
-                                )}
-                            </>
-                        )}
-                    </Route>
-                </Routes>
-            }
+            <Routes>
+                {/* Guest */}
+                <Route path="/" element={<GuestHomePage />} />
+                <Route path="/restaurant-list" element={<GuestRestaurantListPage />} />
+                <Route
+                    path="/restaurant-details/:id"
+                    element={<GuestRestaurantDetailsPage />}
+                />
+
+                {/* Authorized */}
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/forgetpw" element={<ForgetPassword />} />
+
+                {/* Customer */}
+                <Route path="/customer/:id" element={<CustomerHome />} />
+                <Route path="/customer/information" element={<UserInformationPage />} />
+                <Route
+                    path="/customer/restaurant-list/:id"
+                    element={<CustomerRestaurantListPage />}
+                />
+                <Route
+                    path="/customer/restaurant-details/:id"
+                    element={<CustomerRestaurantDetailsPage />}
+                />
+                <Route path="/customer/check-out" element={<CustomerCheckoutPage />} />
+                <Route path="/customer/payment" element={<MomoPaymentPage />} />
+                <Route
+                    path="/customer/booking-success"
+                    element={<BookingSuccessPage />}
+                />
+                <Route
+                    path="/customer/booking-information"
+                    element={<BookingInformationPage />}
+                />
+                <Route path="/customer/booking-list" element={<BookingListPage />} />
+                <Route path="/customer/notification" element={<PartyNotification />} />
+
+                {/* Host */}
+                <Route path="/host/:userId" element={<HostHomePage />} />
+                <Route path="/host/list-party" element={<HostPartyListPage />} />
+                <Route path="/host/create-party" element={<HostCreatePartyPage />} />
+                <Route
+                    path="/host/create-party/create-party-theme"
+                    element={<HostCreatePartyThemePage />}
+                />
+                <Route
+                    path="/host/create-party/create-party-theme/create-special-service"
+                    element={<HostCreateSpecialServicePage />}
+                />
+                <Route
+                    path="/host/create-party/create-party-theme/create-special-service/create-food-menu"
+                    element={<CreateFoodMenuPage />}
+                />
+                <Route
+                    path="/host/restaurant-booking-tracking"
+                    element={<RestaurantBookingTracking />}
+                />
+                <Route
+                    path="/host/restaurant-booking-tracking/restaurant-booking-success"
+                    element={<RestaurantBookingSuccess />}
+                />
+            </Routes>
         </>
     );
 }
