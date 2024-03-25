@@ -7,9 +7,19 @@ function PartyInformation() {
     const [partyData, setPartyData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/restaurantTypes/all')
-            .then(response => setPartyData(response.data))
-            .catch(error => console.error('Error fetching party data:', error));
+        axios
+            .get("http://localhost:8080/api/restaurantTypes/all")
+            .then((response) => {
+                // Lấy dữ liệu từ API restaurantTypes
+                const restaurantTypesData = response.data;
+                // Tiếp tục gọi API khác nếu cần và xử lý dữ liệu
+
+                // Set dữ liệu vào state
+                setPartyData(restaurantTypesData);
+            })
+            .catch((error) =>
+                console.error("Error fetching party data:", error)
+            );
     }, []);
 
     return (
