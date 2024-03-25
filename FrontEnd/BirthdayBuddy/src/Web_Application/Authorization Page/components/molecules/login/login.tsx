@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./login.scss";
 import api from "../../../../../../src/config/axios";
 
 const Login: React.FC = () => {
-    const user = sessionStorage.getItem("loginedUser")
-        ? JSON.parse(sessionStorage.getItem("loginedUser"))
-        : null;
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -20,52 +17,31 @@ const Login: React.FC = () => {
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!username || !password) {
-            toast.error("Vui lòng nhập đầy đủ thông tin đăng nhập.");
+            toast.error("Vui lòng nhập đầy đủ thông tin đăng nhập");
             return;
         }
-
         try {
-            const response = await api.post(
-                "login?username=" + username + "&password=" + password
-            );
+            const response = await api.post("users/login?username=" + username + "&password=" + password);
             if (response.status === 200) {
+                console.log("Login successful");
                 const data = response.data;
-                if (data.errorMessage === "User is not exist") {
-                    toast.error(
-                        "Tên đăng nhập không có trong hệ thống. Vui lòng kiểm tra lại!"
-                    );
+                const roleId = data.roleId;
+                console.log(data);
+                if (roleId === 3) {
+                    navigate('/host/list-party');
+                } else if (roleId === 2) {
+                    navigate(`/customer/${data.id}`, { state: { loggedInUser: data } }); // Pass user data via URL parameters
                 } else {
-                    if (data.errorMessage !== "Password is not correct") {
-                        sessionStorage.setItem(
-                            "loginedUser",
-                            JSON.stringify(data.payload)
-                        );
-                        localStorage.setItem(
-                            "loginSuccessNotify",
-                            "Đăng nhập thành công!"
-                        );
-                        location.reload();
-                    } else {
-                        toast.error("Mật khẩu không đúng. Vui lòng nhập lại!");
-                    }
+                    toast.error("Unauthorized access.");
                 }
             } else {
-                console.log("Xảy ra lỗi khi nhận dữ liệu");
+                toast.error("Login failed. Please check your credentials.");
             }
         } catch (error) {
-            console.log(error);
+            console.error("Login failed:", error);
+            toast.error("Login failed. Please check your credentials.");
         }
     };
-
-    useEffect(() => {
-        const user = sessionStorage.getItem("loginedUser")
-            ? JSON.parse(sessionStorage.getItem("loginedUser"))
-            : null;
-        if (user !== null) {
-            navigate("/");
-        }
-        console.log(window.location.href);
-    }, [user]);
 
     return (
         <div className="loginPage">

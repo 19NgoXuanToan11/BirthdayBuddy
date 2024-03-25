@@ -9,7 +9,7 @@ function CustomerCheckoutPage() {
                 <CustomerHeaderHome />
             </header>
             <div className="body-container">
-                <PartyCheckout />
+                {/* <PartyCheckout /> */}
             </div>
             <footer>
                 <CustomerFooterHome />
